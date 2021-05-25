@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CompanyInformation">
+
+    <ScrollView
+        android:layout_width="353dp"
+        android:layout_height="687dp"
+        android:layout_marginTop="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/label_sales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_sales"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_sales"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_input_sales"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/label_credit30"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_credit_sales30"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_credit30"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_credit_sales30"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/label_credit60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_credit_sales60"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_credit60"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_credit_sales60"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/label_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_about_sales"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_about"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_about_sales"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/label_bad_debt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_bad_debt"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_bad_debt"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_bad_debt"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/label_interest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_input_interest"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_interest"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="20sp"
+                android:backgroundTint="@color/blue_app"
+                android:ems="10"
+                android:hint="@string/placeholder_interest"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue_app"
+                android:text="@string/btn_register" />
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red_app"
+                android:text="@string/btn_cancel" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

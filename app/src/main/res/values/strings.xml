@@ -9,4 +9,21 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="label_input_sales">% Ventas al contado</string>
+    <string name="label_input_credit_sales30">% Ventas a credito de 30 dias</string>
+    <string name="label_input_credit_sales60">% Ventas a credito de 60 dias</string>
+    <string name="label_input_about_sales">% Sobre ventas</string>
+    <string name="label_input_bad_debt">% Incobrabilidad</string>
+    <string name="label_input_interest">% Interes</string>
+
+    <string name="placeholder_input_sales">Ingrese el % de ventas al contado</string>
+    <string name="placeholder_credit_sales30">Ingrese el % de ventas a credito de 30 dias</string>
+    <string name="placeholder_credit_sales60">Ingrese el % de ventas a credito de 60 dias</string>
+    <string name="placeholder_about_sales">Ingrese el % sobre ventas</string>
+    <string name="placeholder_bad_debt">Ingrese el % de incobrabilidad</string>
+    <string name="placeholder_interest">Ingrese el % de interes</string>
+
+    <string name="btn_register">REGISTRAR</string>
+    <string name="btn_cancel">CANCELAR</string>
 </resources>

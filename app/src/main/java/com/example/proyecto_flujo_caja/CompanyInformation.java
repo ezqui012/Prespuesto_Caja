@@ -2,6 +2,7 @@ package com.example.proyecto_flujo_caja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -49,5 +50,10 @@ public class CompanyInformation extends AppCompatActivity {
         interest = Double.parseDouble(input_interest.getText().toString());
 
         company = new Company(sales, credit30, credit60, about, badDebt, interest);
+
+        Intent interest_comercial = new Intent(this, CommercialInterest.class);
+        interest_comercial.putExtra("information", company);
+        startActivity(interest_comercial);
+
     }
 }

@@ -109,17 +109,7 @@
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="10sp" />
-                <TextView
-                    android:id="@+id/R30month1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginLeft="10sp"/>
+
                 <TextView
                     android:id="@+id/R30month2"
                     android:layout_width="match_parent"
@@ -242,28 +232,7 @@
                     android:textSize="22sp"
                     android:textStyle="bold"
                     android:layout_marginLeft="10sp" />
-                <TextView
-                    android:id="@+id/R60month1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginLeft="10sp"/>
-                <TextView
-                    android:id="@+id/R60month2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="TextView"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:layout_marginTop="10sp"
-                    android:layout_marginBottom="5sp"
-                    android:layout_marginLeft="10sp"/>
+
                 <TextView
                     android:id="@+id/R60month3"
                     android:layout_width="match_parent"

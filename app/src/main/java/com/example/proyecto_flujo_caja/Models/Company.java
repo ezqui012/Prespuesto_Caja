@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
-public class Company {
+import java.io.Serializable;
+
+public class Company implements Serializable {
 
     private Double sales;
     private Double credit30;

@@ -41,12 +41,14 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         resAporte.setText(""+res);
     }
     public void anterior (View view){
-        Intent anterior = new Intent(this, MainActivity.class);
-       // startActivity(anterior);
+        Intent anterior = new Intent(this, sueldos.class);
+        startActivity(anterior);
     }
+
     public void registrar(View view){
         Intent siguienteSueldo = new Intent(this, sueldos.class);
         startActivity(siguienteSueldo);
+
     }
 
 

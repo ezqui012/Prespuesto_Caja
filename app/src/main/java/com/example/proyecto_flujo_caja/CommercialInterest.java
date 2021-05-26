@@ -49,7 +49,6 @@ public class CommercialInterest extends AppCompatActivity {
         idViewText();
         projectionSold();
         editText();
-
     }
 
     private void projectionSold(){

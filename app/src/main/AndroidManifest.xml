@@ -10,11 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
 
+
         <activity android:name=".sueldos"></activity>
         <activity android:name=".aportepatronal" />
 
         <activity android:name=".CommercialInterest"></activity>
         <activity android:name=".CompanyInformation" />
+
+
+        <activity android:name=".ventas"></activity>
 
         <activity
             android:name=".MainActivity"

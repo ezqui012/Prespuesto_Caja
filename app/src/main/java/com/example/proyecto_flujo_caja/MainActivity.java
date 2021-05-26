@@ -1,5 +1,6 @@
 package com.example.proyecto_flujo_caja;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -42,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
     public void Siguiente(View view){
         Intent siguiente = new Intent(this, aportepatronal.class);
         startActivity(siguiente);
+    }
+
+
+    public void showMyAvtivity(View view){
+        Intent change = new Intent(this, CompanyInformation.class);
+        startActivity(change);
     }
 
 

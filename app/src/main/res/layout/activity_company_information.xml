@@ -164,19 +164,22 @@
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="@color/blue_app"
-                android:text="@string/btn_register"
                 android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"/>
+                android:layout_marginRight="10sp"
+                android:backgroundTint="@color/blue_app"
+                android:onClick="registerInfo"
+                android:text="@string/btn_register"
+                app:cornerRadius="10sp" />
 
             <Button
                 android:id="@+id/btn_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="10sp"
+                android:layout_marginRight="10sp"
                 android:backgroundTint="@color/red_app"
                 android:text="@string/btn_cancel"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"/>
+                app:cornerRadius="10sp" />
 
         </LinearLayout>
     </ScrollView>

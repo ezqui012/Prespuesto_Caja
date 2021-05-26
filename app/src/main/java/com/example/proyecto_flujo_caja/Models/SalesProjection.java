@@ -11,6 +11,7 @@ public class SalesProjection {
         this.month = month;
         this.sold_units = sold_units;
         this.unit_price = unit_price;
+        calculateGrossIncome();
     }
 
     public String getMonth() {

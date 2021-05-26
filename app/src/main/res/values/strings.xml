@@ -26,4 +26,13 @@
 
     <string name="btn_register">REGISTRAR</string>
     <string name="btn_cancel">CANCELAR</string>
+
+    <string name="title_income_interest">Interes comercial de ingreso</string>
+    <string name="title_expense_interest">Interes comercial de gasto</string>
+
+    <string name="title_gross_income30">Interes bruto a 30 dias</string>
+    <string name="title_gross_income60">Interes bruto a 60 dias</string>
+
+    <string name="title_recoveryTo30">Recuperación a 30 dias</string>
+    <string name="title_recoveryTo60">Recuperación a 60 dias</string>
 </resources>

@@ -2,14 +2,15 @@ package com.example.proyecto_flujo_caja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.TextView;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
+
 import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
 
-public class CommercialInterest extends AppCompatActivity {
+public class spending_interest extends AppCompatActivity {
 
     private SalesProjection february;
     private SalesProjection march;
@@ -18,6 +19,12 @@ public class CommercialInterest extends AppCompatActivity {
     private SalesProjection june;
 
     private Company info;
+
+    TextView igFebruary;
+    TextView igMarch;
+    TextView igApril;
+    TextView igMay;
+    TextView igJune;
 
     TextView ibFebruary;
     TextView ibMarch;
@@ -43,7 +50,7 @@ public class CommercialInterest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_commercial_interest);
+        setContentView(R.layout.activity_spending_interest);
 
         info = (Company) getIntent().getSerializableExtra("information");
         idViewText();
@@ -69,7 +76,18 @@ public class CommercialInterest extends AppCompatActivity {
         return String.valueOf(res);
     }
 
+    private String grossPurchases(Double valueMonth){
+        double res = valueMonth * info.getAbout();
+        return String.valueOf(res);
+    }
+
     private void idViewText(){
+        igFebruary = (TextView) findViewById(R.id.IGmonth1);
+        igMarch = (TextView) findViewById(R.id.IGmonth2);
+        igApril = (TextView) findViewById(R.id.IGmonth3);
+        igMay = (TextView) findViewById(R.id.IGmonth4);
+        igJune = (TextView) findViewById(R.id.IGmonth5);
+
         ibFebruary = (TextView) findViewById(R.id.IBmonth1);
         ibMarch = (TextView) findViewById(R.id.IBmonth2);
         ibApril = (TextView) findViewById(R.id.IBmonth3);
@@ -95,6 +113,12 @@ public class CommercialInterest extends AppCompatActivity {
 
     private void editText(){
 
+        igFebruary.setText(grossPurchases(february.getGross_income()));
+        igMarch.setText(grossPurchases(march.getGross_income()));
+        igApril.setText(grossPurchases(april.getGross_income()));
+        igMay.setText(grossPurchases(may.getGross_income()));
+        igJune.setText(grossPurchases(june.getGross_income()));
+
         ibFebruary.setText(grossIncome(february.getGross_income(), info.getCredit30()));
         ibMarch.setText(grossIncome(march.getGross_income(), info.getCredit30()));
         ibApril.setText(grossIncome(april.getGross_income(), info.getCredit30()));
@@ -115,13 +139,11 @@ public class CommercialInterest extends AppCompatActivity {
         r60April.setText(recovery(Double.parseDouble(ib60February.getText().toString())));
         r60May.setText(recovery(Double.parseDouble(ib60March.getText().toString())));
         r60June.setText(recovery(Double.parseDouble(ib60April.getText().toString())));
-
     }
 
-    public void viewSpendingInterest(View view){
-        Intent interest_spending = new Intent(this, spending_interest.class);
-        interest_spending.putExtra("information", info);
-        startActivity(interest_spending);
+    public void viewComercialInterest(View view){
+        Intent interest_comercial = new Intent(this, CommercialInterest.class);
+        interest_comercial.putExtra("information", info);
+        startActivity(interest_comercial);
     }
-
 }

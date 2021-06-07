@@ -95,25 +95,25 @@ public class CommercialInterest extends AppCompatActivity {
 
     private void editText(){
 
-        ibFebruary.setText(grossIncome(february.getGross_income(), info.getCredit30()));
-        ibMarch.setText(grossIncome(march.getGross_income(), info.getCredit30()));
-        ibApril.setText(grossIncome(april.getGross_income(), info.getCredit30()));
-        ibMay.setText(grossIncome(may.getGross_income(), info.getCredit30()));
-        ibJune.setText(grossIncome(june.getGross_income(), info.getCredit30()));
+        ibFebruary.setText("Febrero" + grossIncome(february.getGross_income(), info.getCredit30()));
+        ibMarch.setText("Marzo" + grossIncome(march.getGross_income(), info.getCredit30()));
+        ibApril.setText("Abril" + grossIncome(april.getGross_income(), info.getCredit30()));
+        ibMay.setText("Mayo" + grossIncome(may.getGross_income(), info.getCredit30()));
+        ibJune.setText("Junio" + grossIncome(june.getGross_income(), info.getCredit30()));
 
-        r30March.setText(recovery(Double.parseDouble(ibFebruary.getText().toString())));
-        r30April.setText(recovery(Double.parseDouble(ibMarch.getText().toString())));
-        r30May.setText(recovery(Double.parseDouble(ibApril.getText().toString())));
-        r30June.setText(recovery(Double.parseDouble(ibMay.getText().toString())));
+        r30March.setText("Marzo" + recovery(Double.parseDouble(ibFebruary.getText().toString())));
+        r30April.setText("Abril" + recovery(Double.parseDouble(ibMarch.getText().toString())));
+        r30May.setText("Mayo" + recovery(Double.parseDouble(ibApril.getText().toString())));
+        r30June.setText("Junio" + recovery(Double.parseDouble(ibMay.getText().toString())));
 
-        ib60February.setText(grossIncome(february.getGross_income(), info.getCredit60()));
-        ib60March.setText(grossIncome(march.getGross_income(), info.getCredit60()));
-        ib60April.setText(grossIncome(april.getGross_income(), info.getCredit60()));
-        ib60May.setText(grossIncome(may.getGross_income(), info.getCredit60()));
-        ib60June.setText(grossIncome(june.getGross_income(), info.getCredit60()));
+        ib60February.setText("Febrero" + grossIncome(february.getGross_income(), info.getCredit60()));
+        ib60March.setText("Marzo" + grossIncome(march.getGross_income(), info.getCredit60()));
+        ib60April.setText("Abril" + grossIncome(april.getGross_income(), info.getCredit60()));
+        ib60May.setText("Mayo" + grossIncome(may.getGross_income(), info.getCredit60()));
+        ib60June.setText("Junio" + grossIncome(june.getGross_income(), info.getCredit60()));
 
-        r60April.setText(recovery(Double.parseDouble(ib60February.getText().toString())));
-        r60May.setText(recovery(Double.parseDouble(ib60March.getText().toString())));
-        r60June.setText(recovery(Double.parseDouble(ib60April.getText().toString())));
+        r60April.setText("Abril" + recovery(Double.parseDouble(ib60February.getText().toString())));
+        r60May.setText("Mayo" + recovery(Double.parseDouble(ib60March.getText().toString())));
+        r60June.setText("Junio" + recovery(Double.parseDouble(ib60April.getText().toString())));
     }
 }

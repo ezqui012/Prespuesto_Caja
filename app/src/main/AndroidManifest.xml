@@ -9,17 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
-
-
-        <activity android:name=".sueldos"></activity>
+        <activity android:name=".proyeccion_ventas"></activity>
+        <activity android:name=".sueldos" />
         <activity android:name=".aportepatronal" />
-
-        <activity android:name=".CommercialInterest"></activity>
+        <activity android:name=".CommercialInterest" />
         <activity android:name=".CompanyInformation" />
-
-
-        <activity android:name=".ventas"></activity>
-
+        <activity android:name=".ventas" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

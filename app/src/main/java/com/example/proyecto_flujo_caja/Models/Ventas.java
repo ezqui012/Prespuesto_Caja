@@ -1,46 +1,53 @@
 package com.example.proyecto_flujo_caja.Models;
 
 public class Ventas {
-    private Double contado, treinta, sesenta, interes, incobrabilidad;
+    private Double vcontado, vtreinta, vsesenta, vinteres, vincobrabilidad;
 
-    public Double getContado() {
-        return contado;
+    public Ventas(Double vcontado, Double vtreinta, Double vsesenta, Double vinteres, Double vincobrabilidad) {
+        this.vcontado = vcontado;
+        this.vtreinta = vtreinta;
+        this.vsesenta = vsesenta;
+        this.vinteres = vinteres;
+        this.vincobrabilidad = vincobrabilidad;
     }
 
-    public Double getTreinta() {
-        return treinta;
+    public Double getVcontado() {
+        return vcontado;
     }
 
-    public Double getSesenta() {
-        return sesenta;
+    public void setVcontado(Double vcontado) {
+        this.vcontado = vcontado;
     }
 
-    public Double getInteres() {
-        return interes;
+    public Double getVtreinta() {
+        return vtreinta;
     }
 
-    public Double getIncobrabilidad() {
-        return incobrabilidad;
+    public void setVtreinta(Double vtreinta) {
+        this.vtreinta = vtreinta;
     }
 
-    public void setContado(Double contado) {
-        this.contado = contado;
+    public Double getVsesenta() {
+        return vsesenta;
     }
 
-    public void setTreinta(Double treinta) {
-        this.treinta = treinta;
+    public void setVsesenta(Double vsesenta) {
+        this.vsesenta = vsesenta;
     }
 
-    public void setSesenta(Double sesenta) {
-        this.sesenta = sesenta;
+    public Double getVinteres() {
+        return vinteres;
     }
 
-    public void setInteres(Double interes) {
-        this.interes = interes;
+    public void setVinteres(Double vinteres) {
+        this.vinteres = vinteres;
     }
 
-    public void setIncobrabilidad(Double incobrabilidad) {
-        this.incobrabilidad = incobrabilidad;
+    public Double getVincobrabilidad() {
+        return vincobrabilidad;
     }
 
+    public void setVincobrabilidad(Double vincobrabilidad) {
+        this.vincobrabilidad = vincobrabilidad;
+    }
 }

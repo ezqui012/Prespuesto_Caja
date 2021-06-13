@@ -150,13 +150,13 @@
         android:onClick="registrar"
         android:text="@string/BotonRegistrarAporte"
         app:backgroundTint="#00509A"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintBottom_toTopOf="@+id/cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resAporte" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/cancel"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="49dp"

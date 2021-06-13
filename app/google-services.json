@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "213558028841",
+    "project_id": "tallersimu-91f7c",
+    "storage_bucket": "tallersimu-91f7c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213558028841:android:7914e6befc01762f7cca38",
+        "android_client_info": {
+          "package_name": "com.example.proyecto_flujo_caja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "213558028841-dhfifs92lgvu8088qbipj5nr3sq7cnrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJjaIkg5FIuiqUZPUwJYJh3hoqeigwIDo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "213558028841-dhfifs92lgvu8088qbipj5nr3sq7cnrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

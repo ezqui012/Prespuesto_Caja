@@ -14,7 +14,8 @@ import com.example.proyecto_flujo_caja.Models.Compras;
 public class compras extends AppCompatActivity {
     private Compras compra;
     EditText contado, treinta, venta;
-    Button registra, cancel;
+    Button register, cancel;
+
 
     private Double pcontado, ptreinta, pventas;
 
@@ -28,35 +29,22 @@ public class compras extends AppCompatActivity {
         venta = findViewById(R.id.vent);
 
 
-        registra.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final String cont = contado.getText().toString();
                 final String thirty = treinta.getText().toString();
                 final String ventaa = venta.getText().toString();
 
-                if(TextUtils.isEmpty(cont)){
-                    contado.setError("Campo Obligatorio");
-                    return;
-                }
-                if(TextUtils.isEmpty(thirty)){
-                    treinta.setError("Campo Obligatorio");
-                    return;
-                }
-                if(TextUtils.isEmpty(ventaa)){
-                    venta.setError("Campo Obligatorio");
-                    return;
-                }
-
-
+                if(TextUtils.isEmpty(cont)){ contado.setError("Campo Obligatorio");return; }
+                if(TextUtils.isEmpty(thirty)){ treinta.setError("Campo Obligatorio");return; }
+                if(TextUtils.isEmpty(ventaa)){ venta.setError("Campo Obligatorio");return; }
 
                 pcontado =Double.parseDouble(contado.getText().toString());
                 ptreinta =Double.parseDouble(treinta.getText().toString());
                 pventas =Double.parseDouble(venta.getText().toString());
-
-
                 compra = new Compras (pcontado,ptreinta,pventas);
-                startActivity(new Intent(getApplicationContext(),proyeccion_compras.class));
+
 
             }
         });

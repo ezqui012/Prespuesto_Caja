@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
-        <activity android:name=".spending_interest"></activity>
+        <activity android:name=".FlujoCaja"></activity>
+        <activity android:name=".spending_interest" />
         <activity android:name=".sueldos" />
         <activity android:name=".aportepatronal" />
         <activity android:name=".CommercialInterest" />

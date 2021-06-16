@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".compras">
+    tools:context=".comprass">
+
 
     <TextView
         android:id="@+id/porVentas"
@@ -39,7 +40,6 @@
         android:layout_width="329dp"
         android:layout_height="51dp"
         android:layout_marginBottom="64dp"
-        android:onClick="anteriorMain"
         android:text="CANCELAR"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="#F44336"
@@ -111,5 +111,6 @@
         android:inputType="numberDecimal"
         app:layout_constraintBottom_toTopOf="@+id/register"
         app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

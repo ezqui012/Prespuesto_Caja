@@ -55,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(this, compras.class);
         startActivity(siguiente);
     }
+    public void siguienteComprass(View view){
+        Intent siguiente = new Intent(this, comprass.class);
+        startActivity(siguiente);
+    }
 
     public void siguienteImpuestos(View view){
         Intent siguiente = new Intent(this, menu_impuestos.class);

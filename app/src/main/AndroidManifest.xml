@@ -9,21 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
-
-
-        <activity android:name=".financiamiento"></activity>
-        <activity android:name=".iue"></activity>
+        <activity android:name=".comprass"></activity>
+        <activity android:name=".financiamiento" />
+        <activity android:name=".iue" />
         <activity android:name=".it" />
         <activity android:name=".iva" />
         <activity android:name=".menu_impuestos" />
         <activity android:name=".proyeccion_ventas" />
-        <activity android:name=".FlujoCaja"></activity>
+        <activity android:name=".FlujoCaja" />
         <activity android:name=".spending_interest" />
         <activity android:name=".sueldos" />
         <activity android:name=".aportepatronal" />
         <activity android:name=".CommercialInterest" />
         <activity android:name=".CompanyInformation" />
         <activity android:name=".ventas" />
+        <activity android:name=".compras" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

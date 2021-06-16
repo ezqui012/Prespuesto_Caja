@@ -11,7 +11,9 @@ import android.widget.Button;
 
 import com.example.proyecto_flujo_caja.Models.Compras;
 
-public class compras extends AppCompatActivity {
+
+public class comprass extends AppCompatActivity {
+
     private Compras compra;
     EditText contado, treinta, venta;
 
@@ -48,17 +50,12 @@ public class compras extends AppCompatActivity {
             }
         });
 
-      //  cancel.setOnClickListener(new View.OnClickListener() {
-      //      @Override
-      //      public void onClick(View v) {
-       //         startActivity(new Intent(getApplicationContext(),MainActivity.class));
-        //    }
-     //   });
+         cancel.setOnClickListener(new View.OnClickListener() {
+             @Override
+              public void onClick(View v) {
+                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+           });
 
-    }
-    public void anteriorMain(View view){
-        Intent anterior = new Intent(this, MainActivity.class);
-        startActivity(anterior);
-    }
 
-}
+}}

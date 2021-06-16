@@ -81,6 +81,7 @@
         android:layout_marginTop="16dp"
         android:onClick="siguienteImpuestos"
         android:text="IMPUESTOS"
+        app:backgroundTint="#00509A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -105,12 +106,26 @@
         android:layout_height="wrap_content"
         android:onClick="verFlujo"
         android:text="@string/titulo_flojo"
+        app:backgroundTint="#00509A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button5"
         app:layout_constraintVertical_bias="0.85" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:onClick="siguienteCompras"
+        android:text="@string/BotonSiguienteCompras"
+        app:backgroundTint="#00509A"
+        app:layout_constraintEnd_toEndOf="@+id/button8"
+        app:layout_constraintTop_toBottomOf="@+id/button8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

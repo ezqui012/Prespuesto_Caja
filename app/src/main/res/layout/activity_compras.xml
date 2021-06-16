@@ -35,15 +35,15 @@
         android:layout_width="329dp"
         android:layout_height="51dp"
         android:layout_marginBottom="64dp"
+        android:onClick="anteriorMain"
         android:text="CANCELAR"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:backgroundTint="#F44336"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.536"
-        app:layout_constraintStart_toStartOf="parent"
 
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/register"

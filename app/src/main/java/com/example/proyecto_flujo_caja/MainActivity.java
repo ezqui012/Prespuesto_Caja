@@ -62,7 +62,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(change);
     }
 
-
+    public void verFlujo(View view){
+        Intent change = new Intent(this, FlujoCaja.class);
+        startActivity(change);
+    }
 
 
     @Override

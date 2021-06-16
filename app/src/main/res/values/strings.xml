@@ -48,5 +48,31 @@
 
     <string name="title_recoveryTo30">Recuperación a 30 dias</string>
     <string name="title_recoveryTo60">Recuperación a 60 dias</string>
-    >>>>>>> 57104d76c6f385a4f28a9a48cd774b9534268a92
+
+
+    <string name="title_gross_purchases">Compras Brutas</string>
+
+    <string name="show_expense_interes">Ver interes de gasto</string>
+    <string name="show_comercial_interes">Ver interes de ingreso</string>
+
+    <string name="titulo_flojo">Flujo de Caja Proyectado</string>
+    <string name="subTituloActividadDeOperacion">Actividades de Operación</string>
+    <string name="subTituloActividadDeInversion">Actividades de Inverción</string>
+    <string name="subTituloActividadDeFinanciamiento">Actividades de Financiamiento</string>
+    <string name="subTituloIncrementoProyectado">Incremento Proyectado del Efectivo</string>
+    <string name="subTituloEfectivoInicial">Efectivo al Inicio del Periodo</string>
+    <string name="subTituloSaldoFinalProyectado">Saldo de Efectivo Final Proyectado</string>
+
+    <string name="subIngresoOp">Ingresos de Operación: </string>
+    <string name="subGastoOp">Gastos de Operación: </string>
+    <string name="subIngresosCap">Ingresos de Capital: </string>
+    <string name="subGastoCap">Gastos de Capital: </string>
+    <string name="subFuentes">Fuentes: </string>
+    <string name="subUsos">Usos: </string>
+
+    <string name="title_Total">Total: </string>
+
+    <string name="volver">Volver</string>
+
+
 </resources>

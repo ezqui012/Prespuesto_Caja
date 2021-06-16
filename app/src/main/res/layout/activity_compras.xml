@@ -10,25 +10,29 @@
         android:id="@+id/porVentas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginBottom="16dp"
         android:text="% SOBRE VENTAS"
         android:textColor="#020202"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="305dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/vent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/porContTre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginBottom="16dp"
         android:text="% AL CONTADO 30 DIAS"
         android:textColor="#020202"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="191dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/tren"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/cancel"
@@ -55,49 +59,57 @@
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
         android:id="@+id/porContado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginBottom="16dp"
         android:text="% AL CONTADO"
         android:textColor="#020202"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="62dp"
-        tools:layout_editor_absoluteY="78dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/cont"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/cont"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="112dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/porContTre"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/tren"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="70dp"
-        tools:layout_editor_absoluteY="232dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/porVentas"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/vent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginBottom="152dp"
         android:ems="10"
         android:inputType="numberDecimal"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="358dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintBottom_toTopOf="@+id/register"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.*;
+import android.widget.Button;
 
 
 import com.example.proyecto_flujo_caja.Models.Compras;
@@ -14,11 +15,8 @@ import com.example.proyecto_flujo_caja.Models.Compras;
 public class compras extends AppCompatActivity {
     private Compras compra;
     EditText contado, treinta, venta;
-    Button register, cancel;
-
 
     private Double pcontado, ptreinta, pventas;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +25,8 @@ public class compras extends AppCompatActivity {
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);
-
+        Button register = findViewById(R.id.btn_register);
+        Button cancel = findViewById(R.id.btn_cancel);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +42,7 @@ public class compras extends AppCompatActivity {
                 pcontado =Double.parseDouble(contado.getText().toString());
                 ptreinta =Double.parseDouble(treinta.getText().toString());
                 pventas =Double.parseDouble(venta.getText().toString());
+
                 compra = new Compras (pcontado,ptreinta,pventas);
 
 

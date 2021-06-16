@@ -10,7 +10,10 @@
     <string name="action_settings">Settings</string>
     <string name="BotonCalcularInteres">Calcular Interes</string>
     <string name="BotonVentas">Ventas</string>
-
+    <!-- Financiamiento -->
+    <string name="BotonSiguienteFinanciamiento">Financiamiento</string>
+    <string name="BotonRegistrarFinanciamiento">Registrar</string>
+    <string name="BotonCancelarFinanciamiento">Cancelar</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -45,5 +48,5 @@
 
     <string name="title_recoveryTo30">Recuperación a 30 dias</string>
     <string name="title_recoveryTo60">Recuperación a 60 dias</string>
->>>>>>> 57104d76c6f385a4f28a9a48cd774b9534268a92
+    >>>>>>> 57104d76c6f385a4f28a9a48cd774b9534268a92
 </resources>

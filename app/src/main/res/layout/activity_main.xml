@@ -27,6 +27,7 @@
         android:layout_marginBottom="428dp"
         android:onClick="Siguiente"
         android:text="@string/BotonSiguiente"
+        app:backgroundTint="#00509A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.144"
@@ -41,6 +42,7 @@
         android:layout_marginTop="160dp"
         android:onClick="showMyAvtivity"
         android:text="@string/BotonCalcularInteres"
+        app:backgroundTint="#00509A"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,10 +53,22 @@
         android:layout_marginTop="36dp"
         android:onClick="siguienteVenta"
         android:text="@string/BotonVentas"
+        app:backgroundTint="#00509A"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.137"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:onClick="siguienteFinanciamiento"
+        android:text="@string/BotonSiguienteFinanciamiento"
+        app:backgroundTint="#00509A"
+        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintTop_toBottomOf="@+id/button5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

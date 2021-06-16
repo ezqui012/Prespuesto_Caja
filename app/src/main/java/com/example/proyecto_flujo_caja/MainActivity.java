@@ -3,12 +3,10 @@ package com.example.proyecto_flujo_caja;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
-import android.content.Intent;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -49,12 +47,29 @@ public class MainActivity extends AppCompatActivity {
         startActivity(siguiente);
     }
 
+    public void siguienteFinanciamiento(View view){
+        Intent siguiente = new Intent(this, financiamiento.class);
+        startActivity(siguiente);
+    }
+    public void siguienteCompras(View view){
+        Intent siguiente = new Intent(this, compras.class);
+        startActivity(siguiente);
+    }
+
+    public void siguienteImpuestos(View view){
+        Intent siguiente = new Intent(this, menu_impuestos.class);
+        startActivity(siguiente);
+    }
+
     public void showMyAvtivity(View view){
         Intent change = new Intent(this, CompanyInformation.class);
         startActivity(change);
     }
 
-
+    public void verFlujo(View view){
+        Intent change = new Intent(this, FlujoCaja.class);
+        startActivity(change);
+    }
 
 
     @Override

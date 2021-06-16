@@ -20,13 +20,13 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aportepatronal);
-        caja = (EditText)findViewById(R.id.caja);
-        prov = (EditText)findViewById(R.id.prov);
-        afp = (EditText)findViewById(R.id.afp);
-        solidario = (EditText)findViewById(R.id.solidario);
-        riesgo = (EditText)findViewById(R.id.riesgo);
-        resAporte = (TextView)findViewById(R.id.resAporte);
-        btnRegistrar = (Button)findViewById(R.id.btnRegistrar);
+        caja = findViewById(R.id.caja);
+        prov = findViewById(R.id.prov);
+        afp = findViewById(R.id.afp);
+        solidario = findViewById(R.id.solidario);
+        riesgo = findViewById(R.id.riesgo);
+        resAporte = findViewById(R.id.resAporte);
+        btnRegistrar = findViewById(R.id.btnRegistrar);
         btnRegistrar.setOnClickListener(this);
     }
 

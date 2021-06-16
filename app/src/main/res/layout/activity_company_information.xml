@@ -30,11 +30,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_sales"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -43,7 +43,8 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <TextView
                 android:id="@+id/label_credit30"
@@ -53,11 +54,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_credit30"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -66,7 +67,8 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <TextView
                 android:id="@+id/label_credit60"
@@ -76,11 +78,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_credit60"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -89,7 +91,8 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <TextView
                 android:id="@+id/label_about"
@@ -99,11 +102,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_about"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -112,7 +115,8 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <TextView
                 android:id="@+id/label_bad_debt"
@@ -122,11 +126,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_bad_debt"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -135,7 +139,8 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <TextView
                 android:id="@+id/label_interest"
@@ -145,11 +150,11 @@
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"/>
 
             <EditText
                 android:id="@+id/input_interest"
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginBottom="20sp"
                 android:backgroundTint="@color/blue_app"
@@ -158,14 +163,15 @@
                 android:inputType="number|numberDecimal"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:layout_marginLeft="10sp"/>
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
 
             <Button
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
                 android:backgroundTint="@color/blue_app"
                 android:onClick="registerInfo"
                 android:text="@string/btn_register"
@@ -175,8 +181,8 @@
                 android:id="@+id/btn_cancel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10sp"
-                android:layout_marginRight="10sp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"
                 android:backgroundTint="@color/red_app"
                 android:onClick="anterior"
                 android:text="@string/btn_cancel"

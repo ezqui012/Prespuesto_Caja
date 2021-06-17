@@ -25,8 +25,8 @@ public class comprass extends AppCompatActivity {
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);
-        Button register = findViewById(R.id.btn_register);
-        Button cancel = findViewById(R.id.btn_cancel);
+        Button register = (Button) findViewById(R.id.register);
+        Button cancel = (Button) findViewById(R.id.cancel);
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override

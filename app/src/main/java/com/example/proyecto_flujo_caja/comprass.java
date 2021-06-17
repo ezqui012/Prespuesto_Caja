@@ -21,8 +21,7 @@ public class comprass extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_compras);
-        setContentView(R.layout.activity_compras);
+        setContentView(R.layout.activity_comprass);
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);

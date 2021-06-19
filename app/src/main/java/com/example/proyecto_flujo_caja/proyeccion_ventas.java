@@ -2,6 +2,7 @@ package com.example.proyecto_flujo_caja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -10,8 +11,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyecto_flujo_caja.Models.Ventas;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class proyeccion_ventas extends AppCompatActivity {
     private Ventas venta;
@@ -20,6 +23,8 @@ public class proyeccion_ventas extends AppCompatActivity {
     EditText dmes1,dmes2,dmes3, precio1, precio2, precio3, vcont, v30, v60, vinco;
     Button calcu, sig, cancel;
     private Double vcontado, vtreinta, vsesenta, vincobrabilidad;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +65,19 @@ public class proyeccion_ventas extends AppCompatActivity {
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opc);
         opciones.setAdapter(adapter);
 
+
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            }
+        });
+
     }
+
+
+
     public void Calcular (View view){
         sig.setVisibility(View.VISIBLE);
 
@@ -101,8 +118,6 @@ public class proyeccion_ventas extends AppCompatActivity {
         vsesenta = Double.parseDouble(sesent);
         vincobrabilidad= Double.parseDouble(inco);
 
-
-        venta = new Ventas(vcontado,vtreinta,vsesenta,vincobrabilidad);
 
         if(seleccion.equals("Trimestre I")){
             mes1.setText("ENERO");
@@ -154,6 +169,29 @@ public class proyeccion_ventas extends AppCompatActivity {
 
         sesent3.setText(xsesent.toString());
 
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                venta = new Ventas(mes1.getText().toString(),mes2.getText().toString(),mes3.getText().toString(),xcont1,xcont2,xcont3);
+
+
+                Intent intent = new Intent(proyeccion_ventas.this, iva.class);
+                intent.putExtra("mes1", mes1.getText().toString());
+                intent.putExtra("mes2", mes2.getText().toString());
+                intent.putExtra("mes3", mes3.getText().toString());
+                intent.putExtra("contado1", xcont1.toString());
+                intent.putExtra("contado2", xcont2.toString());
+                intent.putExtra("contado3", xcont3.toString());
+
+                db.collection("ventas").add(venta);
+                Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+
+            }
+        });
 
     }
+
+
+
 }

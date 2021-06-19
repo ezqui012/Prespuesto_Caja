@@ -1,13 +1,12 @@
 package com.example.proyecto_flujo_caja.Models;
 
 public class Ventas {
-    private Double vcontado, vtreinta, vsesenta, vinteres, vincobrabilidad;
+    private Double vcontado, vtreinta, vsesenta, vincobrabilidad;
 
-    public Ventas(Double vcontado, Double vtreinta, Double vsesenta, Double vinteres, Double vincobrabilidad) {
+    public Ventas(Double vcontado, Double vtreinta, Double vsesenta, Double vincobrabilidad) {
         this.vcontado = vcontado;
         this.vtreinta = vtreinta;
         this.vsesenta = vsesenta;
-        this.vinteres = vinteres;
         this.vincobrabilidad = vincobrabilidad;
     }
 
@@ -33,14 +32,6 @@ public class Ventas {
 
     public void setVsesenta(Double vsesenta) {
         this.vsesenta = vsesenta;
-    }
-
-    public Double getVinteres() {
-        return vinteres;
-    }
-
-    public void setVinteres(Double vinteres) {
-        this.vinteres = vinteres;
     }
 
     public Double getVincobrabilidad() {

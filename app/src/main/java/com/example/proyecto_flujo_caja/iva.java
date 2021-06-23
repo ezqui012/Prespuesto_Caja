@@ -8,12 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.proyecto_flujo_caja.Models.Iva;
 import com.example.proyecto_flujo_caja.Models.Ventas;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class iva extends AppCompatActivity {
+    Iva iva;
     Button sig, cancel, calcu;
     TextView m1,m2,m3,cont1,cont2,cont3,totv1,totv2,totv3,debi1,debi2,debi3, totc1,totc2,totc3, credi1,credi2,credi3,fis1,fis2,fis3;
     EditText merch1,merch2,merch3,op1,op2,op3;
@@ -132,6 +135,26 @@ public class iva extends AppCompatActivity {
         fis1.setText(fisco1.toString());
         fis2.setText(fisco2.toString());
         fis3.setText(fisco3.toString());
+
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                iva = new Iva(merca1,merca2,merca3,gasop1,gasop2,gasop3,fisco1,fisco2,fisco3);
+
+
+                Intent intent = new Intent(iva.this, it.class);
+                intent.putExtra("mes1", m1.getText());
+                intent.putExtra("mes2", m2.getText());
+                intent.putExtra("mes3", m3.getText());
+                intent.putExtra("contado1", cont1.toString());
+                intent.putExtra("contado2", cont2.toString());
+                intent.putExtra("contado3", cont3.toString());
+
+                db.collection("Iva").add(iva);
+                Toast.makeText(iva.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
+                startActivity(intent);
+            }
+        });
     }
 
 }

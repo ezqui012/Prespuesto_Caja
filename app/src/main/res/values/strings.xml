@@ -10,6 +10,7 @@
     <string name="action_settings">Settings</string>
     <string name="BotonCalcularInteres">Calcular Interes</string>
     <string name="BotonVentas">Ventas</string>
+    <string name="resAporte">0,00</string>
     <!-- Financiamiento -->
     <string name="BotonSiguienteFinanciamiento">Financiamiento</string>
     <string name="BotonRegistrarFinanciamiento">Registrar</string>

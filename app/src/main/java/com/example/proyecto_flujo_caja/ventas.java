@@ -9,15 +9,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.example.proyecto_flujo_caja.Models.Ventas;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ventas extends AppCompatActivity {
     private Ventas venta;
     EditText contado, treinta, sesenta, interes, incob;
     Button registra, cancel;
     ProgressBar progressBar;
-    private Double vcontado, vtreinta, vsesenta, vinteres, vincobrabilidad;
+    //private Double vcontado, vtreinta, vsesenta, vinteres, vincobrabilidad;
+
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,13 +62,18 @@ public class ventas extends AppCompatActivity {
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                vcontado =Double.parseDouble(contado.getText().toString());
+                /*vcontado =Double.parseDouble(contado.getText().toString());
                 vtreinta =Double.parseDouble(treinta.getText().toString());
                 vsesenta =Double.parseDouble(sesenta.getText().toString());
                 vinteres =Double.parseDouble(interes.getText().toString());
                 vincobrabilidad =Double.parseDouble(incob.getText().toString());
 
-                venta = new Ventas (vcontado,vtreinta,vsesenta,vinteres,vincobrabilidad);
+                //venta = new Ventas (vcontado,vtreinta,vsesenta,vinteres,vincobrabilidad);*/
+
+                db.collection("venta").add(venta);
+
+                Toast.makeText(ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
+                
                 startActivity(new Intent(getApplicationContext(),proyeccion_ventas.class));
 
             }

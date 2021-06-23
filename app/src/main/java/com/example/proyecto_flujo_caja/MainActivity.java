@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(siguiente);
     }
     public void siguienteVenta(View view){
-        Intent siguiente = new Intent(this, ventas.class);
+        Intent siguiente = new Intent(this, proyeccion_ventas.class);
         startActivity(siguiente);
     }
 

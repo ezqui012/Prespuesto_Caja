@@ -4,10 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.proyecto_flujo_caja.Models.Company;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class CompanyInformation extends AppCompatActivity {
 
@@ -27,6 +32,8 @@ public class CompanyInformation extends AppCompatActivity {
     private Double badDebt;
     private Double interest;
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,11 +47,38 @@ public class CompanyInformation extends AppCompatActivity {
         input_interest = (EditText) findViewById(R.id.input_interest);
 
     }
+
     public void anterior(View view){
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
     }
+
     public void registerInfo(View view){
+        if(TextUtils.isEmpty(input_sales.getText().toString())){
+            input_sales.setError("Este campo es requerido");
+            return;
+        }
+        if(TextUtils.isEmpty(input_credit30.getText().toString())){
+            input_credit30.setError("Este campo es requerido");
+            return;
+        }
+        if(TextUtils.isEmpty(input_credit60.getText().toString())){
+            input_credit60.setError("Este campo es requerido");
+            return;
+        }
+        if(TextUtils.isEmpty(input_about.getText().toString())){
+            input_about.setError("Este campo es requerido");
+            return;
+        }
+        if(TextUtils.isEmpty(input_badDebt.getText().toString())){
+            input_badDebt.setError("Este campo es requerido");
+            return;
+        }
+        if(TextUtils.isEmpty(input_interest.getText().toString())){
+            input_interest.setError("Este campo es requerido");
+            return;
+        }
+
         sales = Double.parseDouble(input_sales.getText().toString());
         credit30 = Double.parseDouble(input_credit30.getText().toString());
         credit60 = Double.parseDouble(input_credit60.getText().toString());
@@ -53,6 +87,10 @@ public class CompanyInformation extends AppCompatActivity {
         interest = Double.parseDouble(input_interest.getText().toString());
 
         company = new Company(sales, credit30, credit60, about, badDebt, interest);
+
+        db.collection("interesc").document().delete();
+
+        db.collection("interesc").add(company);
 
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
         interest_comercial.putExtra("information", company);

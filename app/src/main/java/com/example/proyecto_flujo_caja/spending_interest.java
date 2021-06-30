@@ -8,17 +8,22 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.proyecto_flujo_caja.Models.Company;
+import com.example.proyecto_flujo_caja.Models.InteresGasto;
+import com.example.proyecto_flujo_caja.Models.InteresIngreso;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
 
 public class spending_interest extends AppCompatActivity {
 
-    private SalesProjection february;
+    /*private SalesProjection february;
     private SalesProjection march;
     private SalesProjection april;
     private SalesProjection may;
     private SalesProjection june;
 
-    private Company info;
+    private Company info;*/
+
+    private InteresGasto interes;
+    private InteresIngreso interesI;
 
     TextView igFebruary;
     TextView igMarch;
@@ -52,13 +57,16 @@ public class spending_interest extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spending_interest);
 
-        info = (Company) getIntent().getSerializableExtra("information");
+        //info = (Company) getIntent().getSerializableExtra("information");
+        interes = (InteresGasto) getIntent().getSerializableExtra("informationG");
+        interesI = (InteresIngreso) getIntent().getSerializableExtra("informationI");
+
         idViewText();
-        projectionSold();
+        //projectionSold();
         editText();
     }
 
-    private void projectionSold(){
+    /*private void projectionSold(){
         february = new SalesProjection("Febrero", 0,0.0);
         march = new SalesProjection("Marzo", 0,0.0);
         april = new SalesProjection("Abril", 400000,0.2);
@@ -79,7 +87,7 @@ public class spending_interest extends AppCompatActivity {
     private String grossPurchases(Double valueMonth){
         double res = valueMonth * info.getAbout();
         return String.valueOf(res);
-    }
+    }*/
 
     private void idViewText(){
         igFebruary = (TextView) findViewById(R.id.IGmonth1);
@@ -113,7 +121,34 @@ public class spending_interest extends AppCompatActivity {
 
     private void editText(){
 
-        igFebruary.setText(grossPurchases(february.getGross_income()));
+        igFebruary.setText(interes.getIgFebruary());
+        igMarch.setText(interes.getIgMarch());
+        igApril.setText(interes.getIgApril());
+        igMay.setText(interes.getIgMay());
+        igJune.setText(interes.getIgJune());
+
+        ibFebruary.setText(interes.getIbFebruary());
+        ibMarch.setText(interes.getIbMarch());
+        ibApril.setText(interes.getIbApril());
+        ibMay.setText(interes.getIbMay());
+        ibJune.setText(interes.getIbJune());
+
+        r30March.setText(interes.getR30March());
+        r30April.setText(interes.getR30April());
+        r30May.setText(interes.getR30May());
+        r30June.setText(interes.getR30June());
+
+        ib60February.setText(interes.getIb60February());
+        ib60March.setText(interes.getIb60March());
+        ib60April.setText(interes.getIb60April());
+        ib60May.setText(interes.getIb60May());
+        ib60June.setText(interes.getIb60June());
+
+        r60April.setText(interes.getR60April());
+        r60May.setText(interes.getR60May());
+        r60June.setText(interes.getR60June());
+
+        /*igFebruary.setText(grossPurchases(february.getGross_income()));
         igMarch.setText(grossPurchases(march.getGross_income()));
         igApril.setText(grossPurchases(april.getGross_income()));
         igMay.setText(grossPurchases(may.getGross_income()));
@@ -138,12 +173,14 @@ public class spending_interest extends AppCompatActivity {
 
         r60April.setText(recovery(Double.parseDouble(ib60February.getText().toString())));
         r60May.setText(recovery(Double.parseDouble(ib60March.getText().toString())));
-        r60June.setText(recovery(Double.parseDouble(ib60April.getText().toString())));
+        r60June.setText(recovery(Double.parseDouble(ib60April.getText().toString())));*/
     }
 
     public void viewComercialInterest(View view){
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
-        interest_comercial.putExtra("information", info);
+        interest_comercial.putExtra("informationG", interes);
+        interest_comercial.putExtra("informationI", interesI);
+        //interest_comercial.putExtra("information", info);
         startActivity(interest_comercial);
     }
 }

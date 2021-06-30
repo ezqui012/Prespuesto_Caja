@@ -5,12 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.proyecto_flujo_caja.Models.Company;
+import com.example.proyecto_flujo_caja.Models.InteresGasto;
+import com.example.proyecto_flujo_caja.Models.InteresIngreso;
+import com.example.proyecto_flujo_caja.Models.SalesProjection;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -32,6 +33,15 @@ public class CompanyInformation extends AppCompatActivity {
     private Double badDebt;
     private Double interest;
 
+    private InteresGasto interes;
+    private InteresIngreso interesI;
+
+    private SalesProjection february;
+    private SalesProjection march;
+    private SalesProjection april;
+    private SalesProjection may;
+    private SalesProjection june;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
@@ -46,11 +56,20 @@ public class CompanyInformation extends AppCompatActivity {
         input_badDebt = (EditText) findViewById(R.id.input_bad_debt);
         input_interest = (EditText) findViewById(R.id.input_interest);
 
+        projectionSold();
     }
 
     public void anterior(View view){
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
+    }
+
+    private void projectionSold(){
+        february = new SalesProjection("Febrero", 0,0.0);
+        march = new SalesProjection("Marzo", 0,0.0);
+        april = new SalesProjection("Abril", 400000,0.2);
+        may = new SalesProjection("Mayo", 400000,0.2);
+        june = new SalesProjection("Junio", 250000,0.2);
     }
 
     public void registerInfo(View view){
@@ -87,13 +106,17 @@ public class CompanyInformation extends AppCompatActivity {
         interest = Double.parseDouble(input_interest.getText().toString());
 
         company = new Company(sales, credit30, credit60, about, badDebt, interest);
-
-        db.collection("interesc").document().delete();
+        interes = new InteresGasto(february, march, april, may, june, company);
+        interesI = new InteresIngreso(february, march, april, may, june, company);
 
         db.collection("interesc").add(company);
+        db.collection("interesIngreso").add(interesI);
+        db.collection("interesGasto").add(interes);
 
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
         interest_comercial.putExtra("information", company);
+        interest_comercial.putExtra("informationG", interes);
+        interest_comercial.putExtra("informationI", interesI);
         startActivity(interest_comercial);
 
     }

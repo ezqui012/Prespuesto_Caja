@@ -7,18 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.proyecto_flujo_caja.Models.Company;
-import com.example.proyecto_flujo_caja.Models.SalesProjection;
+import com.example.proyecto_flujo_caja.Models.InteresGasto;
+import com.example.proyecto_flujo_caja.Models.InteresIngreso;
 
 public class spending_interest extends AppCompatActivity {
 
-    private SalesProjection february;
-    private SalesProjection march;
-    private SalesProjection april;
-    private SalesProjection may;
-    private SalesProjection june;
-
-    private Company info;
+    private InteresGasto interes;
+    private InteresIngreso interesI;
 
     TextView igFebruary;
     TextView igMarch;
@@ -51,34 +46,11 @@ public class spending_interest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spending_interest);
+        interes = (InteresGasto) getIntent().getSerializableExtra("informationG");
+        interesI = (InteresIngreso) getIntent().getSerializableExtra("informationI");
 
-        info = (Company) getIntent().getSerializableExtra("information");
         idViewText();
-        projectionSold();
         editText();
-    }
-
-    private void projectionSold(){
-        february = new SalesProjection("Febrero", 0,0.0);
-        march = new SalesProjection("Marzo", 0,0.0);
-        april = new SalesProjection("Abril", 400000,0.2);
-        may = new SalesProjection("Mayo", 400000,0.2);
-        june = new SalesProjection("Junio", 250000,0.2);
-    }
-
-    private String grossIncome(Double grossIncomeMonth, Double credit){
-        double res = grossIncomeMonth * credit * info.getInterest();
-        return String.valueOf(res);
-    }
-
-    private String recovery(Double grossIncomeMonth){
-        double res = grossIncomeMonth * (1 - info.getBadDebt());
-        return String.valueOf(res);
-    }
-
-    private String grossPurchases(Double valueMonth){
-        double res = valueMonth * info.getAbout();
-        return String.valueOf(res);
     }
 
     private void idViewText(){
@@ -113,37 +85,39 @@ public class spending_interest extends AppCompatActivity {
 
     private void editText(){
 
-        igFebruary.setText(grossPurchases(february.getGross_income()));
-        igMarch.setText(grossPurchases(march.getGross_income()));
-        igApril.setText(grossPurchases(april.getGross_income()));
-        igMay.setText(grossPurchases(may.getGross_income()));
-        igJune.setText(grossPurchases(june.getGross_income()));
+        igFebruary.setText(interes.getIgFebruary());
+        igMarch.setText(interes.getIgMarch());
+        igApril.setText(interes.getIgApril());
+        igMay.setText(interes.getIgMay());
+        igJune.setText(interes.getIgJune());
 
-        ibFebruary.setText(grossIncome(february.getGross_income(), info.getCredit30()));
-        ibMarch.setText(grossIncome(march.getGross_income(), info.getCredit30()));
-        ibApril.setText(grossIncome(april.getGross_income(), info.getCredit30()));
-        ibMay.setText(grossIncome(may.getGross_income(), info.getCredit30()));
-        ibJune.setText(grossIncome(june.getGross_income(), info.getCredit30()));
+        ibFebruary.setText(interes.getIbFebruary());
+        ibMarch.setText(interes.getIbMarch());
+        ibApril.setText(interes.getIbApril());
+        ibMay.setText(interes.getIbMay());
+        ibJune.setText(interes.getIbJune());
 
-        r30March.setText(recovery(Double.parseDouble(ibFebruary.getText().toString())));
-        r30April.setText(recovery(Double.parseDouble(ibMarch.getText().toString())));
-        r30May.setText(recovery(Double.parseDouble(ibApril.getText().toString())));
-        r30June.setText(recovery(Double.parseDouble(ibMay.getText().toString())));
+        r30March.setText(interes.getR30March());
+        r30April.setText(interes.getR30April());
+        r30May.setText(interes.getR30May());
+        r30June.setText(interes.getR30June());
 
-        ib60February.setText(grossIncome(february.getGross_income(), info.getCredit60()));
-        ib60March.setText(grossIncome(march.getGross_income(), info.getCredit60()));
-        ib60April.setText(grossIncome(april.getGross_income(), info.getCredit60()));
-        ib60May.setText(grossIncome(may.getGross_income(), info.getCredit60()));
-        ib60June.setText(grossIncome(june.getGross_income(), info.getCredit60()));
+        ib60February.setText(interes.getIb60February());
+        ib60March.setText(interes.getIb60March());
+        ib60April.setText(interes.getIb60April());
+        ib60May.setText(interes.getIb60May());
+        ib60June.setText(interes.getIb60June());
 
-        r60April.setText(recovery(Double.parseDouble(ib60February.getText().toString())));
-        r60May.setText(recovery(Double.parseDouble(ib60March.getText().toString())));
-        r60June.setText(recovery(Double.parseDouble(ib60April.getText().toString())));
+        r60April.setText(interes.getR60April());
+        r60May.setText(interes.getR60May());
+        r60June.setText(interes.getR60June());
+
     }
 
     public void viewComercialInterest(View view){
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
-        interest_comercial.putExtra("information", info);
+        interest_comercial.putExtra("informationG", interes);
+        interest_comercial.putExtra("informationI", interesI);
         startActivity(interest_comercial);
     }
 }

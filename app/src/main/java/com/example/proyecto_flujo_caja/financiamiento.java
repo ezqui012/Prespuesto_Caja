@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.Financiamiento;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 public class financiamiento extends AppCompatActivity implements View.OnClickListener {
     private EditText cuantia;
     private EditText meses;
@@ -19,6 +22,8 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
     private TextView interes;
     private TextView cuota;
     private Button btnRegistrar;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    Financiamiento financiamiento = new Financiamiento();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +44,7 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
     }
     public void calculoFinanciamiento(){
         double cantCuantia = Double.parseDouble(cuantia.getText().toString());
-        double cantMeses = Double.parseDouble(meses.getText().toString());
+        Integer cantMeses = Integer.parseInt(meses.getText().toString());
         double cantTipoInteres = Double.parseDouble(tipoInteres.getText().toString());
         double cantCapInicial = Double.parseDouble(capitalInicial.getText().toString());
         double i = Math.pow((1-cantTipoInteres),-cantMeses);
@@ -51,9 +56,20 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         amortizacion.setText(""+resAmortizacion);
         interes.setText(""+resInteres);
         cuota.setText(""+resCuota);
+        financiamiento.setCapital(resCapital);
+        financiamiento.setAmortizacion(resAmortizacion);
+        financiamiento.setInteres(resInteres);
+        financiamiento.setCuota(resCuota);
+        financiamiento.setCuantia(cantCuantia);
+        financiamiento.setMeses(cantMeses);
+        financiamiento.setCapitalInicial(cantCapInicial);
+        db.collection("Financiamiento").add(financiamiento);
+
+
     }
     public void anterior(View view){
         Intent main = new Intent(this, MainActivity.class);
         startActivity(main);
     }
+
 }

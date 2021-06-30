@@ -37,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void Comenzar(View view)
+    {
+        Intent siguiente = new Intent(this, CompanyInformation.class);
+        startActivity(siguiente);
+    }
 
     public void Siguiente(View view){
         Intent siguiente = new Intent(this, aportepatronal.class);

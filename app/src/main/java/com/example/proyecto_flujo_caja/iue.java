@@ -75,7 +75,7 @@ public class iue extends AppCompatActivity {
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),sueldos.class));
+                startActivity(new Intent(getApplicationContext(),aportepatronal.class));
             }
         });
 

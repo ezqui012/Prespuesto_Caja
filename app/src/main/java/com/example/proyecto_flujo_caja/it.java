@@ -80,6 +80,12 @@ public class it extends AppCompatActivity {
         it2.setText(itp2.toString());
         it3.setText(itp3.toString());
 
+        sig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), iue.class));
+            }
+        });
 
 
     }

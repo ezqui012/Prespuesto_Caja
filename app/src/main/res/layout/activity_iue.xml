@@ -19,277 +19,252 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TableLayout
-        android:layout_width="402dp"
-        android:layout_height="476dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:id="@+id/scrollView5"
+        android:layout_width="373dp"
+        android:layout_height="390dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/cancel_iue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView28"
         app:layout_constraintVertical_bias="0.0">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView30"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="% Pago dividendos"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+            <TableLayout
+                android:layout_width="402dp"
+                android:layout_height="476dp">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal28"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal29"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="% Pago dividendos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/div_iue"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
-            <TextView
-                android:id="@+id/textView41"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="% Pago de primas"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal30"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal31"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView41"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="% Pago de primas"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/primas_iue"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
-            <TextView
-                android:id="@+id/textView42"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Utilidad antes de impuestos"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal32"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal33"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView42"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Utilidad antes de impuestos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/utili_iue"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:id="@+id/textView43"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Gastos deducibles"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal34"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal35"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView43"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Gastos deducibles"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/gast_iue"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Ingresos no imponibles"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal36"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal37"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView44"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ingresos no imponibles"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/ingre_iue"
+                        android:layout_width="63dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
-            <TextView
-                android:id="@+id/textView45"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Utilidad impositiva"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal38"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal39"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView45"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Utilidad impositiva"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/utiimpo_iue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView46"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IUE por pagar"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal40"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal41"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView46"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="IUE por pagar"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/iuexpag"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Utilidad despues de impuestos"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal42"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal43"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Utilidad despues de impuestos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/utidesp_iue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView48"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dividendos por pagar"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal44"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal45"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Dividendos por pagar"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/divxpag_iue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Primas por pagar"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal47"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal46"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/textView49"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Primas por pagar"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-    </TableLayout>
+                    <TextView
+                        android:id="@+id/primxpag_iue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/cancel_iue"
@@ -298,6 +273,30 @@
         android:layout_marginBottom="24dp"
         android:text="Cancelar"
         app:backgroundTint="#FF1100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sig_iue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:text="siguiente"
+        android:visibility="invisible"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/calcu_iue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="85dp"
+        android:onClick="calcularIue"
+        android:text="calcular"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

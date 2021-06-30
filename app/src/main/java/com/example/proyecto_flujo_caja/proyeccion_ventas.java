@@ -183,8 +183,8 @@ public class proyeccion_ventas extends AppCompatActivity {
                 intent.putExtra("contado2", xcont2.toString());
                 intent.putExtra("contado3", xcont3.toString());
 
-                db.collection("ventas").add(venta);
-                Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
+                /*db.collection("ventas").add(venta);
+                Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
                 startActivity(intent);
 
             }

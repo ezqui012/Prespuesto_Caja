@@ -146,12 +146,12 @@ public class iva extends AppCompatActivity {
                 intent.putExtra("mes1", m1.getText());
                 intent.putExtra("mes2", m2.getText());
                 intent.putExtra("mes3", m3.getText());
-                intent.putExtra("contado1", cont1.toString());
-                intent.putExtra("contado2", cont2.toString());
-                intent.putExtra("contado3", cont3.toString());
+                intent.putExtra("contado1", cont1.getText().toString());
+                intent.putExtra("contado2", cont2.getText().toString());
+                intent.putExtra("contado3", cont3.getText().toString());
 
-                db.collection("Iva").add(iva);
-                Toast.makeText(iva.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
+                /*db.collection("Iva").add(iva);
+                Toast.makeText(iva.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
                 startActivity(intent);
             }
         });

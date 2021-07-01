@@ -54,7 +54,7 @@ public class comprass extends AppCompatActivity {
         compCont2= findViewById(R.id.compcontt2);
         compCont3= findViewById(R.id.compcontt3);
 
-        opciones = findViewById(R.id.sp1);
+        opciones = findViewById(R.id.sp2);
 
 
         String[] opc = {"Trimestre I", "Trimestre II", "Trimestre III", "Trimestre IV"};

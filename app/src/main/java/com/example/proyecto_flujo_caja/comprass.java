@@ -19,8 +19,8 @@ public class comprass extends AppCompatActivity {
     EditText contado, treinta, venta, dmonth1,dmonth2,dmonth3,price1,price2,price3;
     TextView month1, month2, month3,ibru1, ibru2,ibru3,comp1,comp2,comp3, thirty1, thirty2,thirty3, compContt1,compCont2,compCont3;
     Spinner opciones;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private Double pcontado, ptreinta, pventas;
+    Button sigu,calcular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,9 +28,9 @@ public class comprass extends AppCompatActivity {
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);
-        Button calcular = (Button) findViewById(R.id.calc);
+        calcular = (Button) findViewById(R.id.calc);
         Button cancel = (Button) findViewById(R.id.cancel);
-        Button sigu= (Button) findViewById(R.id.sigu);
+        sigu= (Button) findViewById(R.id.sigu);
 
         month1 = findViewById(R.id.month1);
         month2 = findViewById(R.id.month2);
@@ -71,9 +71,7 @@ public class comprass extends AppCompatActivity {
 
     }
 
-
-
-    public void Calculate (View view){
+    public void Calculate(View view){
         sigu.setVisibility(View.VISIBLE);
 
         String dtsmonth1 = dmonth1.getText().toString();
@@ -158,7 +156,9 @@ public class comprass extends AppCompatActivity {
         thirty2.setText(xtre2.toString());
         thirty3.setText(xtre3.toString());
 
-
-        };
-
     }
+    public void anteriorMain(View view){
+        Intent anterior = new Intent(this, MainActivity.class);
+        startActivity(anterior);
+    }
+}

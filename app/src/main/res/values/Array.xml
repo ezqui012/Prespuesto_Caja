@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="opciones">
-        <item>Opcion 1</item>
-        <item>Opcion 2</item>
-        <item>Opcion 3</item>
-        <item>Opcion 4</item>
+        <item>TRIMESTRE I</item>
+        <item>TRIMESTRE II</item>
+        <item>TRIMESTRE III</item>
+        <item>TRIMESTRE IV</item>
     </string-array>
 
 

@@ -19,348 +19,386 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TableLayout
-        android:id="@+id/tableLayout4"
-        android:layout_width="416dp"
-        android:layout_height="460dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="370dp"
+        android:layout_height="399dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView23"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/textView23">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" MES 1"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/textView32"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" MES 2"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
 
-            <TextView
-                android:id="@+id/textView33"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" MES 3"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/mesit1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="MES 1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/mesit2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" MES 2"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VENTAS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <TextView
+                        android:id="@+id/mesit3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=" MES 3"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal2"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Ventas"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal3"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/contit1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/contit2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="INT. COMERCIAL"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <TextView
+                        android:id="@+id/contit3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal4"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal5"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView36"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Int comercial"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal6"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="VENTA ACTIVOS FIJOS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal7"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal8"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView37"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Venta activos fijos"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal9"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal4"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal5"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:id="@+id/textView34"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ALQUILERES"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal6"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal13"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal14"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView38"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Alquileres"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal15"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal7"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal8"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:id="@+id/textView35"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="OTROS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal10"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal11"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView39"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Otros"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal12"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal10"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal11"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-            <TextView
-                android:id="@+id/textView36"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="TOTAL DE VENTAS"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal12"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal16"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal17"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView64"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Total ventas"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal18"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/totvit1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/totvit2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView37"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IT DEL PERIODO"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <TextView
+                        android:id="@+id/totvit3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal19"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal20"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView70"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="IT del periodo"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal21"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
+                    <TextView
+                        android:id="@+id/it1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/it2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <TextView
-                android:id="@+id/textView38"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="IUE MES ANTERIOR"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                    <TextView
+                        android:id="@+id/it3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal22"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal23"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView80"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="IUE mes anterior"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal24"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal13"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        </TableRow>
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal14"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+                    <EditText
+                        android:id="@+id/editTextNumberDecimal15"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+                </TableRow>
 
-            <TextView
-                android:id="@+id/textView39"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="SUELDO A FAVOR DEL FISCO"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal25"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/textView82"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Saldo a favor del fisco"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal26"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
+                    <TextView
+                        android:id="@+id/fisit1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
-            <EditText
-                android:id="@+id/editTextNumberDecimal27"
-                android:layout_width="63dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="numberDecimal" />
-        </TableRow>
-    </TableLayout>
+                    <TextView
+                        android:id="@+id/fisit2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+                    <TextView
+                        android:id="@+id/fisit3"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/cancel_it"
@@ -369,6 +407,30 @@
         android:layout_marginBottom="24dp"
         android:text="cancelar"
         app:backgroundTint="#F81100"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/calcular_it"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:onClick="calcularIt"
+        android:text="Calcular"
+        app:backgroundTint="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sigit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="90dp"
+        android:text="Siguiente"
+        android:visibility="invisible"
+        app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

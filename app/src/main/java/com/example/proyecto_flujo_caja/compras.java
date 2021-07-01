@@ -20,7 +20,6 @@ public class compras extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_compras);
-        setContentView(R.layout.activity_compras);
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);
@@ -42,7 +41,7 @@ public class compras extends AppCompatActivity {
                 ptreinta =Double.parseDouble(treinta.getText().toString());
                 pventas =Double.parseDouble(venta.getText().toString());
 
-                compra = new Compras (pcontado,ptreinta,pventas);
+                //compra = new Compras (pcontado,ptreinta,pventas);
 
 
             }

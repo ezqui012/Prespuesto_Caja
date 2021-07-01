@@ -37,13 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void Comenzar(View view)
+    {
+        Intent siguiente = new Intent(this, CompanyInformation.class);
+        startActivity(siguiente);
+    }
 
     public void Siguiente(View view){
         Intent siguiente = new Intent(this, aportepatronal.class);
         startActivity(siguiente);
     }
     public void siguienteVenta(View view){
-        Intent siguiente = new Intent(this, ventas.class);
+        Intent siguiente = new Intent(this, proyeccion_ventas.class);
         startActivity(siguiente);
     }
 
@@ -55,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(this, presupuesto_caja.class);
         startActivity(siguiente);
     }
+
     public void siguienteComprass(View view){
         Intent siguiente = new Intent(this, comprass.class);
         startActivity(siguiente);

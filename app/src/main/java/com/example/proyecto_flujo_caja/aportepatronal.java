@@ -39,7 +39,11 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         double porcentajeRiesgo = Double.parseDouble(riesgo.getText().toString());
         double res = porcentajeCaja+porcentajeProv+porcentajeAfp+porcentajeSolidario+porcentajeRiesgo;
         resAporte.setText(""+res);
+        Intent siguienteSueldo = new Intent(this, sueldos.class);
+        siguienteSueldo.putExtra("dato", resAporte.getText().toString());
+        startActivity(siguienteSueldo);
     }
+
     public void anterior (View view){
         Intent anterior = new Intent(this, sueldos.class);
         startActivity(anterior);
@@ -47,6 +51,7 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
 
     public void registrar(View view){
         Intent siguienteSueldo = new Intent(this, sueldos.class);
+        siguienteSueldo.putExtra("dato", resAporte.getText().toString());
         startActivity(siguienteSueldo);
 
     }

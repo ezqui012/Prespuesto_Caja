@@ -38,6 +38,7 @@
                         android:text="PRESUPUESTO DE CAJA"
                         android:textSize="18sp"
                         android:textStyle="bold" />
+
                 </TableRow>
 
                 <TableRow
@@ -53,24 +54,24 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView75"
+                        android:id="@+id/month11"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="ABRIL -21"
+                        android:text="MES 1"
                         />
 
                     <TextView
-                        android:id="@+id/textView76"
+                        android:id="@+id/month22"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="MAYO-21"
+                        android:text="MES 2"
                         />
 
                     <TextView
-                        android:id="@+id/textView77"
+                        android:id="@+id/month33"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="JUNIO-21"
+                        android:text="MES 3"
                         />
 
                     <TextView
@@ -90,6 +91,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="VENTAS AL CONTADO" />
+                    <TextView
+                        android:id="@+id/vcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/vcon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/vcon3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -101,6 +117,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="RECUPERACION DE CUENTAS POR COBRAR 60 DIAS" />
+                    <TextView
+                        android:id="@+id/recses1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/recses2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/recses3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -112,6 +143,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="RECUPERACION DE CUENTAS POR COBRAR 30 DIAS" />
+                    <TextView
+                        android:id="@+id/rectre1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rectre2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rectre3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -125,6 +171,21 @@
                         android:text="TOTAL ENTRADAS DE EFECTIVO"
                         android:textColor="#3F51B5"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/toten1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/toten2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/toten3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -138,6 +199,21 @@
                         android:text="SALIDAS DE EFECTIVO"
                         android:textColor="#3F51B5"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/salef1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/salef2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/salef3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -149,6 +225,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="COMPRAS" />
+                    <TextView
+                        android:id="@+id/compp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/compp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/compp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -160,6 +251,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SUELDOS Y SALARIOS" />
+                    <TextView
+                        android:id="@+id/ss1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ss2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ss3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -171,6 +277,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="APORTES PATRONALES" />
+                    <TextView
+                        android:id="@+id/ap1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ap2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ap3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -182,6 +303,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="RETROACTIVOS SUELDOS Y SALARIOS" />
+                    <TextView
+                        android:id="@+id/rss1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rss2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rss3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -193,6 +329,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="RETROACTIVOS APORTES PATRONALES" />
+                    <TextView
+                        android:id="@+id/rap1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rap2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/rap3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -204,6 +355,71 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="COSTOS Y GATOS OPERATIVOS" />
+                    <TextView
+                        android:id="@+id/cgo1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/cgo2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/cgo3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/ampres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AMORTIZACION PRESTAMOS" />
+                    <TextView
+                        android:id="@+id/ampr1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ampr2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ampr3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                </TableRow>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/inpres"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="INTERESES PRESTAMOS" />
+                    <TextView
+                        android:id="@+id/inpr1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/inpr2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/inpr3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -215,6 +431,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="IVA" />
+                    <TextView
+                        android:id="@+id/iv1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/iv2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/iv3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -226,6 +457,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="IT" />
+                    <TextView
+                        android:id="@+id/itt1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/itt2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/itt3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -237,6 +483,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="IUE" />
+                    <TextView
+                        android:id="@+id/iue1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/iue2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/iue3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -248,6 +509,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="OTROS IMPUESTOS" />
+                    <TextView
+                        android:id="@+id/ot1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ot2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ot3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -261,6 +537,21 @@
                         android:text="TOTAL SALIDAS"
                         android:textColor="#3F51B5"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/ts1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ts2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ts3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -273,6 +564,21 @@
                         android:layout_height="wrap_content"
                         android:text="FLUJO NETO PROYECTADO SIN FINANCIAMIENTO"
                          />
+                    <TextView
+                        android:id="@+id/fnp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/fnp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/fnp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -284,6 +590,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="SALDO FINAL MES ANTERIOR" />
+                    <TextView
+                        android:id="@+id/sfma1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sfma2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sfma3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -297,6 +618,21 @@
                         android:text="SALDO FINAL DE EFECTIVO PROYECTADO SIN FINANCIAMIENTO"
                         android:textColor="#3F51B5"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/sfep1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sfep2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sfep3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -308,6 +644,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="FINANCIAMIENTO A CORTO PLAZO" />
+                    <TextView
+                        android:id="@+id/fcp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/fcp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/fcp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -319,6 +670,22 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="AMORTIZACION FINANCIAMIENTO A CORTO PLAZO" />
+                    <TextView
+                        android:id="@+id/afin1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/afin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/afin3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+
                 </TableRow>
 
                 <TableRow
@@ -330,6 +697,21 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="INTERESES FINANCIAMIENTO A CORTO PLAZO" />
+                    <TextView
+                        android:id="@+id/ifin1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ifin2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/ifin3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
 
                 <TableRow
@@ -343,6 +725,21 @@
                         android:text="SALDO FINAL DE EFECTIVO PROYECTADO CON FINANCIAMIENTO"
                         android:textColor="#3F51B5"
                         android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/sf1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sf2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
+                    <TextView
+                        android:id="@+id/sf3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" " />
                 </TableRow>
             </TableLayout>
 

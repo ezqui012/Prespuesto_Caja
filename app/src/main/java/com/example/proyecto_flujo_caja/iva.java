@@ -151,12 +151,10 @@ public class iva extends AppCompatActivity {
                 intent.putExtra("contado3", cont3.getText().toString());
 
                 Intent intent1 = new Intent(iva.this, presupuesto_caja.class);
-                intent1.putExtra("contado1", cont1.getText().toString());
-                intent1.putExtra("contado2", cont2.getText().toString());
-                intent1.putExtra("contado3", cont3.getText().toString());
-                intent1.putExtra("oper1", op1.getText().toString());
-                intent1.putExtra("oper2", op2.getText().toString());
-                intent1.putExtra("oper3", op3.getText().toString());
+
+                intent1.putExtra("oper1", gasop1.toString());
+                intent1.putExtra("oper2", gasop2.toString());
+                intent1.putExtra("oper3", gasop3.toString());
 
 
 

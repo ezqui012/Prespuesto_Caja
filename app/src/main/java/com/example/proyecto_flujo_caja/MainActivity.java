@@ -3,12 +3,10 @@ package com.example.proyecto_flujo_caja;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
-import android.content.Intent;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -39,6 +37,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void Comenzar(View view)
+    {
+        Intent siguiente = new Intent(this, CompanyInformation.class);
+        startActivity(siguiente);
+    }
 
     public void Siguiente(View view){
         Intent siguiente = new Intent(this, aportepatronal.class);
@@ -48,6 +51,20 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(this, proyeccion_ventas.class);
         startActivity(siguiente);
     }
+
+    public void siguienteFinanciamiento(View view){
+        Intent siguiente = new Intent(this, financiamiento.class);
+        startActivity(siguiente);
+    }
+    public void siguientePresupuestoC(View view){
+        Intent siguiente = new Intent(this, presupuesto_caja.class);
+        startActivity(siguiente);
+    }
+    public void siguienteComprass(View view){
+        Intent siguiente = new Intent(this, comprass.class);
+        startActivity(siguiente);
+    }
+
     public void siguienteImpuestos(View view){
         Intent siguiente = new Intent(this, menu_impuestos.class);
         startActivity(siguiente);
@@ -58,7 +75,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(change);
     }
 
-
+    public void verFlujo(View view){
+        Intent change = new Intent(this, FlujoCaja.class);
+        startActivity(change);
+    }
 
 
     @Override

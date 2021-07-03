@@ -19,7 +19,7 @@ public class iva extends AppCompatActivity {
     Iva iva;
     Button sig, cancel, calcu;
     TextView m1,m2,m3,cont1,cont2,cont3,totv1,totv2,totv3,debi1,debi2,debi3, totc1,totc2,totc3, credi1,credi2,credi3,fis1,fis2,fis3;
-    EditText merch1,merch2,merch3,op1,op2,op3;
+    EditText merch1,merch2,merch3,op1,op2,op3,inte1,inte2,inte3,vent1,vent2,vent3,alq1,alq2,alq3,otro1,otro2,otro3, in1,in2,in3, com1,com2,com3,sub1,sub2,sub3,ot1,ot2,ot3;
     String mes1,mes2,mes3,ct1,ct2,ct3;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -59,6 +59,31 @@ public class iva extends AppCompatActivity {
         fis1=findViewById(R.id.fis1);
         fis2=findViewById(R.id.fis2);
         fis3=findViewById(R.id.fis3);
+        inte1=findViewById(R.id.intcom_v);
+        inte2=findViewById(R.id.intcom_v2);
+        inte3=findViewById(R.id.intcom_v3);
+        vent1=findViewById(R.id.act_v);
+        vent2=findViewById(R.id.act_v2);
+        vent3=findViewById(R.id.act_v3);
+        alq1=findViewById(R.id.alq_v);
+        alq2=findViewById(R.id.alq_v2);
+        alq3=findViewById(R.id.alq_v3);
+        otro1=findViewById(R.id.otro_v);
+        otro2=findViewById(R.id.otro_v2);
+        otro3=findViewById(R.id.otro_v3);
+        in1=findViewById(R.id.intedeb_v);
+        in2=findViewById(R.id.intedeb_v2);
+        in3=findViewById(R.id.intedeb_v3);
+        com1=findViewById(R.id.compra_v);
+        com2=findViewById(R.id.compra_v2);
+        com3=findViewById(R.id.compra_v3);
+        sub1=findViewById(R.id.sub_v);
+        sub2=findViewById(R.id.sub_v2);
+        sub3=findViewById(R.id.sub_v3);
+        ot1=findViewById(R.id.ot_v);
+        ot2=findViewById(R.id.ot_v2);
+        ot3=findViewById(R.id.ot_v3);
+
 
         Bundle bundle = this.getIntent().getExtras();
         mes1= bundle.getString("mes1");
@@ -90,9 +115,29 @@ public class iva extends AppCompatActivity {
         sig.setVisibility(View.VISIBLE);
 
         //calcula ventas
-        totv1.setText(cont1.getText());
-        totv2.setText(cont2.getText());
-        totv3.setText(cont3.getText());
+        Double con1 = Double.parseDouble(cont1.getText().toString());
+        Double con2 = Double.parseDouble(cont2.getText().toString());
+        Double con3 = Double.parseDouble(cont3.getText().toString());
+        Double inter1 = Double.parseDouble(inte1.getText().toString());
+        Double inter2 = Double.parseDouble(inte2.getText().toString());
+        Double inter3 = Double.parseDouble(inte3.getText().toString());
+        Double activo1 = Double.parseDouble(vent1.getText().toString());
+        Double activo2 = Double.parseDouble(vent2.getText().toString());
+        Double activo3 = Double.parseDouble(vent3.getText().toString());
+        Double alqui1 = Double.parseDouble(alq1.getText().toString());
+        Double alqui2 = Double.parseDouble(alq2.getText().toString());
+        Double alqui3 = Double.parseDouble(alq3.getText().toString());
+        Double otros1 = Double.parseDouble(otro1.getText().toString());
+        Double otros2 = Double.parseDouble(otro2.getText().toString());
+        Double otros3 = Double.parseDouble(otro3.getText().toString());
+
+        Double totalvmes1 = con1+inter1+activo1+alqui1+otros1;
+        Double totalvmes2 = con2+inter2+activo2+alqui2+otros2;
+        Double totalvmes3 = con3+inter3+activo3+alqui3+otros3;
+
+        totv1.setText(totalvmes1.toString());
+        totv2.setText(totalvmes2.toString());
+        totv3.setText(totalvmes3.toString());
         //debito del periodo
 
         Double total1 =Double.parseDouble(totv1.getText().toString());
@@ -112,9 +157,22 @@ public class iva extends AppCompatActivity {
         Double gasop1=Double.parseDouble(op1.getText().toString());
         Double gasop2=Double.parseDouble(op2.getText().toString());
         Double gasop3=Double.parseDouble(op3.getText().toString());
-        Double totalc1=merca1+gasop1;
-        Double totalc2=merca2+gasop2;
-        Double totalc3=merca3+gasop3;
+        Double interc1=Double.parseDouble(in1.getText().toString());
+        Double interc2=Double.parseDouble(in2.getText().toString());
+        Double interc3=Double.parseDouble(in3.getText().toString());
+        Double compra1=Double.parseDouble(com1.getText().toString());
+        Double compra2=Double.parseDouble(com2.getText().toString());
+        Double compra3 =Double.parseDouble(com3.getText().toString());
+        Double subs1=Double.parseDouble(sub1.getText().toString());
+        Double subs2=Double.parseDouble(sub2.getText().toString());
+        Double subs3=Double.parseDouble(sub3.getText().toString());
+        Double otr1=Double.parseDouble(ot1.getText().toString());
+        Double otr2=Double.parseDouble(ot2.getText().toString());
+        Double otr3=Double.parseDouble(ot3.getText().toString());
+
+        Double totalc1=merca1+gasop1+interc1+compra1+subs1+otr1;
+        Double totalc2=merca2+gasop2+interc2+compra2+subs2+otr2;
+        Double totalc3=merca3+gasop3+interc3+compra3+subs3+otr3;
         totc1.setText(totalc1.toString());
         totc2.setText(totalc2.toString());
         totc3.setText(totalc3.toString());

@@ -49,6 +49,8 @@ public class CompanyInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_company_information);
 
+        company = (Company) getIntent().getSerializableExtra("information");
+
         input_sales = (EditText) findViewById(R.id.input_sales);
         input_credit30 = (EditText) findViewById(R.id.input_credit30);
         input_credit60 = (EditText) findViewById(R.id.input_credit60);
@@ -57,6 +59,7 @@ public class CompanyInformation extends AppCompatActivity {
         input_interest = (EditText) findViewById(R.id.input_interest);
 
         projectionSold();
+
     }
 
     public void anterior(View view){
@@ -70,6 +73,16 @@ public class CompanyInformation extends AppCompatActivity {
         april = new SalesProjection("Abril", 400000,0.2);
         may = new SalesProjection("Mayo", 400000,0.2);
         june = new SalesProjection("Junio", 250000,0.2);
+        showInfo();
+    }
+
+    private void showInfo(){
+        input_sales.setText(String.valueOf(company.getSales()));
+        input_credit30.setText(String.valueOf(company.getCredit30()));
+        input_credit60.setText(String.valueOf(company.getCredit60()));
+        input_about.setText(String.valueOf(company.getAbout()));
+        input_badDebt.setText(String.valueOf(company.getBadDebt()));
+        input_interest.setText(String.valueOf(company.getInterest()));
     }
 
     public void registerInfo(View view){
@@ -105,16 +118,16 @@ public class CompanyInformation extends AppCompatActivity {
         badDebt = Double.parseDouble(input_badDebt.getText().toString());
         interest = Double.parseDouble(input_interest.getText().toString());
 
+        company = null;
         company = new Company(sales, credit30, credit60, about, badDebt, interest);
         interes = new InteresGasto(february, march, april, may, june, company);
         interesI = new InteresIngreso(february, march, april, may, june, company);
 
-        db.collection("interesc").add(company);
+        db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").update(company.getMapInfo());
         db.collection("interesIngreso").add(interesI);
         db.collection("interesGasto").add(interes);
 
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
-        interest_comercial.putExtra("information", company);
         interest_comercial.putExtra("informationG", interes);
         interest_comercial.putExtra("informationI", interesI);
         startActivity(interest_comercial);

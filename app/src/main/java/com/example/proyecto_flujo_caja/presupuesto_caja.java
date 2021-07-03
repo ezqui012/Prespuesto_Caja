@@ -19,22 +19,24 @@ import androidx.appcompat.app.*;
 
 import com.google.android.gms.tasks.*;
 import com.google.firebase.database.*;
+import com.google.firebase.database.annotations.*;
+import com.google.firebase.firestore.*;
 
 public class presupuesto_caja extends AppCompatActivity {
 
     TextView month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
     //String contt1,contt2,contt3,gasop1,gasop2,gasop3,reses1,reses2,reses3,retre1,retre2,retre3,mess1,mess2,mess3;
-    Button btnLoad;
-    DatabaseReference reference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presupuesto_caja);
 
-        btnLoad=(Button)findViewById(R.id.btnLoad);
-        vcont1= (TextView)findViewById(R.id.vcon1);
-        vcont2= (TextView)findViewById(R.id.vcon2);
-        vcont3= (TextView)findViewById(R.id.vcon3);
+
+        vcont1= findViewById(R.id.vcon1);
+        vcont2= findViewById(R.id.vcon2);
+        vcont3= findViewById(R.id.vcon3);
         recses1= findViewById(R.id.recses1);
         recses2= findViewById(R.id.recses2);
         recses3= findViewById(R.id.recses3);
@@ -111,52 +113,41 @@ public class presupuesto_caja extends AppCompatActivity {
         month2=findViewById(R.id.month22);
         month3=findViewById(R.id.month33);
 
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("ventass").document("a");
+               documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                   @Override
+                   public void onSuccess(DocumentSnapshot documentSnapshot) {
+                       String monthh1= documentSnapshot.getString("Month1");
+                       month1.setText(monthh1);
+                       String monthh2= documentSnapshot.getString("Month2");
+                       month2.setText(monthh2);
+                       String monthh3= documentSnapshot.getString("Month3");
+                       month3.setText(monthh3);
+                       String vcontt1= documentSnapshot.getLong("cont1").toString();
+                       vcont1.setText(vcontt1);
+                       String vcontt2= documentSnapshot.getLong("cont2").toString();
+                       vcont2.setText(vcontt2);
+                       String vcontt3= documentSnapshot.getLong("cont3").toString();
+                       vcont3.setText(vcontt3);
+                   }
+               });
 
-        /*Bundle bundle = this.getIntent().getExtras();
-        mess1= bundle.getString("mes1");
-        mess2= bundle.getString("mes2");
-        mess3= bundle.getString("mes3");
-        contt1= bundle.getString("contado1");
-        contt2= bundle.getString("contado2");
-        contt3= bundle.getString("contado3");
-        gasop1=bundle.getString("oper1");
-        gasop2=bundle.getString("oper2");
-        gasop3=bundle.getString("oper3");
-        retre1=bundle.getString("treinta1");
-        retre2=bundle.getString("treinta2");
-        retre3=bundle.getString("treinta3");
-
-        month1.setText(mess1);
-        month2.setText(mess2);
-        month3.setText(mess3);
-        vcont1.setText(contt1);
-        vcont2.setText(contt2);
-        vcont3.setText(contt3);
-        cgo1.setText(gasop1);
-        cgo2.setText(gasop2);
-        cgo3.setText(gasop3);
-        rectre1.setText(retre1);
-        rectre2.setText(retre2);
-        rectre3.setText(retre3);*/
-
-    }
-    public void llenar(View view){
-        reference = FirebaseDatabase.getInstance().getReference().child("ventass").child("a");
-        reference.addValueEventListener(new ValueEventListener() {
+               DocumentReference documentReference1=FirebaseFirestore.getInstance().collection("Iva").document("a");
+        documentReference1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
-            public void onDataChange(DataSnapshot datasnapshot) {
-                String vcnt1 = datasnapshot.child("cont1").getValue().toString();
-                String vcnt2 = datasnapshot.child("cont2").getValue().toString();
-                vcont1.setText(vcnt1);
-                vcont2.setText(vcnt2);
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String cgoo1= documentSnapshot.getLong("gasop1").toString();
+                cgo1.setText(cgoo1);
+                String cgoo2= documentSnapshot.getLong("gasop2").toString();
+                cgo2.setText(cgoo2);
+                String cgoo3= documentSnapshot.getLong("gasop3").toString();
+                cgo3.setText(cgoo3);
             }
         });
-    }
+           }
+       }
 
-}
+
+
+
+

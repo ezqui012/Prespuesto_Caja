@@ -183,24 +183,16 @@ public class proyeccion_ventas extends AppCompatActivity {
                 intent.putExtra("contado2", xcont2.toString());
                 intent.putExtra("contado3", xcont3.toString());
 
-                Intent intent1 = new Intent(proyeccion_ventas.this, presupuesto_caja.class);
-                intent1.putExtra("contado1", xcont1.toString());
-                intent1.putExtra("contado2", xcont2.toString());
-                intent1.putExtra("contado3", xcont3.toString());
-                intent1.putExtra("treinta1", xtre1.toString());
-                intent1.putExtra("treinta2", xtre2.toString());
-                intent1.putExtra("treinta3", xtre3.toString());
-                intent1.putExtra("mes1", mes1.getText().toString());
-                intent1.putExtra("mes2", mes2.getText().toString());
-                intent1.putExtra("mes3", mes3.getText().toString());
+
 
                 /*db.collection("ventas").add(venta);
                 Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
                 startActivity(intent);
-                startActivity(intent1);
+
 
             }
         });
+
 
     }
 

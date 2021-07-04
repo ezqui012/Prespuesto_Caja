@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
-public class FlujoCajaProy {
+import java.io.Serializable;
+
+public class FlujoCajaProy implements Serializable {
 
     private Double actividadesOp;
     private Double ingresosdOp;

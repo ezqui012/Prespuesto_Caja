@@ -13,6 +13,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.proyecto_flujo_caja.Models.Company;
+import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
 import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private Company company;
+    private FlujoCajaProy flujo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getCompanyInfo();
+        loadInfoCaja();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -87,6 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void verFlujo(View view){
         Intent change = new Intent(this, FlujoCaja.class);
+        change.putExtra("flujoCajaInfo", flujo);
         startActivity(change);
     }
 
@@ -99,6 +103,21 @@ public class MainActivity extends AppCompatActivity {
                     company = new Company(documentSnapshot.getDouble("sales"), documentSnapshot.getDouble("credit30"),
                             documentSnapshot.getDouble("credit60"), documentSnapshot.getDouble("about"),
                             documentSnapshot.getDouble("badDebt"), documentSnapshot.getDouble("interest"));
+                }
+            }
+        });
+    }
+
+    private void loadInfoCaja(){
+        db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").get().addOnSuccessListener(
+                new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                 if(documentSnapshot.exists()){
+                     flujo = new FlujoCajaProy(Double.parseDouble(documentSnapshot.getString("ingresosdOp")), Double.parseDouble(documentSnapshot.getString("gastosOp")),
+                             Double.parseDouble(documentSnapshot.getString("ingresosC")), Double.parseDouble(documentSnapshot.getString("gastosC")),
+                             Double.parseDouble(documentSnapshot.getString("fuentes")), Double.parseDouble(documentSnapshot.getString("usos")),
+                             Double.parseDouble(documentSnapshot.getString("efectivoIn")));
                 }
             }
         });

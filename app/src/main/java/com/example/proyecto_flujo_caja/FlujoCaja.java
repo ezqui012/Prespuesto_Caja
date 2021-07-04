@@ -8,11 +8,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FlujoCaja extends AppCompatActivity {
 
     FlujoCajaProy flujo;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private TextView actividadesOp;
     private TextView ingresosdOp;
@@ -32,7 +38,8 @@ public class FlujoCaja extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flujo_caja);
 
-        flujo = new FlujoCajaProy(210000.00, 212131.00, 0.00, 0.00, 0.00, 0.00, 16000.00);
+        flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+        //flujo = new FlujoCajaProy(210000.00, 212131.00, 0.00, 0.00, 0.00, 0.00, 16000.00);
 
         actividadesOp = (TextView) findViewById(R.id.Input_total1);
         ingresosdOp = (TextView) findViewById(R.id.Input_ingresoOP);

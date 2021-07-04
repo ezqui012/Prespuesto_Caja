@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 if(documentSnapshot.exists()){
-                    //company = (Company) documentSnapshot.getData();
                     company = new Company(documentSnapshot.getDouble("sales"), documentSnapshot.getDouble("credit30"),
                             documentSnapshot.getDouble("credit60"), documentSnapshot.getDouble("about"),
                             documentSnapshot.getDouble("badDebt"), documentSnapshot.getDouble("interest"));

@@ -124,8 +124,8 @@ public class CompanyInformation extends AppCompatActivity {
         interesI = new InteresIngreso(february, march, april, may, june, company);
 
         db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").update(company.getMapInfo());
-        db.collection("interesIngreso").add(interesI);
-        db.collection("interesGasto").add(interes);
+        db.collection("interesIngreso").document("TtnQFYTiuoOc3OqXitgn").update(interesI.getMapinteresI());
+        db.collection("interesGasto").document("2UOhIn6STMTCQBGjA9Sk").update(interes.getMapInteresG());
 
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
         interest_comercial.putExtra("informationG", interes);

@@ -41,7 +41,7 @@ public class compras extends AppCompatActivity {
                 ptreinta =Double.parseDouble(treinta.getText().toString());
                 pventas =Double.parseDouble(venta.getText().toString());
 
-                compra = new Compras (pcontado,ptreinta,pventas);
+                //compra = new Compras (pcontado,ptreinta,pventas);
 
 
             }

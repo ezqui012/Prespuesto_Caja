@@ -289,6 +289,7 @@ public class iva extends AppCompatActivity {
                 intent.putExtra("contado2", cont2.getText().toString());
                 intent.putExtra("contado3", cont3.getText().toString());
 
+
                 db.collection("Iva").document("a")
                         .set(iva)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -303,7 +304,14 @@ public class iva extends AppCompatActivity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
+
+
+
+                /*db.collection("Iva").add(iva);
+                Toast.makeText(iva.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
+
                 startActivity(intent);
+
             }
         });
     }

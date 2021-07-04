@@ -244,10 +244,18 @@ public class proyeccion_ventas extends AppCompatActivity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
+
+
+
+                /*db.collection("ventas").add(venta);
+                Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
+
                 startActivity(intent);
+
 
             }
         });
+
 
     }
 

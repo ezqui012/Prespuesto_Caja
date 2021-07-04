@@ -24,16 +24,19 @@ import com.google.firebase.firestore.*;
 
 public class presupuesto_caja extends AppCompatActivity {
 
-    TextView month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
-    //String contt1,contt2,contt3,gasop1,gasop2,gasop3,reses1,reses2,reses3,retre1,retre2,retre3,mess1,mess2,mess3;
+    TextView Tottee,Totses,Tottre,Totcom,Totcgo,Totvcon,month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
 
+String sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,cgoo2,cgoo3,vcontt1,vcontt2,vcontt3, comp1,comp2,comp3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presupuesto_caja);
 
-
+        Tottre=findViewById(R.id.Tottre);
+        Totcom=findViewById(R.id.Totcom);
+        Totcgo=findViewById(R.id.Totcgo);
+        Totvcon=findViewById(R.id.Totvcon);
         vcont1= findViewById(R.id.vcon1);
         vcont2= findViewById(R.id.vcon2);
         vcont3= findViewById(R.id.vcon3);
@@ -113,22 +116,38 @@ public class presupuesto_caja extends AppCompatActivity {
         month2=findViewById(R.id.month22);
         month3=findViewById(R.id.month33);
 
-        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("ventass").document("a");
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("venta").document("a");
                documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                    @Override
                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                       String monthh1= documentSnapshot.getString("Month1");
+                       String monthh1= documentSnapshot.getString("mes1");
                        month1.setText(monthh1);
-                       String monthh2= documentSnapshot.getString("Month2");
+                       String monthh2= documentSnapshot.getString("mes2");
                        month2.setText(monthh2);
-                       String monthh3= documentSnapshot.getString("Month3");
+                       String monthh3= documentSnapshot.getString("mes3");
                        month3.setText(monthh3);
-                       String vcontt1= documentSnapshot.getLong("cont1").toString();
+
+                       vcontt1= documentSnapshot.getString("cont1");
                        vcont1.setText(vcontt1);
-                       String vcontt2= documentSnapshot.getLong("cont2").toString();
+                       vcontt2= documentSnapshot.getString("cont2");
                        vcont2.setText(vcontt2);
-                       String vcontt3= documentSnapshot.getLong("cont3").toString();
+                       vcontt3= documentSnapshot.getString("cont3");
                        vcont3.setText(vcontt3);
+
+                       sess1= documentSnapshot.getString("sesenta1");
+                       recses1.setText(sess1);
+                       sess2= documentSnapshot.getString("sesenta2");
+                       recses2.setText(sess2);
+                       sess3= documentSnapshot.getString("sesenta3");
+                       recses3.setText(sess3);
+
+                       tree1= documentSnapshot.getString("treinta1");
+                       rectre1.setText(tree1);
+                       tree2= documentSnapshot.getString("treinta2");
+                       rectre2.setText(tree2);
+                       tree3= documentSnapshot.getString("trinta3");
+                       rectre3.setText(tree3);
+
                    }
                });
 
@@ -136,15 +155,63 @@ public class presupuesto_caja extends AppCompatActivity {
         documentReference1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String cgoo1= documentSnapshot.getLong("gasop1").toString();
+                cgoo1= documentSnapshot.getString("gastosop1");
                 cgo1.setText(cgoo1);
-                String cgoo2= documentSnapshot.getLong("gasop2").toString();
+                cgoo2= documentSnapshot.getString("gastosop2");
                 cgo2.setText(cgoo2);
-                String cgoo3= documentSnapshot.getLong("gasop3").toString();
+                cgoo3= documentSnapshot.getString("gastosop3");
                 cgo3.setText(cgoo3);
+                comp1= documentSnapshot.getString("compras1");
+                compp1.setText(comp1);
+                comp2= documentSnapshot.getString("compras2");
+                compp2.setText(comp2);
+                comp3= documentSnapshot.getString("compras3");
+                compp3.setText(comp3);
+
             }
         });
            }
+           public void totalpc(View v){
+
+               Double totalpc1 =Double.parseDouble(vcont1.getText().toString());
+               Double totalpc2 =Double.parseDouble(vcont2.getText().toString());
+               Double totalpc3 =Double.parseDouble(vcont3.getText().toString());
+               Double totPC= totalpc1+totalpc2+totalpc3;
+               Totvcon.setText(totPC.toString());
+               Double cgopc1 =Double.parseDouble(cgo1.getText().toString());
+               Double cgopc2 =Double.parseDouble(cgo2.getText().toString());
+               Double cgopc3 =Double.parseDouble(cgo3.getText().toString());
+               Double cgoPC= cgopc1+cgopc2+cgopc3;
+               Totcgo.setText(cgoPC.toString());
+               Double compc1 =Double.parseDouble(compp1.getText().toString());
+               Double compc2 =Double.parseDouble(compp2.getText().toString());
+               Double compc3 =Double.parseDouble(compp3.getText().toString());
+               Double comPC= compc1+compc2+compc3;
+               Totcom.setText(comPC.toString());
+
+               Double trepc1 =Double.parseDouble(rectre1.getText().toString());
+               Double trepc2 =Double.parseDouble(rectre2.getText().toString());
+               Double trepc3 =Double.parseDouble(rectre3.getText().toString());
+               Double trPC= trepc1+trepc2+trepc3;
+               Tottre.setText(trPC.toString());
+
+               Double sepc1 =Double.parseDouble(recses1.getText().toString());
+               Double sepc2 =Double.parseDouble(recses2.getText().toString());
+               Double sepc3 =Double.parseDouble(recses3.getText().toString());
+               Double sePC= sepc1+sepc2+sepc3;
+               //Totses.setText(sePC.toString());
+
+               Double tee11=totalpc1+trepc1+sepc1;
+               Double tee22=totalpc2+trepc2+sepc2;
+               Double tee33=totalpc3+trepc3+sepc3;
+               tee1.setText(tee11.toString());
+               tee2.setText(tee22.toString());
+               tee3.setText(tee33.toString());
+
+               Double totaltee=totPC+trPC+sePC;
+               //Tottee.setText(totaltee.toString());
+
+    }
        }
 
 

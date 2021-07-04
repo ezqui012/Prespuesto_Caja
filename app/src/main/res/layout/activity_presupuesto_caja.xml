@@ -46,7 +46,12 @@
                                 android:textSize="18sp"
                                 android:textStyle="bold" />
 
-
+                            <Button
+                                android:id="@+id/button2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="totalpc"
+                                android:text="Calcular Total" />
 
 
                         </TableRow>
@@ -60,7 +65,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="ENTRADAS"
+                                android:text="ENTRADAS  "
                                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                                 android:textColor="#3F51B5"
                                 android:textStyle="bold" />
@@ -125,6 +130,12 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text=" " />
+                            <TextView
+                                android:id="@+id/Totvcon"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
                         </TableRow>
 
                         <TableRow
@@ -154,6 +165,12 @@
 
                             <TextView
                                 android:id="@+id/recses3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
+                            <TextView
+                                android:id="@+id/Totses"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -191,6 +208,12 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text=" " />
+                            <TextView
+                                android:id="@+id/Tottre"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
                         </TableRow>
 
                         <TableRow
@@ -222,6 +245,12 @@
 
                             <TextView
                                 android:id="@+id/toten3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
+                            <TextView
+                                android:id="@+id/Tottee"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -290,6 +319,12 @@
 
                             <TextView
                                 android:id="@+id/compp3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
+                            <TextView
+                                android:id="@+id/Totcom"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -437,7 +472,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="COSTOS Y GATOS OPERATIVOS" />
+                                android:text="COSTOS Y GASTOS OPERATIVOS" />
 
                             <TextView
                                 android:id="@+id/cgo1"
@@ -455,6 +490,12 @@
 
                             <TextView
                                 android:id="@+id/cgo3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text=" " />
+                            <TextView
+                                android:id="@+id/Totcgo"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

@@ -1,10 +1,12 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,12 +16,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyecto_flujo_caja.Models.Ventas;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import static android.content.ContentValues.TAG;
 
 public class proyeccion_ventas extends AppCompatActivity {
     private Ventas venta;
     Spinner opciones;
-    TextView mes1,mes2, mes3, ib1, ib2, ib3, pcont1,pcont2,pcont3, treint1,treint2,treint3, sesent3;
+    TextView mes1,mes2, mes3, ib1, ib2, ib3, pcont1,pcont2,pcont3, treint1,treint2,treint3,sesent1,sesent2, sesent3;
     EditText dmes1,dmes2,dmes3, precio1, precio2, precio3, vcont, v30, v60, vinco;
     Button calcu, sig, cancel;
     private Double vcontado, vtreinta, vsesenta, vincobrabilidad;
@@ -51,6 +59,8 @@ public class proyeccion_ventas extends AppCompatActivity {
         treint1=findViewById(R.id.treint1);
         treint2=findViewById(R.id.treint2);
         treint3=findViewById(R.id.treint3);
+        sesent1=findViewById(R.id.sesent1);
+        sesent2=findViewById(R.id.sesen2);
         sesent3=findViewById(R.id.sesent3);
         calcu = findViewById(R.id.btn_calcu);
         sig = findViewById(R.id.sig);
@@ -64,6 +74,40 @@ public class proyeccion_ventas extends AppCompatActivity {
         String[] opc ={"Trimestre I", "Trimestre II","Trimestre III","Trimestre IV"};
         ArrayAdapter<String> adapter= new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opc);
         opciones.setAdapter(adapter);
+
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("venta").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String monthh1= documentSnapshot.getString("mes1");
+                mes1.setText(monthh1);
+                String monthh2= documentSnapshot.getString("mes2");
+                mes2.setText(monthh2);
+                String monthh3= documentSnapshot.getString("mes3");
+                mes3.setText(monthh3);
+                String vconta= documentSnapshot.getString("ventcont");
+                vcont.setText(vconta);
+                String vtre= documentSnapshot.getString("vent30");
+                v30.setText(vtre);
+                String vses= documentSnapshot.getString("vent60");
+                v60.setText(vses);
+                String incobra=documentSnapshot.getString("inco");
+                vinco.setText(incobra);
+                String vent1 =documentSnapshot.getString("venta1");
+                dmes1.setText(vent1);
+                String vent2 =documentSnapshot.getString("venta2");
+                dmes2.setText(vent2);
+                String vent3 =documentSnapshot.getString("venta3");
+                dmes3.setText(vent3);
+                String pre1 =documentSnapshot.getString("precio1");
+                precio1.setText(pre1);
+                String pre2 =documentSnapshot.getString("precio2");
+                precio2.setText(pre2);
+                String pre3 =documentSnapshot.getString("precio3");
+                precio3.setText(pre3);
+
+            }
+        });
 
 
 
@@ -168,11 +212,14 @@ public class proyeccion_ventas extends AppCompatActivity {
         Double xsesent= Math.ceil((ingreso1*vsesenta)*(1-vincobrabilidad));
 
         sesent3.setText(xsesent.toString());
+        Double ses1=0.0;
+        sesent1.setText(ses1.toString());
+        sesent2.setText(ses1.toString());
 
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                venta = new Ventas(mes1.getText().toString(),mes2.getText().toString(),mes3.getText().toString(),xcont1,xcont2,xcont3);
+                venta = new Ventas(mes1.getText().toString(),mes2.getText().toString(),mes3.getText().toString(),xcont1.toString(),xcont2.toString(),xcont3.toString(),vcontado.toString(),vtreinta.toString(),vsesenta.toString(),vincobrabilidad.toString(),dtmes1.toString(),dtmes2.toString(),dtmes3.toString(),prec.toString(),prec2.toString(),prec3.toString(),xtre1.toString(),xtre2.toString(),xtre3.toString(),ses1.toString(),ses1.toString(),xsesent.toString());
 
 
                 Intent intent = new Intent(proyeccion_ventas.this, iva.class);
@@ -183,8 +230,20 @@ public class proyeccion_ventas extends AppCompatActivity {
                 intent.putExtra("contado2", xcont2.toString());
                 intent.putExtra("contado3", xcont3.toString());
 
-                /*db.collection("ventas").add(venta);
-                Toast.makeText(proyeccion_ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
+                db.collection("venta").document("a")
+                        .set(venta)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
                 startActivity(intent);
 
             }

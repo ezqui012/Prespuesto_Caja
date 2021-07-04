@@ -1,9 +1,11 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,8 +14,13 @@ import android.widget.Toast;
 
 import com.example.proyecto_flujo_caja.Models.Iva;
 import com.example.proyecto_flujo_caja.Models.Ventas;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import static android.content.ContentValues.TAG;
 
 public class iva extends AppCompatActivity {
     Iva iva;
@@ -84,21 +91,95 @@ public class iva extends AppCompatActivity {
         ot2=findViewById(R.id.ot_v2);
         ot3=findViewById(R.id.ot_v3);
 
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("venta").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String monthh1= documentSnapshot.getString("mes1");
+                m1.setText(monthh1);
+                String monthh2= documentSnapshot.getString("mes2");
+                m2.setText(monthh2);
+                String monthh3= documentSnapshot.getString("mes3");
+                m3.setText(monthh3);
+                String vconta1= documentSnapshot.getString("cont1");
+                cont1.setText(vconta1);
+                String vconta2= documentSnapshot.getString("cont2");
+                cont2.setText(vconta2);
+                String vconta3= documentSnapshot.getString("cont3");
+                cont3.setText(vconta3);
 
-        Bundle bundle = this.getIntent().getExtras();
-        mes1= bundle.getString("mes1");
-        mes2= bundle.getString("mes2");
-        mes3= bundle.getString("mes3");
-        ct1= bundle.getString("contado1");
-        ct2= bundle.getString("contado2");
-        ct3= bundle.getString("contado3");
 
-        m1.setText(mes1);
-        m2.setText(mes2);
-        m3.setText(mes3);
-        cont1.setText(ct1);
-        cont2.setText(ct2);
-        cont3.setText(ct3);
+            }
+        });
+        DocumentReference documentReference1= FirebaseFirestore.getInstance().collection("Iva").document("a");
+        documentReference1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String i1= documentSnapshot.getString("intc1");
+                inte1.setText(i1);
+                String i2= documentSnapshot.getString("intc2");
+                inte2.setText(i2);
+                String i3= documentSnapshot.getString("intc3");
+                inte3.setText(i3);
+                String a1= documentSnapshot.getString("act1");
+                vent1.setText(a1);
+                String a2= documentSnapshot.getString("act2");
+                vent2.setText(a2);
+                String a3= documentSnapshot.getString("act3");
+                vent3.setText(a3);
+                String al1= documentSnapshot.getString("alq1");
+                alq1.setText(al1);
+                String al2= documentSnapshot.getString("alq2");
+                alq2.setText(al2);
+                String al3= documentSnapshot.getString("alq3");
+                alq3.setText(al3);
+                String o1= documentSnapshot.getString("ot1");
+                otro1.setText(o1);
+                String o2= documentSnapshot.getString("ot2");
+                otro2.setText(o2);
+                String o3= documentSnapshot.getString("ot3");
+                otro3.setText(o3);
+                String me1= documentSnapshot.getString("compras1");
+                merch1.setText(me1);
+                String me2= documentSnapshot.getString("compras2");
+                merch2.setText(me2);
+                String me3= documentSnapshot.getString("compras3");
+                merch3.setText(me3);
+                String inn1= documentSnapshot.getString("intco1");
+                in1.setText(inn1);
+                String inn2= documentSnapshot.getString("intco2");
+                in2.setText(inn2);
+                String inn3= documentSnapshot.getString("intco3");
+                in3.setText(inn3);
+                String c1= documentSnapshot.getString("com1");
+                com1.setText(c1);
+                String c2= documentSnapshot.getString("com2");
+                com2.setText(c2);
+                String c3= documentSnapshot.getString("com3");
+                com3.setText(c3);
+                String s1= documentSnapshot.getString("subs1");
+                sub1.setText(s1);
+                String s2= documentSnapshot.getString("subs2");
+                sub2.setText(s2);
+                String s3= documentSnapshot.getString("subs3");
+                sub3.setText(s3);
+                String g1= documentSnapshot.getString("gastosop1");
+                op1.setText(g1);
+                String g2= documentSnapshot.getString("gastosop2");
+                op2.setText(g2);
+                String g3= documentSnapshot.getString("gastosop3");
+                op3.setText(g3);
+                String otr1= documentSnapshot.getString("otr1");
+                ot1.setText(otr1);
+                String otr2= documentSnapshot.getString("otr2");
+                ot2.setText(otr2);
+                String otr3= documentSnapshot.getString("otr3");
+                ot3.setText(otr3);
+
+            }
+        });
+
+
 
 
 
@@ -197,7 +278,7 @@ public class iva extends AppCompatActivity {
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iva = new Iva(merca1,merca2,merca3,gasop1,gasop2,gasop3,fisco1,fisco2,fisco3);
+                iva = new Iva(merca1.toString(),merca2.toString(),merca3.toString(),gasop1.toString(),gasop2.toString(),gasop3.toString(),fisco1.toString(),fisco2.toString(),fisco3.toString(),inter1.toString(),inter2.toString(),inter3.toString(),activo1.toString(),activo2.toString(),activo3.toString(),alqui1.toString(),alqui2.toString(),alqui3.toString(),otros1.toString(),otros2.toString(),otros3.toString(),interc1.toString(),interc2.toString(),interc3.toString(),compra1.toString(),compra2.toString(),compra3.toString(),subs1.toString(),subs2.toString(),subs3.toString(),otr1.toString(),otr2.toString(),otr3.toString());
 
 
                 Intent intent = new Intent(iva.this, it.class);
@@ -208,8 +289,20 @@ public class iva extends AppCompatActivity {
                 intent.putExtra("contado2", cont2.getText().toString());
                 intent.putExtra("contado3", cont3.getText().toString());
 
-                /*db.collection("Iva").add(iva);
-                Toast.makeText(iva.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();*/
+                db.collection("Iva").document("a")
+                        .set(iva)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
                 startActivity(intent);
             }
         });

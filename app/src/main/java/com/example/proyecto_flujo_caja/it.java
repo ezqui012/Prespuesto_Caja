@@ -1,19 +1,33 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.It;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import static android.content.ContentValues.TAG;
+
 public class it extends AppCompatActivity {
+    It it;
     Button cancel, calcu, sig;
     String mes1,mes2,mes3,ct1,ct2,ct3;
     TextView m1,m2,m3, cont1,cont2,cont3, totv1,totv2,totv3,it1,it2,it3, fis1,fis2,fis3;
     EditText intc1, intc2, intc3, act1,act2,act3, alq1,alq2,alq3,ot1,ot2,ot3,iue1,iue2,iue3;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,21 +68,64 @@ public class it extends AppCompatActivity {
         fis2=findViewById(R.id.fisit2);
         fis3=findViewById(R.id.fisit3);
 
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("venta").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String monthh1= documentSnapshot.getString("mes1");
+                m1.setText(monthh1);
+                String monthh2= documentSnapshot.getString("mes2");
+                m2.setText(monthh2);
+                String monthh3= documentSnapshot.getString("mes3");
+                m3.setText(monthh3);
+                String vconta1= documentSnapshot.getString("cont1");
+                cont1.setText(vconta1);
+                String vconta2= documentSnapshot.getString("cont2");
+                cont2.setText(vconta2);
+                String vconta3= documentSnapshot.getString("cont3");
+                cont3.setText(vconta3);
 
-        Bundle bundle = this.getIntent().getExtras();
-        mes1= bundle.getString("mes1");
-        mes2= bundle.getString("mes2");
-        mes3= bundle.getString("mes3");
-        ct1= bundle.getString("contado1");
-        ct2= bundle.getString("contado2");
-        ct3= bundle.getString("contado3");
 
-        m1.setText(mes1);
-        m2.setText(mes2);
-        m3.setText(mes3);
-        cont1.setText(ct1);
-        cont2.setText(ct2);
-        cont3.setText(ct3);
+            }
+        });
+        DocumentReference documentReference1= FirebaseFirestore.getInstance().collection("It").document("a");
+        documentReference1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String i1= documentSnapshot.getString("int1");
+                intc1.setText(i1);
+                String i2= documentSnapshot.getString("int2");
+                intc2.setText(i2);
+                String i3= documentSnapshot.getString("int3");
+                intc3.setText(i3);
+                String a1= documentSnapshot.getString("act1");
+                act1.setText(a1);
+                String a2= documentSnapshot.getString("act2");
+                act2.setText(a2);
+                String a3= documentSnapshot.getString("act3");
+                act3.setText(a3);
+                String al1= documentSnapshot.getString("alq1");
+                alq1.setText(al1);
+                String al2= documentSnapshot.getString("alq2");
+                alq2.setText(al2);
+                String al3= documentSnapshot.getString("alq3");
+                alq3.setText(al3);
+                String o1= documentSnapshot.getString("ot1");
+                ot1.setText(o1);
+                String o2= documentSnapshot.getString("ot2");
+                ot2.setText(o2);
+                String o3= documentSnapshot.getString("ot3");
+                ot3.setText(o3);
+                String u1= documentSnapshot.getString("iue1");
+                iue1.setText(u1);
+                String u2= documentSnapshot.getString("iue2");
+                iue2.setText(u2);
+                String u3= documentSnapshot.getString("iue3");
+                iue3.setText(u3);
+
+            }
+        });
+
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,6 +193,21 @@ public class it extends AppCompatActivity {
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                it = new It(intco1.toString(),intco2.toString(),intco3.toString(),acti1.toString(),acti2.toString(),acti3.toString(),alqu1.toString(),alqu2.toString(),alqu3.toString(),otr1.toString(),otr2.toString(),otr3.toString(),sum1.toString(),sum2.toString(),sum3.toString(),iuee1.toString(),iuee2.toString(),iuee3.toString());
+                db.collection("It").document("a")
+                        .set(it)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
                 startActivity(new Intent(getApplicationContext(), iue.class));
             }
         });

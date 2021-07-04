@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(this, presupuesto_caja.class);
         startActivity(siguiente);
     }
+
     public void siguienteComprass(View view){
         Intent siguiente = new Intent(this, comprass.class);
         startActivity(siguiente);

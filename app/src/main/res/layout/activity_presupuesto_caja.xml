@@ -53,6 +53,13 @@
                                 android:onClick="totalpc"
                                 android:text="Calcular Total" />
 
+                            <Button
+                                android:id="@+id/btnNext"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="upload"
+                                android:text="Siguiente" />
+
 
                         </TableRow>
 

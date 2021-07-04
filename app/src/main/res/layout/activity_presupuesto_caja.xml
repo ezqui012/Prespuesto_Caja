@@ -115,27 +115,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/vcon2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/vcon3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Totvcon"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -154,27 +155,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/recses2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/recses3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Totses"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -193,27 +195,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rectre2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rectre3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Tottre"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -234,27 +237,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/toten2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/toten3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Tottee"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -275,21 +279,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/salef2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/salef3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totsalef"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -308,27 +318,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/compp2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/compp3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Totcom"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -347,21 +358,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ss2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ss3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totss"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -380,21 +397,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ap2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ap3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totap"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -413,21 +436,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rss2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rss3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totrss"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -446,21 +475,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rap2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/rap3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totrap"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -479,27 +514,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/cgo2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/cgo3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
                             <TextView
                                 android:id="@+id/Totcgo"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -518,21 +554,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ampr2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ampr3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totamp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -551,21 +593,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/inpr2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/inpr3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totinpr"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -584,21 +632,28 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/iv2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/iv3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+
+                            <TextView
+                                android:id="@+id/Totiva"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -617,21 +672,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/itt2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/itt3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totitt"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -650,21 +711,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/iue2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/iue3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totiue"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -683,21 +750,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ot2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ot3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totot"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -718,21 +791,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ts2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ts3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totts"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -751,21 +830,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/fnp2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/fnp3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totfnp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -784,21 +869,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sfma2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sfma3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totsfma"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -819,21 +910,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sfep2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sfep3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totsfep"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -852,21 +949,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/fcp2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/fcp3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totfcp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -885,21 +988,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/afin2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/afin3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totafin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
 
                         </TableRow>
 
@@ -919,21 +1028,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ifin2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/ifin3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totifin"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                         <TableRow
@@ -954,21 +1069,27 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sf2"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
 
                             <TextView
                                 android:id="@+id/sf3"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text=" " />
+                                android:text="0" />
+                            <TextView
+                                android:id="@+id/Totsf"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="0" />
                         </TableRow>
 
                     </TableLayout>

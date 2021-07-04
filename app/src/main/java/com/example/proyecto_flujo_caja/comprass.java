@@ -73,6 +73,7 @@ public class comprass extends AppCompatActivity {
 
     public void Calculate(View view){
         sigu.setVisibility(View.VISIBLE);
+        calcular.setVisibility(View.INVISIBLE);
 
         String dtsmonth1 = dmonth1.getText().toString();
         String dtsmonth2 = dmonth2.getText().toString();
@@ -149,8 +150,8 @@ public class comprass extends AppCompatActivity {
 
 
         Double xtre1 = 0.0;
-        Double xtre2 = Math.ceil((ingreso1 * ptreinta));
-        Double xtre3 = Math.ceil((ing2 * ptreinta));
+        Double xtre2 = ingreso1 * ptreinta;
+        Double xtre3 = ing2 * ptreinta;
 
         thirty1.setText(xtre1.toString());
         thirty2.setText(xtre2.toString());

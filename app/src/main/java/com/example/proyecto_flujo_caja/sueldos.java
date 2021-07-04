@@ -27,6 +27,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
     private TextView resRetroActivo2;
     private TextView resAporte1;
     private TextView resAporte2;
+    private TextView aporte;
     private Button btnRegistrar;
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.getInstance();
     Sueldos sueldo = new Sueldos();
@@ -50,6 +51,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         retroactivo2 = (TextView)findViewById(R.id.retroActivo2);
         resRetroActivo1 = (TextView)findViewById(R.id.resRetroActivo1);
         resRetroActivo2 = (TextView)findViewById(R.id.resRetroActivo2);
+        aporte = (TextView)findViewById(R.id.textViAporteRecibido);
         btnRegistrar = findViewById(R.id.btnRegistrarSueldo);
         btnRegistrar.setOnClickListener(this);
     }
@@ -62,22 +64,23 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
     }
     private void calculoTotalAntes(){
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
-        double aporte = 0.1671;
-        double res = totalAntes*aporte;
+        double aportePat = Double.parseDouble(aporte.getText().toString());
+        double res = totalAntes*aportePat;
         resAporte1.setText(""+res);
-        sueldo.setTotalGainAntes(res);
+        sueldo.setTotalGainAntes(totalAntes);
+        sueldo.setResAporte1(res);
         //firebaseFirestore.collection("sueldo").add(res);
     }
 
     private void calculoTotalDespues(){
-        double aporte = 0.1671;
+        double aportePat = Double.parseDouble(aporte.getText().toString());
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double totalDespues = (totalAntes*porcentajeIncremento)+totalAntes;
         totalGanadoDespues.setText(""+totalDespues);
-        resAporte2.setText(""+aporte*totalDespues);
+        resAporte2.setText(""+aportePat*totalDespues);
         sueldo.setTotalGainDespues(totalDespues);
-        sueldo.setResAporte2(aporte*totalDespues);
+        sueldo.setResAporte2(aportePat*totalDespues);
         //firebaseFirestore.collection("sueldo").add(totalDespues);
        // firebaseFirestore.collection("sueldo").add(aporte*totalDespues);
 
@@ -90,6 +93,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         int numMesUno = Integer.parseInt(numMeses1.getText().toString());
         double resRetroactivo = numMesUno* res;
         resRetroActivo1.setText(""+resRetroactivo);
+        sueldo.setMes1(numMesUno);
         sueldo.setRetroactivo1(res);
         sueldo.setResRetroactivo1(resRetroactivo);
         //firebaseFirestore.collection("sueldo").add(res);
@@ -99,15 +103,16 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
     }
     private void calculoRetroActivoDos(){
 
-        double aporte = 0.1671;
+        double aportePat = Double.parseDouble(aporte.getText().toString());
         double totalAntes= Double.parseDouble(totalGanadoAntes.getText().toString());
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double resAporteAntes = totalAntes * porcentajeIncremento;
-        double res = aporte * resAporteAntes;
+        double res = aportePat * resAporteAntes;
         retroactivo2.setText(""+ res);
         int numMesDos = Integer.parseInt(numMeses2.getText().toString());
         double resRetroactivo = numMesDos* res;
         resRetroActivo2.setText(""+resRetroactivo);
+        sueldo.setMes2(numMesDos);
         sueldo.setRetroactivo2(res);
         sueldo.setResRetroactivo2(resRetroactivo);
         //firebaseFirestore.collection("sueldo").add(res);

@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.example.proyecto_flujo_caja.Models.Aporte;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class aportepatronal extends AppCompatActivity implements View.OnClickListener{
     private EditText caja;
@@ -16,6 +18,8 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
     private EditText riesgo;
     private TextView resAporte;
     private Button btnRegistrar;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    Aporte aporte = new Aporte();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,13 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         double porcentajeRiesgo = Double.parseDouble(riesgo.getText().toString());
         double res = porcentajeCaja+porcentajeProv+porcentajeAfp+porcentajeSolidario+porcentajeRiesgo;
         resAporte.setText(""+res);
+        aporte.setAfp(porcentajeAfp);
+        aporte.setCaja(porcentajeCaja);
+        aporte.setProvivienda(porcentajeProv);
+        aporte.setSolidario(porcentajeSolidario);
+        aporte.setRiesgo(porcentajeRiesgo);
+        aporte.setResAporte(res);
+        db.collection("Aporte").add(aporte);
         Intent siguienteSueldo = new Intent(this, sueldos.class);
         siguienteSueldo.putExtra("dato", resAporte.getText().toString());
         startActivity(siguienteSueldo);

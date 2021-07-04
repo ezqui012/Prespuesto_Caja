@@ -12,7 +12,11 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private Company company;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        getCompanyInfo();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -40,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
     public void Comenzar(View view)
     {
         Intent siguiente = new Intent(this, CompanyInformation.class);
+        siguiente.putExtra("information", company);
         startActivity(siguiente);
     }
 
@@ -72,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMyAvtivity(View view){
         Intent change = new Intent(this, CompanyInformation.class);
+        change.putExtra("information", company);
         startActivity(change);
     }
 
@@ -80,6 +90,19 @@ public class MainActivity extends AppCompatActivity {
         startActivity(change);
     }
 
+    private void getCompanyInfo(){
+        db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").get().addOnSuccessListener(
+                new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    company = new Company(documentSnapshot.getDouble("sales"), documentSnapshot.getDouble("credit30"),
+                            documentSnapshot.getDouble("credit60"), documentSnapshot.getDouble("about"),
+                            documentSnapshot.getDouble("badDebt"), documentSnapshot.getDouble("interest"));
+                }
+            }
+        });
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

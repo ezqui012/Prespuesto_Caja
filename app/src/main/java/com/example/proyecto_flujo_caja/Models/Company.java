@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Company implements Serializable {
 
@@ -66,5 +68,16 @@ public class Company implements Serializable {
 
     public void setInterest(Double interest) {
         this.interest = interest;
+    }
+
+    public Map<String, Object> getMapInfo(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("sales", this.sales);
+        map.put("credit30", this.credit30);
+        map.put("credit60", this.credit60);
+        map.put("about", this.about);
+        map.put("badDebt", this.badDebt);
+        map.put("interest", this.interest);
+        return  map;
     }
 }

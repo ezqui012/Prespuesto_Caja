@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class InteresIngreso implements Serializable {
 
@@ -125,5 +127,27 @@ public class InteresIngreso implements Serializable {
 
     public String getR60June() {
         return r60June;
+    }
+
+    public Map<String, Object> getMapinteresI(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("ibFebruary", this.ibFebruary);
+        map.put("ibMarch", this.ibMarch);
+        map.put("ibApril", this.ibApril);
+        map.put("ibMay", this.ibMay);
+        map.put("ibJune", this.ibJune);
+        map.put("r30March", this.r30March);
+        map.put("r30April", this.r30April);
+        map.put("r30May", this.r30May);
+        map.put("r30June", this.r30June);
+        map.put("ib60February", this.ib60February);
+        map.put("ib60March", this.ib60March);
+        map.put("ib60April", this.ib60April);
+        map.put("ib60May", this.ib60May);
+        map.put("ib60June", this.ib60June);
+        map.put("r60April", this.r60April);
+        map.put("r60May", this.r60May);
+        map.put("r60June", this.r60June);
+        return map;
     }
 }

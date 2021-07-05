@@ -128,4 +128,9 @@ public class spending_interest extends AppCompatActivity {
         interest_comercial.putExtra("nMes3", mes3);
         startActivity(interest_comercial);
     }
+
+    public void volverinicio(View view){
+        Intent change = new Intent(this, MainActivity.class);
+        startActivity(change);
+    }
 }

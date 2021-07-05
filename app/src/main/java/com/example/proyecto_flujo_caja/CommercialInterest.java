@@ -112,4 +112,9 @@ public class CommercialInterest extends AppCompatActivity {
         startActivity(interest_spending);
     }
 
+    public void volverinicio(View view){
+        Intent change = new Intent(this, MainActivity.class);
+        startActivity(change);
+    }
+
 }

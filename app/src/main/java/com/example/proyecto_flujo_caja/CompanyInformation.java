@@ -121,6 +121,9 @@ public class CompanyInformation extends AppCompatActivity {
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
         interest_comercial.putExtra("informationG", interes);
         interest_comercial.putExtra("informationI", interesI);
+        interest_comercial.putExtra("nMes1", february.getMonth());
+        interest_comercial.putExtra("nMes2", march.getMonth());
+        interest_comercial.putExtra("nMes3", april.getMonth());
         startActivity(interest_comercial);
     }
 }

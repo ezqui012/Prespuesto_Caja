@@ -39,7 +39,6 @@ public class FlujoCaja extends AppCompatActivity {
         setContentView(R.layout.activity_flujo_caja);
 
         flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
-        //flujo = new FlujoCajaProy(210000.00, 212131.00, 0.00, 0.00, 0.00, 0.00, 16000.00);
 
         actividadesOp = (TextView) findViewById(R.id.Input_total1);
         ingresosdOp = (TextView) findViewById(R.id.Input_ingresoOP);

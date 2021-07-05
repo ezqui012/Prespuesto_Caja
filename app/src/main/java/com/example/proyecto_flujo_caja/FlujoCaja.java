@@ -33,12 +33,26 @@ public class FlujoCaja extends AppCompatActivity {
     private TextView efectivoIn;
     private TextView saldoProy;
 
+    private Double ingreos;
+    private Double gastos;
+    private Double fuente;
+    private Double uso;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flujo_caja);
 
-        flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+        ingreos = (Double) getIntent().getSerializableExtra("ingresoOP");
+        gastos = (Double) getIntent().getSerializableExtra("gastoOP");
+        fuente = (Double) getIntent().getSerializableExtra("fuentes");
+        uso = (Double) getIntent().getSerializableExtra("usos");
+
+        //flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+
+        flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 100.0);
+
+        db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").update(flujo.getMapInfo());
 
         actividadesOp = (TextView) findViewById(R.id.Input_total1);
         ingresosdOp = (TextView) findViewById(R.id.Input_ingresoOP);

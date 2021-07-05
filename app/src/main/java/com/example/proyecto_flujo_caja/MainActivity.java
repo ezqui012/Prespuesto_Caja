@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private SalesProjection march;
     private SalesProjection april;
 
+    private Double ingreosoOP;
+    private Double gastosOP;
+    private Double fuentes;
+    private Double usos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,7 +107,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void verFlujo(View view){
         Intent change = new Intent(this, FlujoCaja.class);
-        change.putExtra("flujoCajaInfo", flujo);
+        //change.putExtra("flujoCajaInfo", flujo);
+        change.putExtra("ingresoOP", ingreosoOP);
+        change.putExtra("gastoOP", gastosOP);
+        change.putExtra("fuentes", fuentes);
+        change.putExtra("usos", usos);
         startActivity(change);
     }
 
@@ -121,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadInfoCaja(){
-        db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").get().addOnSuccessListener(
+        /*db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").get().addOnSuccessListener(
                 new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
@@ -132,7 +141,19 @@ public class MainActivity extends AppCompatActivity {
                              Double.parseDouble(documentSnapshot.getString("efectivoIn")));
                 }
             }
-        });
+        });*/
+        db.collection("PresupuestoCaja").document("a").get().addOnSuccessListener(
+                new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if(documentSnapshot.exists()){
+                            ingreosoOP = Double.parseDouble(documentSnapshot.getString("tot1"));
+                            gastosOP = Double.parseDouble(documentSnapshot.getString("tot2"));
+                            fuentes = Double.parseDouble(documentSnapshot.getString("tot4"));
+                            usos = Double.parseDouble(documentSnapshot.getString("tot5"));
+                        }
+                    }
+                });
     }
 
     private void loadSolds(){

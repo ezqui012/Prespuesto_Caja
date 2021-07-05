@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FlujoCajaProy implements Serializable {
 
@@ -98,5 +100,17 @@ public class FlujoCajaProy implements Serializable {
 
     public Double getEfectivoIn() {
         return efectivoIn;
+    }
+
+    public Map<String, Object> getMapInfo(){
+        Map<String, Object> map = new HashMap<>();
+        map.put("efectivoIn", this.efectivoIn);
+        map.put("fuentes", this.fuentes);
+        map.put("gastosC", this.gastosC);
+        map.put("gastosOp", this.gastosOp);
+        map.put("ingresosC", this.ingresosC);
+        map.put("ingresosdOp", this.ingresosdOp);
+        map.put("usos", this.usos);
+        return map;
     }
 }

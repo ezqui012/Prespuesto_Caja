@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
+import com.example.proyecto_flujo_caja.Models.SalesProjection;
 import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     private Company company;
     private FlujoCajaProy flujo;
+    private SalesProjection february;
+    private SalesProjection march;
+    private SalesProjection april;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         getCompanyInfo();
         loadInfoCaja();
+        loadSolds();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -52,6 +57,9 @@ public class MainActivity extends AppCompatActivity {
     {
         Intent siguiente = new Intent(this, CompanyInformation.class);
         siguiente.putExtra("information", company);
+        siguiente.putExtra("mes1", february);
+        siguiente.putExtra("mes2", march);
+        siguiente.putExtra("mes3", april);
         startActivity(siguiente);
     }
 
@@ -86,6 +94,9 @@ public class MainActivity extends AppCompatActivity {
     public void showMyAvtivity(View view){
         Intent change = new Intent(this, CompanyInformation.class);
         change.putExtra("information", company);
+        change.putExtra("mes1", february);
+        change.putExtra("mes2", march);
+        change.putExtra("mes3", april);
         startActivity(change);
     }
 
@@ -120,6 +131,20 @@ public class MainActivity extends AppCompatActivity {
                              Double.parseDouble(documentSnapshot.getString("fuentes")), Double.parseDouble(documentSnapshot.getString("usos")),
                              Double.parseDouble(documentSnapshot.getString("efectivoIn")));
                 }
+            }
+        });
+    }
+
+    private void loadSolds(){
+        db.collection("venta").document("a").get().addOnSuccessListener(
+                new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                 if(documentSnapshot.exists()){
+                    february = new SalesProjection(documentSnapshot.getString("mes1"), Double.parseDouble(documentSnapshot.getString("venta1")), Double.parseDouble(documentSnapshot.getString("precio1")));
+                    march = new SalesProjection(documentSnapshot.getString("mes2"), Double.parseDouble(documentSnapshot.getString("venta2")), Double.parseDouble(documentSnapshot.getString("precio2")));
+                    april = new SalesProjection(documentSnapshot.getString("mes3"), Double.parseDouble(documentSnapshot.getString("venta3")), Double.parseDouble(documentSnapshot.getString("precio3")));
+                 }
             }
         });
     }

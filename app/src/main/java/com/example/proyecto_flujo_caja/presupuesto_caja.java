@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.*;
 import android.view.View;
 import android.widget.*;
 import android.widget.Button;
@@ -17,6 +18,7 @@ import android.os.*;
 
 import androidx.appcompat.app.*;
 
+import com.example.proyecto_flujo_caja.Models.*;
 import com.google.android.gms.tasks.*;
 import com.google.firebase.database.*;
 import com.google.firebase.database.annotations.*;
@@ -24,15 +26,22 @@ import com.google.firebase.firestore.*;
 
 public class presupuesto_caja extends AppCompatActivity {
 
-    TextView Totts,Tottee,Totitt,Totses,Totiva,Tottre,Totcom,Totcgo,Totvcon,month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
-
+    TextView Totafin,Totfcp,Totiue,Totss,Totap,Totrap,Totrss,Totts,Tottee,Totitt,Totses,Totiva,Tottre,Totcom,Totcgo,Totvcon,month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
+    PresupuestoCaja pcaja;
 String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,cgoo2,cgoo3,vcontt1,vcontt2,vcontt3, comp1,comp2,comp3;
-
+    FirebaseFirestore dba = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_presupuesto_caja);
 
+        Totafin=findViewById(R.id.Totafin);
+        Totfcp=findViewById(R.id.Totfcp);
+        Totiue=findViewById(R.id.Totiue);
+        Totap=findViewById(R.id.Totap);
+        Totrap=findViewById(R.id.Totrap);
+        Totrss=findViewById(R.id.Totrss);
+        Totss=findViewById(R.id.Totss);
         Totts=findViewById(R.id.Totts);
         Tottee=findViewById(R.id.Tottee);
         Totses=findViewById(R.id.Totses);
@@ -326,8 +335,24 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                sfma2.setText(sfPC1.toString());
                sfma3.setText(sfepc2.toString());
 
+    }
+
+        public void upload(View v){
 
 
+        String tott1=Tottee.getText().toString();
+        Double tott22=(Double.parseDouble(Totcgo.getText().toString())+Double.parseDouble(Totss.getText().toString())+Double.parseDouble(Totap.getText().toString())+Double.parseDouble(Totrss.getText().toString())+Double.parseDouble(Totrap.getText().toString())+Double.parseDouble(Totap.getText().toString()));
+        Double tott33= (Double.parseDouble(Totitt.getText().toString())+Double.parseDouble(Totiva.getText().toString())+Double.parseDouble(Totiue.getText().toString()));
+        Double tot2=tott22+tott33;
+        String Tot2=tot2.toString();
+        String tot3=sfma1.getText().toString();
+        String Tottfcp=Totfcp.getText().toString();
+        String Tottafin=Totafin.getText().toString();
+
+             pcaja=new PresupuestoCaja(tott1,Tot2,tot3,Tottfcp,Tottafin);
+
+            dba.collection("PresupuestoCaja").document("a")
+                    .set(pcaja);
 
 
     }

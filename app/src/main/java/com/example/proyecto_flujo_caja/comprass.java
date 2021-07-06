@@ -10,6 +10,7 @@ import android.widget.*;
 import android.widget.Button;
 
 import com.example.proyecto_flujo_caja.Models.*;
+import com.google.android.gms.tasks.*;
 import com.google.firebase.firestore.*;
 
 
@@ -19,8 +20,11 @@ public class comprass extends AppCompatActivity {
     EditText contado, treinta, venta, dmonth1,dmonth2,dmonth3,price1,price2,price3;
     TextView month1, month2, month3,ibru1, ibru2,ibru3,comp1,comp2,comp3, thirty1, thirty2,thirty3, compContt1,compCont2,compCont3;
     Spinner opciones;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private Double pcontado, ptreinta, pventas;
     Button sigu,calcular;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +65,39 @@ public class comprass extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, opc);
         opciones.setAdapter(adapter);
 
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("compras").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String alcontado= documentSnapshot.getString("alcont");
+                contado.setText(alcontado);
+                String monthh1= documentSnapshot.getString("month1");
+                month1.setText(monthh1);
+                String monthh2= documentSnapshot.getString("month2");
+                month2.setText(monthh2);
+                String monthh3= documentSnapshot.getString("month3");
+                month3.setText(monthh3);
+
+                String tre= documentSnapshot.getString("cont30");
+                treinta.setText(tre);
+                String com1 =documentSnapshot.getString("comp1");
+                dmonth1.setText(com1);
+                String com2 =documentSnapshot.getString("comp2");
+                dmonth2.setText(com2);
+                String com3 =documentSnapshot.getString("comp3");
+                dmonth3.setText(com3);
+                String pre1 =documentSnapshot.getString("price1");
+                price1.setText(pre1);
+                String pre2 =documentSnapshot.getString("price2");
+                price2.setText(pre2);
+                String pre3 =documentSnapshot.getString("price3");
+                price3.setText(pre3);
+                String ventt =documentSnapshot.getString("vent");
+                venta.setText(ventt);
+
+            }
+        });
+
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,17 +105,21 @@ public class comprass extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
             }
         });
+        sigu.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
+            }
+
+
+        });
 
     }
 
     public void Calculate(View view){
         sigu.setVisibility(View.VISIBLE);
-        sigu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
-            }
-        });
+
         calcular.setVisibility(View.INVISIBLE);
 
         String dtsmonth1 = dmonth1.getText().toString();
@@ -163,10 +204,23 @@ public class comprass extends AppCompatActivity {
         thirty2.setText(xtre2.toString());
         thirty3.setText(xtre3.toString());
 
+
+        String mes1= (String) month1.getText();
+        String mes2= (String) month2.getText();
+        String mes3= (String) month3.getText();
+
+        compra = new Compras(conta,dtmonth1.toString(), dtmonth2.toString(),dtmonth3.toString(),trent,mes1,mes2,mes3,dtsprice,dtsprice2,dtsprice3,ven);
+        db.collection("compras").document("a")
+                .set(compra);
+
+
+
     }
+
     public void anteriorMain(View view){
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
     }
+
 
 }

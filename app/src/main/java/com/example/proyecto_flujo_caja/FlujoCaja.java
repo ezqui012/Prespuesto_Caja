@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
-import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FlujoCaja extends AppCompatActivity {
@@ -20,23 +16,23 @@ public class FlujoCaja extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    private TextView actividadesOp;
-    private TextView ingresosdOp;
-    private TextView gastosOp;
-    private TextView actividadesI;
-    private TextView ingresosC;
-    private TextView gastosC;
-    private TextView actividadFin;
-    private TextView fuentes;
-    private TextView usos;
-    private TextView incremento;
-    private TextView efectivoIn;
-    private TextView saldoProy;
+    TextView actividadesOp;
+    TextView ingresosdOp;
+    TextView gastosOp;
+    TextView actividadesI;
+    TextView ingresosC;
+    TextView gastosC;
+    TextView actividadFin;
+    TextView fuentes;
+    TextView usos;
+    TextView incremento;
+    TextView efectivoIn;
+    TextView saldoProy;
 
-    private Double ingreos;
-    private Double gastos;
-    private Double fuente;
-    private Double uso;
+    Double ingreos;
+    Double gastos;
+    Double fuente;
+    Double uso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +44,7 @@ public class FlujoCaja extends AppCompatActivity {
         fuente = (Double) getIntent().getSerializableExtra("fuentes");
         uso = (Double) getIntent().getSerializableExtra("usos");
 
-        //flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+        flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
 
         flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 100.0);
 

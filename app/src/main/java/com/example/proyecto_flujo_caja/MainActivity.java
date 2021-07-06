@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void verFlujo(View view){
         Intent change = new Intent(this, FlujoCaja.class);
-        //change.putExtra("flujoCajaInfo", flujo);
+        change.putExtra("flujoCajaInfo", flujo);
         change.putExtra("ingresoOP", ingreosoOP);
         change.putExtra("gastoOP", gastosOP);
         change.putExtra("fuentes", fuentes);
@@ -130,18 +130,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadInfoCaja(){
-        /*db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").get().addOnSuccessListener(
-                new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                 if(documentSnapshot.exists()){
-                     flujo = new FlujoCajaProy(Double.parseDouble(documentSnapshot.getString("ingresosdOp")), Double.parseDouble(documentSnapshot.getString("gastosOp")),
-                             Double.parseDouble(documentSnapshot.getString("ingresosC")), Double.parseDouble(documentSnapshot.getString("gastosC")),
-                             Double.parseDouble(documentSnapshot.getString("fuentes")), Double.parseDouble(documentSnapshot.getString("usos")),
-                             Double.parseDouble(documentSnapshot.getString("efectivoIn")));
-                }
-            }
-        });*/
         db.collection("PresupuestoCaja").document("a").get().addOnSuccessListener(
                 new OnSuccessListener<DocumentSnapshot>() {
                     @Override

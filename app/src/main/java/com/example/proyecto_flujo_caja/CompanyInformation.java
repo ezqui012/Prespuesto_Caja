@@ -12,33 +12,36 @@ import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.InteresGasto;
 import com.example.proyecto_flujo_caja.Models.InteresIngreso;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class CompanyInformation extends AppCompatActivity {
 
-    private Company company;
+    Company company;
 
-    private EditText input_sales;
-    private EditText input_credit30;
-    private EditText input_credit60;
-    private EditText input_about;
-    private EditText input_badDebt;
-    private EditText input_interest;
+    EditText input_sales;
+    EditText input_credit30;
+    EditText input_credit60;
+    EditText input_about;
+    EditText input_badDebt;
+    EditText input_interest;
 
-    private Double sales;
-    private Double credit30;
-    private Double credit60;
-    private Double about;
-    private Double badDebt;
-    private Double interest;
+    Double sales;
+    Double credit30;
+    Double credit60;
+    Double about;
+    Double badDebt;
+    Double interest;
 
-    private InteresGasto interes;
-    private InteresIngreso interesI;
+    InteresGasto interes;
+    InteresIngreso interesI;
 
-    private SalesProjection february;
-    private SalesProjection march;
-    private SalesProjection april;
+    SalesProjection february;
+    SalesProjection march;
+    SalesProjection april;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -51,6 +54,7 @@ public class CompanyInformation extends AppCompatActivity {
         february = (SalesProjection) getIntent().getSerializableExtra("mes1");
         march = (SalesProjection) getIntent().getSerializableExtra("mes2");
         april = (SalesProjection) getIntent().getSerializableExtra("mes3");
+
 
         input_sales = (EditText) findViewById(R.id.input_sales);
         input_credit30 = (EditText) findViewById(R.id.input_credit30);

@@ -14,7 +14,7 @@ public class Inicio extends AppCompatActivity {
         setContentView(R.layout.activity_inicio);
     }
     public void iniFlujo(View view){
-        Intent venta = new Intent(this, ventas.class);
+        Intent venta = new Intent(this, proyeccion_ventas.class);
         startActivity(venta);
     }
     public void sinFlujo(View view){

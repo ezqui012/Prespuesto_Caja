@@ -349,11 +349,12 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         String Tottfcp=Totfcp.getText().toString();
         String Tottafin=Totafin.getText().toString();
 
-             pcaja=new PresupuestoCaja(tott1,Tot2,tot3,Tottfcp,Tottafin);
+        pcaja=new PresupuestoCaja(tott1,Tot2,tot3,Tottfcp,Tottafin);
 
-            dba.collection("PresupuestoCaja").document("a")
+        dba.collection("PresupuestoCaja").document("a")
                     .set(pcaja);
-
+        Intent flujoCaj = new Intent(this, FlujoCaja.class);
+        startActivity(flujoCaj);
 
     }
        }

@@ -21,6 +21,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
+import com.example.proyecto_flujo_caja.Models.InteresGasto;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
 import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -64,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
     private Double iue1, iue2, iue3;
     private Double totIt1, totIt2, totIt3;
 
+    private String comprasB1, comprasB2, comprasB3;
+    private String ib30g1, ib30g2, ib30g3;
+    private String r30g2, r30g3;
+    private String ib60g1, ib60g2, ib60g3;
+    private String r60g3;
+
     private static  final int CREATEPDF = 1;
 
     @Override
@@ -79,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
         cargarCompras();
         cargarIva();
         cargarIt();
+        cargarInteresG();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -249,6 +257,28 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void cargarInteresG(){
+        db.collection("interesGasto").document("2UOhIn6STMTCQBGjA9Sk").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    comprasB1 = documentSnapshot.getString("igFebruary");
+                    comprasB2 = documentSnapshot.getString("igMarch");
+                    comprasB3 = documentSnapshot.getString("igApril");
+                    ib30g1 = documentSnapshot.getString("ibFebruary");
+                    ib30g2 = documentSnapshot.getString("ibMarch");
+                    ib30g3 = documentSnapshot.getString("ibApril");
+                    r30g2 = documentSnapshot.getString("r30March");
+                    r30g3 = documentSnapshot.getString("r30April");
+                    ib60g1 = documentSnapshot.getString("ib60February");
+                    ib60g2 = documentSnapshot.getString("ib60March");
+                    ib60g3 = documentSnapshot.getString("ib60April");
+                    r60g3 = documentSnapshot.getString("r60April");
+                }
+            }
+        });
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -390,6 +420,59 @@ public class MainActivity extends AppCompatActivity {
                 canvas.drawText(" ", 50, 1585, paint);
 
                 pdfDocument.finishPage(page);
+
+                //Pagina 2
+                Paint paint2 = new Paint();
+                PdfDocument.PageInfo pageInfo2 = new PdfDocument.PageInfo.Builder(1240, 1754, 2).create();
+                PdfDocument.Page page2 = pdfDocument.startPage(pageInfo2);
+                Canvas canvas2 = page2.getCanvas();
+
+                //Interes comercial
+                paint2.setTextAlign(Paint.Align.LEFT);
+                paint2.setTextSize(30f);
+                paint2.setFakeBoldText(true);
+                canvas2.drawText("Interes Comercial", 50, 80, paint2);
+                canvas2.drawText(" ", 50, 90, paint2);
+                paint2.setTextAlign(Paint.Align.LEFT);
+                paint2.setTextSize(24f);
+                paint2.setFakeBoldText(false);
+                canvas2.drawText("Mes: "+february.getMonth(), 50, 125, paint2);
+                canvas2.drawText("Compras brutas: "+comprasB1, 50, 155, paint2);
+                canvas2.drawText("Ingreso bruto 30 dias: "+ib30g1, 50, 185, paint2);
+                canvas2.drawText("Ingreso Bruto 60 dias: "+ib60g1, 50, 215, paint2);
+                canvas2.drawLine(48, 130, pageInfo.getPageWidth()-100, 140, paint2);
+                canvas2.drawLine(48, 160, pageInfo.getPageWidth()-100, 170, paint2);
+                canvas2.drawLine(48, 190, pageInfo.getPageWidth()-100, 200, paint2);
+                canvas2.drawLine(48, 220, pageInfo.getPageWidth()-100, 230, paint2);
+                canvas2.drawText(" ", 50, 275, paint2);
+
+                canvas2.drawText("Mes: "+march.getMonth(), 50, 305, paint2);
+                canvas2.drawText("Compras brutas: "+comprasB2, 50, 335, paint2);
+                canvas2.drawText("Ingreso bruto 30 dias: "+ib30g2, 50, 365, paint2);
+                canvas2.drawText("Recuperacion 30 dias: "+r30g2, 50, 395, paint2);
+                canvas2.drawText("Ingreso Bruto 60 dias: "+ib60g2, 50, 425, paint2);
+                canvas2.drawLine(48, 310, pageInfo.getPageWidth()-100, 320, paint2);
+                canvas2.drawLine(48, 340, pageInfo.getPageWidth()-100, 350, paint2);
+                canvas2.drawLine(48, 370, pageInfo.getPageWidth()-100, 380, paint2);
+                canvas2.drawLine(48, 400, pageInfo.getPageWidth()-100, 410, paint2);
+                canvas2.drawLine(48, 430, pageInfo.getPageWidth()-100, 440, paint2);
+                canvas2.drawText(" ", 50, 475, paint2);
+
+                canvas2.drawText("Mes: "+april.getMonth(), 50, 505, paint2);
+                canvas2.drawText("Compras brutas: "+comprasB3, 50, 535, paint2);
+                canvas2.drawText("Ingreso bruto 30 dias: "+ib30g3, 50, 565, paint2);
+                canvas2.drawText("Recuperacion 30 dias: "+r30g3, 50, 595, paint2);
+                canvas2.drawText("Ingreso Bruto 60 dias: "+ib60g3, 50, 625, paint2);
+                canvas2.drawText("Recuperacion 60 dias: "+r60g3, 50, 655, paint2);
+                canvas2.drawLine(48, 510, pageInfo.getPageWidth()-100, 520, paint2);
+                canvas2.drawLine(48, 540, pageInfo.getPageWidth()-100, 550, paint2);
+                canvas2.drawLine(48, 570, pageInfo.getPageWidth()-100, 580, paint2);
+                canvas2.drawLine(48, 600, pageInfo.getPageWidth()-100, 610, paint2);
+                canvas2.drawLine(48, 630, pageInfo.getPageWidth()-100, 640, paint2);
+                canvas2.drawLine(48, 660, pageInfo.getPageWidth()-100, 670, paint2);
+                canvas2.drawText(" ", 50, 705, paint2);
+
+                pdfDocument.finishPage(page2);
                 grabarPDF(uri, pdfDocument);
             }
         }

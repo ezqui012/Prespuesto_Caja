@@ -88,4 +88,30 @@ public class Compras {
     public void setComp3(String comp3) {
         this.comp3 = comp3;
     }
+
+    public String getPrecio1() {
+        return precio1;
+    }
+
+    public void setPrecio1(String precio1) {
+        this.precio1 = precio1;
+    }
+
+    public String getPrecio2() {
+        return precio2;
+    }
+
+    public void setPrecio2(String precio2) {
+        this.precio2 = precio2;
+    }
+
+    public String getPrecio3() {
+        return precio3;
+    }
+
+    public void setPrecio3(String precio3) {
+        this.precio3 = precio3;
+    }
+
+
 }

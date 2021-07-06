@@ -86,11 +86,11 @@ public class comprass extends AppCompatActivity {
                 dmonth2.setText(com2);
                 String com3 =documentSnapshot.getString("comp3");
                 dmonth3.setText(com3);
-                String pre1 =documentSnapshot.getString("precio1");
+                String pre1 =documentSnapshot.getString("price1");
                 price1.setText(pre1);
-                String pre2 =documentSnapshot.getString("precio2");
+                String pre2 =documentSnapshot.getString("price2");
                 price2.setText(pre2);
-                String pre3 =documentSnapshot.getString("precio3");
+                String pre3 =documentSnapshot.getString("price3");
                 price3.setText(pre3);
                 String ventt =documentSnapshot.getString("vent");
                 venta.setText(ventt);

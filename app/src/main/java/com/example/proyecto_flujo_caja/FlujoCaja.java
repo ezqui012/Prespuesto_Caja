@@ -44,7 +44,7 @@ public class FlujoCaja extends AppCompatActivity {
         fuente = (Double) getIntent().getSerializableExtra("fuentes");
         uso = (Double) getIntent().getSerializableExtra("usos");
 
-        flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+        //flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
 
         flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 16000.0);
 

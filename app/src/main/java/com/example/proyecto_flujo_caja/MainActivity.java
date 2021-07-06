@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
     private String ib60g1, ib60g2, ib60g3;
     private String r60g3;
 
+    private FlujoCajaProy flujo;
+
     private static  final int CREATEPDF = 1;
 
     @Override
@@ -187,9 +189,14 @@ public class MainActivity extends AppCompatActivity {
                             gastosOP = Double.parseDouble(documentSnapshot.getString("tot2"));
                             fuentes = Double.parseDouble(documentSnapshot.getString("tot4"));
                             usos = Double.parseDouble(documentSnapshot.getString("tot5"));
+                            newFlujoCaja();
                         }
                     }
                 });
+    }
+
+    private void newFlujoCaja(){
+        flujo = new FlujoCajaProy(ingreosoOP, gastosOP, 0.0, 0.0, fuentes, usos, 16000.0);
     }
 
     private void loadSolds(){
@@ -471,6 +478,44 @@ public class MainActivity extends AppCompatActivity {
                 canvas2.drawLine(48, 630, pageInfo.getPageWidth()-100, 640, paint2);
                 canvas2.drawLine(48, 660, pageInfo.getPageWidth()-100, 670, paint2);
                 canvas2.drawText(" ", 50, 705, paint2);
+
+                //Flujo de caja
+                paint2.setTextAlign(Paint.Align.LEFT);
+                paint2.setTextSize(30f);
+                paint2.setFakeBoldText(true);
+                canvas2.drawText("Flujo de caja Proyectado", 50, 755, paint2);
+                canvas2.drawText(" ", 50, 785, paint2);
+                paint2.setTextAlign(Paint.Align.LEFT);
+                paint2.setTextSize(24f);
+                paint2.setFakeBoldText(false);
+                canvas2.drawText("Flujo de efectivo proyectado por actividades de operacion:  "+flujo.getActividadesOp(), 50, 815, paint2);
+                canvas2.drawText("Ingresos de operacion: "+flujo.getIngresosdOp(), 50, 845, paint2);
+                canvas2.drawText("(-) Gastos de operacion: "+flujo.getGastosOp(), 50, 875, paint2);
+                canvas2.drawLine(48, 850, pageInfo.getPageWidth()-100, 860, paint2);
+                canvas2.drawLine(48, 880, pageInfo.getPageWidth()-100, 890, paint2);
+                canvas2.drawText(" ", 50, 905, paint2);
+
+                canvas2.drawText("Flujo de efectivo por actividades de invercion:  "+flujo.getActividadesI(), 50, 935, paint2);
+                canvas2.drawText("Ingresos de capital: "+flujo.getIngresosC(), 50, 965, paint2);
+                canvas2.drawText("(-) Gastos de gastos de capital: "+flujo.getGastosC(), 50, 995, paint2);
+                canvas2.drawLine(48, 970, pageInfo.getPageWidth()-100, 980, paint2);
+                canvas2.drawLine(48, 1000, pageInfo.getPageWidth()-100, 1010, paint2);
+                canvas2.drawText(" ", 50, 1025, paint2);
+
+                canvas2.drawText("Flujo de efectivo por actividades de financiamiento:  "+flujo.getActividadFin(), 50, 1055, paint2);
+                canvas2.drawText("Fuentes: "+flujo.getFuentes(), 50, 1085, paint2);
+                canvas2.drawText("(-) Usos: "+flujo.getUsos(), 50, 1115, paint2);
+                canvas2.drawLine(48, 1090, pageInfo.getPageWidth()-100, 1100, paint2);
+                canvas2.drawLine(48, 1120, pageInfo.getPageWidth()-100, 1130, paint2);
+                canvas2.drawText(" ", 50, 1145, paint2);
+
+                canvas2.drawText("Incremento proyectado del efectivo del periodo:  "+flujo.getIncremento(), 50, 1175, paint2);
+                canvas2.drawText("Efectivo al inicio del periodo: "+flujo.getEfectivoIn(), 50, 1205, paint2);
+                canvas2.drawText("Saldo efectivo final proyectado "+flujo.getSaldoProy(), 50, 1235, paint2);
+                canvas2.drawLine(48, 1180, pageInfo.getPageWidth()-100, 1190, paint2);
+                canvas2.drawLine(48, 1210, pageInfo.getPageWidth()-100, 1220, paint2);
+                canvas2.drawLine(48, 1240, pageInfo.getPageWidth()-100, 1250, paint2);
+                canvas2.drawText(" ", 50, 1265, paint2);
 
                 pdfDocument.finishPage(page2);
                 grabarPDF(uri, pdfDocument);

@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         getCompanyInfo();
-
+        obtenerDatos();
 
 
 
@@ -50,17 +50,15 @@ public class MainActivity extends AppCompatActivity {
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                int t1=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t2=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t3=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t4=Integer.parseInt(documentSnapshot.getString("tot1"));
+                total1=Integer.parseInt(documentSnapshot.getString("tot1"));
+                total2=Integer.parseInt(documentSnapshot.getString("tot2"));
+                total3=Integer.parseInt(documentSnapshot.getString("tot1"));
+                total4=Integer.parseInt(documentSnapshot.getString("tot1"));
 
             }
         });
 
-        Intent siguiente = new Intent(this, CompanyInformation.class);
-        siguiente.putExtra("information", company);
-        startActivity(siguiente);
+
     }
 
     public void Siguiente(View view){
@@ -93,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(siguiente);
     }
     public void siguienteGrafico(View view){
-        obtenerDatos();
         Intent graficos = new Intent(this, grafico.class);
         graficos.putExtra("total",total1);
         graficos.putExtra("total2",total2);

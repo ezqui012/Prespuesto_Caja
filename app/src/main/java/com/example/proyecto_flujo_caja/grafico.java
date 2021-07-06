@@ -46,49 +46,23 @@ public class grafico extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafico);
-        text=(TextView)findViewById(R.id.prueba);
-        text2=(TextView)findViewById(R.id.prueba2);
-        obtenerDatos();
+        total1=(int) getIntent().getSerializableExtra("total");
+        total2=(int)getIntent().getSerializableExtra("total2");
+        total3=(int)getIntent().getSerializableExtra("total3");
+        total4=(int)getIntent().getSerializableExtra("total4");
 
         totales[0]=30;
         totales[1]=total2;
         totales[2]=total3;
         totales[3]=total4;
-        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("PresupuestoCaja").document("a");
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String t1=documentSnapshot.getString("tot1");
-                total1=Integer.parseInt(t1);
-                text.setText(""+total1);
-                int t2=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t3=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t4=Integer.parseInt(documentSnapshot.getString("tot1"));
-            }
-        });
-        text2.setText("HH"+p2);
 
-    //    barChart=(BarChart)findViewById(R.id.barChart);
-  //      pieChart=(PieChart)findViewById(R.id.pieChart);
-//        createCharts();
+       barChart=(BarChart)findViewById(R.id.barChart);
 
-
-
-
-
-
-
-
+       createCharts();
 
     }
 
-    private void obtenerDatos(){
-        Bundle extras = getIntent().getExtras();
-        p1 = extras.getString("total");
-        p2 = extras.getString("total1");
-        p3 = extras.getString("tota2");
-        p4 = extras.getString("tota3");
-    }
+
     private Chart getSameChart(Chart chart, String descripcion, int textColor, int background, int animateY){
         chart.getDescription().setText(descripcion);
         chart.getDescription().setTextSize(15);
@@ -150,12 +124,6 @@ public class grafico extends AppCompatActivity {
         axisLeftY(barChart.getAxisLeft());
         axisRight(barChart.getAxisRight());
 
-     //   pieChart=(PieChart)getSameChart(pieChart, "ventas",Color.GRAY, Color.MAGENTA,3000);
-       // pieChart.setHoleRadius(10);
-        //pieChart.setTransparentCircleRadius(12);
-       // pieChart.setData(getPieData());
-     //   pieChart.invalidate();
-        //pieChart.setDrawHoleEnabled(false);
     }
 
     private DataSet getData(DataSet dataSet){
@@ -173,11 +141,6 @@ public class grafico extends AppCompatActivity {
         return barData;
     }
 
-    private PieData getPieData(){
-        PieDataSet pieDataSet = (PieDataSet)getData(new PieDataSet(getPieEntries(),""));
-        pieDataSet.setSliceSpace(2);
-        pieDataSet.setValueFormatter(new PercentFormatter());
-        return new PieData(pieDataSet);
-    }
+
 
 }

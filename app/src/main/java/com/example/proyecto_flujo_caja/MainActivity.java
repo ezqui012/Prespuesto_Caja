@@ -56,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
     private Double usos;
 
     private String compra1, compra2, compra3;
+    private String iva1, iva2, iva3;
+    private String iGasto1, iGasto2, iGasto3;
+    private String iComp1, iComp2, iComp3;
+
+    private Double it1, it2, it3;
+    private Double iue1, iue2, iue3;
+    private Double totIt1, totIt2, totIt3;
 
     private static  final int CREATEPDF = 1;
 
@@ -70,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
         loadInfoCaja();
         loadSolds();
         cargarCompras();
+        cargarIva();
+        cargarIt();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -202,6 +211,44 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void cargarIva(){
+        db.collection("Iva").document("a").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    iva1 = documentSnapshot.getString("iva1");
+                    iva2 = documentSnapshot.getString("iva2");
+                    iva3 = documentSnapshot.getString("iva3");
+                    iGasto1 = documentSnapshot.getString("gastosop1");
+                    iGasto2 = documentSnapshot.getString("gastosop2");
+                    iGasto3 = documentSnapshot.getString("gastosop3");
+                    iComp1 = documentSnapshot.getString("compras1");
+                    iComp2 = documentSnapshot.getString("compras2");
+                    iComp3 = documentSnapshot.getString("compras3");
+                }
+            }
+        });
+    }
+
+    private void cargarIt(){
+        db.collection("It").document("a").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    it1 = Double.parseDouble(documentSnapshot.getString("it1"));
+                    it2 = Double.parseDouble(documentSnapshot.getString("it2"));
+                    it3 = Double.parseDouble(documentSnapshot.getString("it3"));
+                    iue1 = Double.parseDouble(documentSnapshot.getString("iue1"));
+                    iue2 = Double.parseDouble(documentSnapshot.getString("iue2"));
+                    iue3 = Double.parseDouble(documentSnapshot.getString("iue3"));
+                    totIt1 = it1 - iue1;
+                    totIt2 = it2 - iue2;
+                    totIt3 = it3 - iue3;
+                }
+            }
+        });
+    }
+
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -262,7 +309,85 @@ public class MainActivity extends AppCompatActivity {
                 canvas.drawLine(48, 550, pageInfo.getPageWidth()-100, 560, paint);
                 canvas.drawLine(48, 580, pageInfo.getPageWidth()-100, 590, paint);
                 canvas.drawLine(48, 610, pageInfo.getPageWidth()-100, 620, paint);
-                canvas.drawText(" ", 50, 455, paint);
+                canvas.drawText(" ", 50, 635, paint);
+
+                //IVA
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(30f);
+                paint.setFakeBoldText(true);
+                canvas.drawText("IVA", 50, 640, paint);
+                canvas.drawText(" ", 50, 660, paint);
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(24f);
+                paint.setFakeBoldText(false);
+                canvas.drawText("Mes: "+february.getMonth(), 50, 690, paint);
+                canvas.drawText("Compras materia prima: "+iComp1, 50, 720, paint);
+                canvas.drawText("Gastos operativos: "+iGasto1, 50, 750, paint);
+                canvas.drawText("Saldo a favor del fisco: "+iva1, 50, 780, paint);
+                canvas.drawLine(48, 695, pageInfo.getPageWidth()-100, 705, paint);
+                canvas.drawLine(48, 725, pageInfo.getPageWidth()-100, 735, paint);
+                canvas.drawLine(48, 755, pageInfo.getPageWidth()-100, 765, paint);
+                canvas.drawLine(48, 785, pageInfo.getPageWidth()-100, 795, paint);
+                canvas.drawText(" ", 50, 810, paint);
+
+                canvas.drawText("Mes: "+march.getMonth(), 50, 840, paint);
+                canvas.drawText("Compras materia prima: "+iComp2, 50, 870, paint);
+                canvas.drawText("Gastos operativos: "+iGasto2, 50, 900, paint);
+                canvas.drawText("Saldo a favor del fisco: "+iva2, 50, 930, paint);
+                canvas.drawLine(48, 845, pageInfo.getPageWidth()-100, 855, paint);
+                canvas.drawLine(48, 875, pageInfo.getPageWidth()-100, 885, paint);
+                canvas.drawLine(48, 905, pageInfo.getPageWidth()-100, 915, paint);
+                canvas.drawLine(48, 935, pageInfo.getPageWidth()-100, 945, paint);
+                canvas.drawText(" ", 50, 960, paint);
+
+                canvas.drawText("Mes: "+april.getMonth(), 50, 990, paint);
+                canvas.drawText("Compras materia prima: "+iComp3, 50, 1020, paint);
+                canvas.drawText("Gastos operativos: "+iGasto3, 50, 1050, paint);
+                canvas.drawText("Saldo a favor del fisco: "+iva3, 50, 1080, paint);
+                canvas.drawLine(48, 995, pageInfo.getPageWidth()-100, 1005, paint);
+                canvas.drawLine(48, 1025, pageInfo.getPageWidth()-100, 1035, paint);
+                canvas.drawLine(48, 1055, pageInfo.getPageWidth()-100, 1065, paint);
+                canvas.drawLine(48, 1085, pageInfo.getPageWidth()-100, 1095, paint);
+                canvas.drawText(" ", 50, 1110, paint);
+
+                //IT
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(30f);
+                paint.setFakeBoldText(true);
+                canvas.drawText("IT", 50, 1115, paint);
+                canvas.drawText(" ", 50, 1135, paint);
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(24f);
+                paint.setFakeBoldText(false);
+                canvas.drawText("Mes: "+february.getMonth(), 50, 1165, paint);
+                canvas.drawText("IT del periodo: "+it1, 50, 1195, paint);
+                canvas.drawText("IUE: "+iue1, 50, 1225, paint);
+                canvas.drawText("Saldo a favor del fisco: "+totIt1, 50, 1255, paint);
+                canvas.drawLine(48, 1170, pageInfo.getPageWidth()-100, 1180, paint);
+                canvas.drawLine(48, 1200, pageInfo.getPageWidth()-100, 1210, paint);
+                canvas.drawLine(48, 1230, pageInfo.getPageWidth()-100, 1240, paint);
+                canvas.drawLine(48, 1260, pageInfo.getPageWidth()-100, 1270, paint);
+                canvas.drawText(" ", 50, 1285, paint);
+
+                canvas.drawText("Mes: "+march.getMonth(), 50, 1315, paint);
+                canvas.drawText("IT del periodo: "+it2, 50, 1345, paint);
+                canvas.drawText("IUE: "+iue2, 50, 1375, paint);
+                canvas.drawText("Saldo a favor del fisco: "+totIt2, 50, 1405, paint);
+                canvas.drawLine(48, 1320, pageInfo.getPageWidth()-100, 1330, paint);
+                canvas.drawLine(48, 1350, pageInfo.getPageWidth()-100, 1360, paint);
+                canvas.drawLine(48, 1380, pageInfo.getPageWidth()-100, 1390, paint);
+                canvas.drawLine(48, 1410, pageInfo.getPageWidth()-100, 1420, paint);
+                canvas.drawText(" ", 50, 1435, paint);
+
+                canvas.drawText("Mes: "+april.getMonth(), 50, 1465, paint);
+                canvas.drawText("IT del periodo: "+it3, 50, 1495, paint);
+                canvas.drawText("IUE: "+iue3, 50, 1525, paint);
+                canvas.drawText("Saldo a favor del fisco: "+totIt3, 50, 1555, paint);
+                canvas.drawLine(48, 1470, pageInfo.getPageWidth()-100, 1480, paint);
+                canvas.drawLine(48, 1500, pageInfo.getPageWidth()-100, 1510, paint);
+                canvas.drawLine(48, 1530, pageInfo.getPageWidth()-100, 1540, paint);
+                canvas.drawLine(48, 1560, pageInfo.getPageWidth()-100, 1570, paint);
+                canvas.drawText(" ", 50, 1585, paint);
 
                 pdfDocument.finishPage(page);
                 grabarPDF(uri, pdfDocument);

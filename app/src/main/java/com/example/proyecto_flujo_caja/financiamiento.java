@@ -64,7 +64,8 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         financiamiento.setMeses(cantMeses);
         financiamiento.setCapitalInicial(cantCapInicial);
         db.collection("Financiamiento").add(financiamiento);
-
+        Intent pre = new Intent(this, presupuesto_caja.class);
+        startActivity(pre);
 
     }
     public void anterior(View view){

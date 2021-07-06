@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/whatsapp_image_2021_06_30_at_11_27_23"
+    android:orientation="vertical"
+    tools:context=".Inicio">
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginTop="50sp"
+        android:layout_marginRight="30sp"
+        android:layout_marginBottom="100sp"
+        android:onClick="iniFlujo"
+        android:text="@string/botonIniFlujo"
+        android:textSize="30sp"
+        app:backgroundTint="#00509A"
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="41dp"
+        tools:text="@string/botonIniFlujo" />
+
+    <Button
+        android:id="@+id/button10"
+        android:layout_width="match_parent"
+        android:layout_height="123dp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        android:onClick="sinFlujo"
+        android:text="@string/botonModDatos"
+        android:textSize="30sp"
+        app:backgroundTint="#00509A"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="313dp" />
+</LinearLayout>

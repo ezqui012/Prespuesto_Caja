@@ -79,6 +79,10 @@ public class MainActivity extends AppCompatActivity {
         Intent siguiente = new Intent(this, menu_impuestos.class);
         startActivity(siguiente);
     }
+    public void siguienteGrafico(View view){
+        Intent graficos = new Intent(this, grafico.class);
+        startActivity(graficos);
+    }
 
     public void showMyAvtivity(View view){
         Intent change = new Intent(this, CompanyInformation.class);

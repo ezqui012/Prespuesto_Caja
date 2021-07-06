@@ -120,4 +120,8 @@ public class spending_interest extends AppCompatActivity {
         interest_comercial.putExtra("informationI", interesI);
         startActivity(interest_comercial);
     }
+    public void Siguiente (View view){
+        Intent sig = new Intent(this, aportepatronal.class);
+        startActivity(sig);
+    }
 }

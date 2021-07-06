@@ -30,7 +30,6 @@
         android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
         app:layout_constraintVertical_bias="0.0">
@@ -130,28 +129,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal48"
+                        android:id="@+id/intcom_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal49"
+                        android:id="@+id/intcom_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal50"
+                        android:id="@+id/intcom_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -167,28 +169,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal51"
+                        android:id="@+id/act_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal52"
+                        android:id="@+id/act_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal53"
+                        android:id="@+id/act_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -204,28 +209,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal54"
+                        android:id="@+id/alq_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal55"
+                        android:id="@+id/alq_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal56"
+                        android:id="@+id/alq_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -241,28 +249,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal57"
+                        android:id="@+id/otro_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal58"
+                        android:id="@+id/otro_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal59"
+                        android:id="@+id/otro_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -385,28 +396,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal69"
+                        android:id="@+id/intedeb_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal70"
+                        android:id="@+id/intedeb_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal71"
+                        android:id="@+id/intedeb_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -422,28 +436,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal72"
+                        android:id="@+id/compra_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal73"
+                        android:id="@+id/compra_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal74"
+                        android:id="@+id/compra_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -459,28 +476,31 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal75"
+                        android:id="@+id/sub_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal76"
+                        android:id="@+id/sub_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal77"
+                        android:id="@+id/sub_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow
@@ -529,31 +549,35 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Otros" />
+                        android:text="Otros"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal81"
+                        android:id="@+id/ot_v"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal82"
+                        android:id="@+id/ot_v2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
 
                     <EditText
-                        android:id="@+id/editTextNumberDecimal83"
+                        android:id="@+id/ot_v3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:ems="10"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        android:text="0.0" />
                 </TableRow>
 
                 <TableRow

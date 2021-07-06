@@ -1,19 +1,33 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.Iue;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import static android.content.ContentValues.TAG;
+
 public class iue extends AppCompatActivity {
+    Iue iuee;
     Button cancel, sig, calular;
     EditText pagodiv,pagoprim,utiant,gastded,ingreno;
     TextView utiimp,iuexpag,utides,divppag,primppag;
+
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +48,25 @@ public class iue extends AppCompatActivity {
         divppag=findViewById(R.id.divxpag_iue);
         primppag=findViewById(R.id.primxpag_iue);
 
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("Iue").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String div= documentSnapshot.getString("pagdiv");
+                pagodiv.setText(div);
+                String prim= documentSnapshot.getString("pagprim");
+                pagoprim.setText(prim);
+                String uti= documentSnapshot.getString("utilant");
+                utiant.setText(uti);
+                String gasd= documentSnapshot.getString("gasded");
+                gastded.setText(gasd);
+                String im= documentSnapshot.getString("ingrimpo");
+                ingreno.setText(im);
 
+
+
+            }
+        });
 
         cancel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +107,21 @@ public class iue extends AppCompatActivity {
         sig.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                iuee =new Iue(pordivi.toString(),primap.toString(),dat1.toString(),dat2.toString(),dat3.toString(),iue.toString());
+                db.collection("Iue").document("a")
+                        .set(iuee)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
                 startActivity(new Intent(getApplicationContext(),aportepatronal.class));
             }
         });

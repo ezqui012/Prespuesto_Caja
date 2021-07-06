@@ -1,5 +1,6 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,10 +13,10 @@ import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.InteresGasto;
 import com.example.proyecto_flujo_caja.Models.InteresIngreso;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
 public class CompanyInformation extends AppCompatActivity {
@@ -45,6 +46,7 @@ public class CompanyInformation extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,7 +56,6 @@ public class CompanyInformation extends AppCompatActivity {
         february = (SalesProjection) getIntent().getSerializableExtra("mes1");
         march = (SalesProjection) getIntent().getSerializableExtra("mes2");
         april = (SalesProjection) getIntent().getSerializableExtra("mes3");
-
 
         input_sales = (EditText) findViewById(R.id.input_sales);
         input_credit30 = (EditText) findViewById(R.id.input_credit30);

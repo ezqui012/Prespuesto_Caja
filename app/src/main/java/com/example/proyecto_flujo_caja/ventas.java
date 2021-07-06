@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.Ventas;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -20,7 +21,7 @@ public class ventas extends AppCompatActivity {
     Button registra, cancel;
     ProgressBar progressBar;
     //private Double vcontado, vtreinta, vsesenta, vinteres, vincobrabilidad;
-
+    Company company;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -29,6 +30,7 @@ public class ventas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ventas);
         setContentView(R.layout.activity_ventas);
+        company = (Company) getIntent().getSerializableExtra("information");
         contado = findViewById(R.id.contado);
         treinta = findViewById(R.id.treinta);
         sesenta = findViewById(R.id.sesenta);
@@ -73,8 +75,11 @@ public class ventas extends AppCompatActivity {
                 db.collection("venta").add(venta);
 
                 Toast.makeText(ventas.this, "Guardado correctamente",Toast.LENGTH_SHORT).show();
-                
-                startActivity(new Intent(getApplicationContext(),proyeccion_ventas.class));
+
+                Intent intent = new Intent(getApplicationContext(), proyeccion_ventas.class);
+                intent.putExtra("information", company);
+                startActivity(intent);
+                //startActivity(new Intent(getApplicationContext(),proyeccion_ventas.class));
 
             }
         });

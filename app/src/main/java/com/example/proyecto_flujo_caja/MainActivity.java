@@ -31,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     private Company company;
-    private FlujoCajaProy flujo;
     private SalesProjection february;
     private SalesProjection march;
     private SalesProjection april;
@@ -111,7 +110,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void verFlujo(View view){
         Intent change = new Intent(this, FlujoCaja.class);
-        change.putExtra("flujoCajaInfo", flujo);
         change.putExtra("ingresoOP", ingreosoOP);
         change.putExtra("gastoOP", gastosOP);
         change.putExtra("fuentes", fuentes);

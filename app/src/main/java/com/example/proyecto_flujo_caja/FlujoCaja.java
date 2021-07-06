@@ -46,7 +46,7 @@ public class FlujoCaja extends AppCompatActivity {
 
         flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
 
-        flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 100.0);
+        flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 16000.0);
 
         db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").update(flujo.getMapInfo());
 

@@ -1,8 +1,15 @@
 package com.example.proyecto_flujo_caja;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.pdf.PdfDocument;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -19,9 +26,17 @@ import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firestore.v1.CreateDocumentRequest;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private Double fuentes;
     private Double usos;
 
+    private String compra1, compra2, compra3;
+
+    private static  final int CREATEPDF = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         getCompanyInfo();
         loadInfoCaja();
         loadSolds();
+        cargarCompras();
 
   //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
     //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
@@ -117,6 +137,15 @@ public class MainActivity extends AppCompatActivity {
         startActivity(change);
     }
 
+    public void crearReporte(View view){
+        Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.setType("application/pdf");
+        intent.putExtra(Intent.EXTRA_TITLE, "Reporte_Flujo_Caja_Proyectado");
+        //startActivity(intent);
+        startActivityForResult(intent, CREATEPDF);
+    }
+
     private void getCompanyInfo(){
         db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").get().addOnSuccessListener(
                 new OnSuccessListener<DocumentSnapshot>() {
@@ -158,6 +187,104 @@ public class MainActivity extends AppCompatActivity {
                  }
             }
         });
+    }
+
+    private void cargarCompras(){
+        db.collection("compras").document("a").get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                if(documentSnapshot.exists()){
+                    compra1 = documentSnapshot.getString("comp1");
+                    compra2 = documentSnapshot.getString("comp2");
+                    compra3 = documentSnapshot.getString("comp3");
+                }
+            }
+        });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == CREATEPDF){
+            if(data.getData() != null){
+                Uri uri = data.getData();
+                PdfDocument pdfDocument = new PdfDocument();
+                Paint paint = new Paint();
+                PdfDocument.PageInfo pageInfo = new PdfDocument.PageInfo.Builder(1240, 1754, 1).create();
+                PdfDocument.Page page = pdfDocument.startPage(pageInfo);
+                Canvas canvas = page.getCanvas();
+                //TITULO
+                paint.setTextAlign(Paint.Align.CENTER);
+                paint.setTextSize(36f);
+                paint.setFakeBoldText(true);
+                canvas.drawText("REPORTE FLUJO DE CAJA PROYECTADO", pageInfo.getPageWidth()/2, 50, paint);
+                //VENTAS
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(30f);
+                paint.setFakeBoldText(true);
+                canvas.drawText("Ventas", 50, 80, paint);
+                canvas.drawText(" ", 50, 90, paint);
+                paint.setTextAlign(Paint.Align.LEFT);
+                paint.setTextSize(24f);
+                paint.setFakeBoldText(false);
+                canvas.drawText("Mes: "+february.getMonth(), 50, 125, paint);
+                canvas.drawText("Unidades vendidas: "+february.getSold_units(), 50, 155, paint);
+                canvas.drawText("Precio unitario: "+february.getUnit_price(), 50, 185, paint);
+                canvas.drawText("Ingreso Bruto: "+february.getGross_income(), 50, 215, paint);
+                canvas.drawText("Compras Brutas: "+compra1, 50, 245, paint);
+                canvas.drawLine(48, 130, pageInfo.getPageWidth()-100, 140, paint);
+                canvas.drawLine(48, 160, pageInfo.getPageWidth()-100, 170, paint);
+                canvas.drawLine(48, 190, pageInfo.getPageWidth()-100, 200, paint);
+                canvas.drawLine(48, 220, pageInfo.getPageWidth()-100, 230, paint);
+                canvas.drawLine(48, 250, pageInfo.getPageWidth()-100, 260, paint);
+                canvas.drawText(" ", 50, 275, paint);
+
+                canvas.drawText("Mes: "+march.getMonth(), 50, 305, paint);
+                canvas.drawText("Unidades vendidas: "+march.getSold_units(), 50, 335, paint);
+                canvas.drawText("Precio unitario: "+march.getUnit_price(), 50, 365, paint);
+                canvas.drawText("Ingreso Bruto: "+march.getGross_income(), 50, 395, paint);
+                canvas.drawText("Compras Brutas: "+compra2, 50, 425, paint);
+                canvas.drawLine(48, 310, pageInfo.getPageWidth()-100, 320, paint);
+                canvas.drawLine(48, 340, pageInfo.getPageWidth()-100, 350, paint);
+                canvas.drawLine(48, 370, pageInfo.getPageWidth()-100, 380, paint);
+                canvas.drawLine(48, 400, pageInfo.getPageWidth()-100, 410, paint);
+                canvas.drawLine(48, 430, pageInfo.getPageWidth()-100, 440, paint);
+                canvas.drawText(" ", 50, 455, paint);
+
+                canvas.drawText("Mes: "+april.getMonth(), 50, 485, paint);
+                canvas.drawText("Unidades vendidas: "+april.getSold_units(), 50, 515, paint);
+                canvas.drawText("Precio unitario: "+april.getUnit_price(), 50, 545, paint);
+                canvas.drawText("Ingreso Bruto: "+april.getGross_income(), 50, 575, paint);
+                canvas.drawText("Compras Brutas: "+compra3, 50, 605, paint);
+                canvas.drawLine(48, 490, pageInfo.getPageWidth()-100, 500, paint);
+                canvas.drawLine(48, 520, pageInfo.getPageWidth()-100, 530, paint);
+                canvas.drawLine(48, 550, pageInfo.getPageWidth()-100, 560, paint);
+                canvas.drawLine(48, 580, pageInfo.getPageWidth()-100, 590, paint);
+                canvas.drawLine(48, 610, pageInfo.getPageWidth()-100, 620, paint);
+                canvas.drawText(" ", 50, 455, paint);
+
+                pdfDocument.finishPage(page);
+                grabarPDF(uri, pdfDocument);
+            }
+        }
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    private void grabarPDF(Uri uri, PdfDocument pdfDocument){
+        try{
+            BufferedOutputStream stream = new BufferedOutputStream(getContentResolver().openOutputStream(uri));
+            pdfDocument.writeTo(stream);
+            pdfDocument.close();
+            stream.flush();
+            Toast.makeText(this, "PDF creado", Toast.LENGTH_LONG);
+        }catch(FileNotFoundException fe){
+            Toast.makeText(this, "Error archivo no encontrado", Toast.LENGTH_LONG);
+        }catch (IOException ioe){
+            Toast.makeText(this, "Error de entrada o salida", Toast.LENGTH_LONG);
+        }catch (Exception ex){
+            Toast.makeText(this, "Ocurrio un error intente de nuevo", Toast.LENGTH_LONG);
+        }
     }
 
     @Override

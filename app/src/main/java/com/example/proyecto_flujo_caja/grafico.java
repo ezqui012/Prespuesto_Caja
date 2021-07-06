@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.Chart;
@@ -22,6 +23,10 @@ import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.PercentFormatter;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
@@ -29,6 +34,10 @@ import java.util.ArrayList;
 public class grafico extends AppCompatActivity {
     private PieChart pieChart;
     private BarChart barChart;
+    private TextView text,text2;
+    private String p1,p2,p3,p4;
+    private int total1,total2,total3,total4;
+    public int[]totales= new int[4];
     private String[]months= new String[]{"Enero","Febrero", "Marzo","Abril"};
     private int[]sale= new int[]{25,30,32,50};
     private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.RED,Color.GREEN};
@@ -37,9 +46,48 @@ public class grafico extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafico);
-        barChart=(BarChart)findViewById(R.id.barChart);
-        pieChart=(PieChart)findViewById(R.id.pieChart);
-        createCharts();
+        text=(TextView)findViewById(R.id.prueba);
+        text2=(TextView)findViewById(R.id.prueba2);
+        obtenerDatos();
+
+        totales[0]=30;
+        totales[1]=total2;
+        totales[2]=total3;
+        totales[3]=total4;
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("PresupuestoCaja").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                String t1=documentSnapshot.getString("tot1");
+                total1=Integer.parseInt(t1);
+                text.setText(""+total1);
+                int t2=Integer.parseInt(documentSnapshot.getString("tot1"));
+                int t3=Integer.parseInt(documentSnapshot.getString("tot1"));
+                int t4=Integer.parseInt(documentSnapshot.getString("tot1"));
+            }
+        });
+        text2.setText("HH"+p2);
+
+    //    barChart=(BarChart)findViewById(R.id.barChart);
+  //      pieChart=(PieChart)findViewById(R.id.pieChart);
+//        createCharts();
+
+
+
+
+
+
+
+
+
+    }
+
+    private void obtenerDatos(){
+        Bundle extras = getIntent().getExtras();
+        p1 = extras.getString("total");
+        p2 = extras.getString("total1");
+        p3 = extras.getString("tota2");
+        p4 = extras.getString("tota3");
     }
     private Chart getSameChart(Chart chart, String descripcion, int textColor, int background, int animateY){
         chart.getDescription().setText(descripcion);
@@ -66,8 +114,8 @@ public class grafico extends AppCompatActivity {
     }
     private ArrayList<BarEntry>getBarEntries(){
         ArrayList<BarEntry>entries= new ArrayList<>();
-        for (int i=0; i<sale.length;i++)
-                entries.add(new BarEntry(i,sale[i]));
+        for (int i=0; i<totales.length;i++)
+                entries.add(new BarEntry(i,totales[i]));
             return entries;
     }
     private ArrayList<PieEntry>getPieEntries(){

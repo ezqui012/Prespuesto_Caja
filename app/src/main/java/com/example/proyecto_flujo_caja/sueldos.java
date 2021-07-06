@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.example.proyecto_flujo_caja.Models.Sueldos;
 import com.google.firebase.firestore.DocumentReference;
-import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -108,9 +107,10 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         resAporte1.setText(""+res);
         sueldo.setTotalGainAntes(totalAntes);
         sueldo.setResAporte1(res);
-        //firebaseFirestore.collection("sueldo").add(res);
+        Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
+        siguienteSueldo.putExtra("resAp1", resAporte1.getText().toString());
+        siguienteSueldo.putExtra("suelAntes", totalGanadoAntes.getText().toString());
     }
-
     private void calculoTotalDespues(){
         double aportePat = Double.parseDouble(aporte.getText().toString());
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
@@ -121,9 +121,9 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         sueldo.setIncremento(porcentajeIncremento);
         sueldo.setTotalGainDespues(totalDespues);
         sueldo.setResAporte2(aportePat*totalDespues);
-        //firebaseFirestore.collection("sueldo").add(totalDespues);
-       // firebaseFirestore.collection("sueldo").add(aporte*totalDespues);
-
+        Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
+        siguienteSueldo.putExtra("resApo2", resAporte2.getText().toString());
+        siguienteSueldo.putExtra("suelDespues", totalGanadoDespues.getText().toString());
     }
     private void calculoRetroActivoUno(){
         double totalAntes= Double.parseDouble(totalGanadoAntes.getText().toString());
@@ -136,8 +136,8 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         sueldo.setMes1(numMesUno);
         sueldo.setRetroactivo1(res);
         sueldo.setResRetroactivo1(resRetroactivo);
-        //firebaseFirestore.collection("sueldo").add(res);
-        //firebaseFirestore.collection("sueldo").add(resRetroactivo);
+        Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
+        siguienteSueldo.putExtra("retro1", retroactivo1.getText().toString());
 
 
     }
@@ -155,9 +155,9 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         sueldo.setMes2(numMesDos);
         sueldo.setRetroactivo2(res);
         sueldo.setResRetroactivo2(resRetroactivo);
-        //firebaseFirestore.collection("sueldo").add(res);
-        //firebaseFirestore.collection("sueldo").add(resRetroactivo);
         firebaseFirestore.collection("Sueldo").document("H74DMS6OaNqVufi9SjNP").set(sueldo);
+        Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
+        siguienteSueldo.putExtra("ret2", retroactivo2.getText().toString());
     }
     public void validacion(){
         String increment = incremento.getText().toString();

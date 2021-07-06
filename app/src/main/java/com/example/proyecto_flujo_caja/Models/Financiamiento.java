@@ -2,6 +2,8 @@ package com.example.proyecto_flujo_caja.Models;
 
 public class Financiamiento {
     private Double cuantia, tipoInteres, interes,capitalInicial, capital, amortizacion, cuota;
+    private Double interes1, capital1, amortizacion1, cuota1;
+    private Double interes2, capital2, amortizacion2, cuota2;
     private Integer meses;
     public Financiamiento(){
     }
@@ -69,5 +71,67 @@ public class Financiamiento {
         this.meses = meses;
     }
 
+    public Double getInteres1() {
+        return interes1;
+    }
 
+    public void setInteres1(Double interes1) {
+        this.interes1 = interes1;
+    }
+
+    public Double getCapital1() {
+        return capital1;
+    }
+
+    public void setCapital1(Double capital1) {
+        this.capital1 = capital1;
+    }
+
+    public Double getAmortizacion1() {
+        return amortizacion1;
+    }
+
+    public void setAmortizacion1(Double amortizacion1) {
+        this.amortizacion1 = amortizacion1;
+    }
+
+    public Double getCuota1() {
+        return cuota1;
+    }
+
+    public void setCuota1(Double cuota1) {
+        this.cuota1 = cuota1;
+    }
+
+    public Double getInteres2() {
+        return interes2;
+    }
+
+    public void setInteres2(Double interes2) {
+        this.interes2 = interes2;
+    }
+
+    public Double getCapital2() {
+        return capital2;
+    }
+
+    public void setCapital2(Double capital2) {
+        this.capital2 = capital2;
+    }
+
+    public Double getAmortizacion2() {
+        return amortizacion2;
+    }
+
+    public void setAmortizacion2(Double amortizacion2) {
+        this.amortizacion2 = amortizacion2;
+    }
+
+    public Double getCuota2() {
+        return cuota2;
+    }
+
+    public void setCuota2(Double cuota2) {
+        this.cuota2 = cuota2;
+    }
 }

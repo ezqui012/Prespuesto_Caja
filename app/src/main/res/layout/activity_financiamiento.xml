@@ -1,326 +1,378 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".financiamiento">
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:background="#00509A"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:text="Financiamiento"
-        android:textColor="#ffffff"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="111dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextCuantia"
+            android:layout_width="275dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:hint="Cuantia"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="53dp" />
+
+        <EditText
+            android:id="@+id/editTextTipoInteres"
+            android:layout_width="278dp"
+            android:layout_height="76dp"
+            android:ems="10"
+            android:hint="Tipo de Interés"
+            android:inputType="textPersonName"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="173dp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/editTextCapitalInicial"
+            android:layout_width="280dp"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:hint="Capital Inicial"
+            android:inputType="textPersonName"
+            android:textColor="#000000"
+            tools:layout_editor_absoluteX="274dp"
+            tools:layout_editor_absoluteY="118dp" />
+
+        <EditText
+            android:id="@+id/editTextMeses"
+            android:layout_width="282dp"
+            android:layout_height="57dp"
+            android:ems="10"
+            android:hint="Meses"
+            android:inputType="textPersonName"
+            tools:layout_editor_absoluteX="240dp"
+            tools:layout_editor_absoluteY="53dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="207dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible"
+                    android:stretchColumns="3">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView11"
+                            android:layout_width="120dp"
+                            android:layout_height="match_parent"
+                            android:text="Periodo"
+                            android:textColor="#000000"
+
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="27dp"
+                            tools:layout_editor_absoluteY="183dp" />
+
+                        <TextView
+                            android:id="@+id/textView18"
+                            android:layout_width="150dp"
+                            android:layout_height="24dp"
+                            android:text="0"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="178dp"
+                            android:layout_height="24dp"
+                            android:text="1"
+                            android:textColor="#000000" />
+
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="156dp"
+                            android:layout_height="24dp"
+                            android:text="3"
+                            android:textColor="#000000" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Capital"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="17dp"
+                            tools:layout_editor_absoluteY="284dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCapital"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="287dp" />
+
+                        <TextView
+                            android:id="@+id/capPeriodo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0.00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/capPeriodo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView19"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Amortización"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="16dp"
+                            tools:layout_editor_absoluteY="327dp" />
+
+                        <TextView
+                            android:id="@+id/textViewAmort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="321dp" />
+
+                        <TextView
+                            android:id="@+id/amoPeriodo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/amoPeriodo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView20"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Interés"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="17dp"
+                            tools:layout_editor_absoluteY="361dp" />
+
+                        <TextView
+                            android:id="@+id/textViewInteres"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="354dp" />
+
+                        <TextView
+                            android:id="@+id/intPeriodo1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/intPeriodo2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/textView21"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cuota"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="24dp"
+                            tools:layout_editor_absoluteY="399dp" />
+
+                        <TextView
+                            android:id="@+id/textViewCuota"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp"
+                            tools:layout_editor_absoluteX="151dp"
+                            tools:layout_editor_absoluteY="393dp" />
+
+                        <TextView
+                            android:id="@+id/cuota1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/cuota2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="0,00"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+
+    </LinearLayout><![CDATA[
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar" />
 
-    <EditText
-        android:id="@+id/editTextCuantia"
-        android:layout_width="wrap_content"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ]]>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Cuantia"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="14dp"
-        tools:layout_editor_absoluteY="53dp" />
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
 
-    <EditText
-        android:id="@+id/editTextMeses"
-        android:layout_width="97dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:hint="Meses"
-        android:inputType="textPersonName"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="53dp" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        tools:layout_editor_absoluteX="320dp"
-        tools:layout_editor_absoluteY="183dp" />
-
-    <EditText
-        android:id="@+id/editTextCapitalInicial"
-        android:layout_width="154dp"
-        android:layout_height="44dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Capital Inicial"
-        tools:layout_editor_absoluteX="214dp"
-        tools:layout_editor_absoluteY="127dp" />
-
-    <EditText
-        android:id="@+id/editTextTipoInteres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginLeft="14dp"
-        android:layout_marginTop="109dp"
-        android:ems="10"
-        android:hint="Tipo de Interés"
-        android:inputType="textPersonName"
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnRegistrarFinanciamiento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="73dp"
-        android:layout_marginLeft="73dp"
-        android:text="@string/BotonRegistrarFinanciamiento"
-        app:backgroundTint="#00509A"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button7"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="78dp"
-        android:onClick="anterior"
-        android:text="@string/BotonCancelarFinanciamiento"
-        app:backgroundTint="#CD0101"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRegistrarFinanciamiento" />
-
-    <HorizontalScrollView
-        android:layout_width="477dp"
-        android:layout_height="277dp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="207dp">
-
-        <LinearLayout
+        <Button
+            android:id="@+id/btnRegistrarFinanciamiento"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:text="@string/BotonRegistrarFinanciamiento"
+            android:layout_marginLeft="160sp"
+            app:backgroundTint="#00509A"
+            tools:layout_editor_absoluteX="147dp"
+            tools:layout_editor_absoluteY="543dp" />
 
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+        <Button
+            android:id="@+id/button7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="anterior"
+            android:layout_marginLeft="30sp"
+            android:text="@string/BotonCancelarFinanciamiento"
+            app:backgroundTint="#CD0101"
+            tools:layout_editor_absoluteX="337dp"
+            tools:layout_editor_absoluteY="543dp" />
+    </LinearLayout>
 
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView11"
-                        android:layout_width="120dp"
-                        android:layout_height="match_parent"
-                        android:text="Periodo"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="27dp"
-                        tools:layout_editor_absoluteY="183dp" />
-
-                    <TextView
-                        android:id="@+id/textView18"
-                        android:layout_width="150dp"
-                        android:layout_height="24dp"
-                        android:text="0"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/textView24"
-                        android:layout_width="178dp"
-                        android:layout_height="24dp"
-                        android:text="1"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/textView26"
-                        android:layout_width="156dp"
-                        android:layout_height="24dp"
-                        android:text="3"
-                        android:textColor="#000000" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Capital"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="17dp"
-                        tools:layout_editor_absoluteY="284dp" />
-
-                    <TextView
-                        android:id="@+id/textViewCapital"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="151dp"
-                        tools:layout_editor_absoluteY="287dp" />
-
-                    <TextView
-                        android:id="@+id/capPeriodo1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0.00"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/capPeriodo2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView19"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Amortización"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="327dp" />
-
-                    <TextView
-                        android:id="@+id/textViewAmort"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="151dp"
-                        tools:layout_editor_absoluteY="321dp" />
-
-                    <TextView
-                        android:id="@+id/amoPeriodo1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-
-                    <TextView
-                        android:id="@+id/amoPeriodo2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/textView20"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Interés"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="17dp"
-                        tools:layout_editor_absoluteY="361dp" />
-
-                    <TextView
-                        android:id="@+id/textViewInteres"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="151dp"
-                        tools:layout_editor_absoluteY="354dp" />
-
-                    <TextView
-                        android:id="@+id/intPeriodo1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000" />
-
-                    <TextView
-                        android:id="@+id/textView84"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-
-                    <TextView
-                        android:id="@+id/textView21"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cuota"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="24dp"
-                        tools:layout_editor_absoluteY="399dp" />
-
-                    <TextView
-                        android:id="@+id/textViewCuota"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="0,00"
-                        android:textColor="#000000"
-                        android:textSize="18sp"
-                        tools:layout_editor_absoluteX="151dp"
-                        tools:layout_editor_absoluteY="393dp" />
-
-                    <TextView
-                        android:id="@+id/textView85"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-
-                    <TextView
-                        android:id="@+id/textView86"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
-                </TableRow>
-            </TableLayout>
-        </LinearLayout>
-    </HorizontalScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

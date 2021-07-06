@@ -162,6 +162,28 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                        tree3= documentSnapshot.getString("trinta3");
                        rectre3.setText(tree3);
 
+
+                       String cap = getIntent().getStringExtra("cap");
+                       fcp1.setText(cap);
+                       String cap1 = getIntent().getStringExtra("cap1");
+                       fcp2.setText(cap1);
+                       String cap2 = getIntent().getStringExtra("cap2");
+                       fcp3.setText(cap2);
+
+                       String amorti = getIntent().getStringExtra("amortizacion");
+                       afin1.setText(amorti);
+                       String amorti1 = getIntent().getStringExtra("amortizacion1");
+                       afin2.setText(amorti1);
+                       String amorti2 = getIntent().getStringExtra("amortizacion2");
+                       afin3.setText(amorti2);
+
+                       String cuot = getIntent().getStringExtra("cuota");
+                       ifin1.setText(cuot);
+                       String cuot1 = getIntent().getStringExtra("cuota1");
+                       ifin2.setText(cuot1);
+                       String cuot2 = getIntent().getStringExtra("cuota2");
+                       ifin3.setText(cuot2);
+
                    }
                });
 
@@ -214,6 +236,49 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
 
             }
         });
+
+        DocumentReference documentReference4= FirebaseFirestore.getInstance().collection("Financiamiento").document("finan");
+        documentReference4.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Double amorti=documentSnapshot.getDouble("amortizacion");
+                ampr1.setText(""+amorti);
+                Double amorti2=documentSnapshot.getDouble("amortizacion1");
+                ampr2.setText(""+amorti2);
+                Double amorti3=documentSnapshot.getDouble("amortizacion2");
+                ampr3.setText(""+amorti3);
+
+                Double inte=documentSnapshot.getDouble("interes");
+                ip1.setText(""+inte);
+                Double inte2=documentSnapshot.getDouble("interes1");
+                ip2.setText(""+inte2);
+                Double inte3=documentSnapshot.getDouble("interes2");
+                ip3.setText(""+inte3);
+
+            }
+        });
+        DocumentReference documentReference5= FirebaseFirestore.getInstance().collection("Sueldo").document("H74DMS6OaNqVufi9SjNP");
+        documentReference5.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Double gainantes=documentSnapshot.getDouble("gainAntes");
+                ss1.setText(""+gainantes);
+                Double gan=documentSnapshot.getDouble("gainAntes");
+                ss2.setText(""+gan);
+                Double gainDep=documentSnapshot.getDouble("totalGainDespues");
+                ss3.setText(""+gainDep);
+
+                Double resAp1=documentSnapshot.getDouble("resAporte1");
+                ap1.setText(""+resAp1);
+                Double resApi2=documentSnapshot.getDouble("resAporte1");
+                ap2.setText(""+resApi2);
+                Double inte3=documentSnapshot.getDouble("resAporte2");
+                ap3.setText(""+inte3);
+
+            }
+        });
+
+
            }
            public void totalpc(View v){
 

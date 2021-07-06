@@ -15,6 +15,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.databinding.ActivityMainBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,7 +23,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-
+    public int total1,total2,total3,total4;
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
 
@@ -39,14 +40,24 @@ public class MainActivity extends AppCompatActivity {
 
         getCompanyInfo();
 
-  //      NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-    //    appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-      //  NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
 
 
     }
-    public void Comenzar(View view)
+    public void obtenerDatos()
     {
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("PresupuestoCaja").document("a");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                int t1=Integer.parseInt(documentSnapshot.getString("tot1"));
+                int t2=Integer.parseInt(documentSnapshot.getString("tot1"));
+                int t3=Integer.parseInt(documentSnapshot.getString("tot1"));
+                int t4=Integer.parseInt(documentSnapshot.getString("tot1"));
+
+            }
+        });
+
         Intent siguiente = new Intent(this, CompanyInformation.class);
         siguiente.putExtra("information", company);
         startActivity(siguiente);
@@ -62,8 +73,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void siguienteFinanciamiento(View view){
-        Intent siguiente = new Intent(this, financiamiento.class);
-        startActivity(siguiente);
+        Intent finnan = new Intent(this, financiamiento.class);
+
+        startActivity(finnan);
     }
     public void siguientePresupuestoC(View view){
         Intent siguiente = new Intent(this, presupuesto_caja.class);
@@ -71,8 +83,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void siguienteComprass(View view){
-        Intent siguiente = new Intent(this, comprass.class);
-        startActivity(siguiente);
+        Intent finna = new Intent(this, comprass.class);
+
+        startActivity(finna);
     }
 
     public void siguienteImpuestos(View view){
@@ -80,7 +93,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(siguiente);
     }
     public void siguienteGrafico(View view){
+        obtenerDatos();
         Intent graficos = new Intent(this, grafico.class);
+        graficos.putExtra("total",total1);
+        graficos.putExtra("total2",total2);
+        graficos.putExtra("total3",total3);
+        graficos.putExtra("total4",total4);
         startActivity(graficos);
     }
 

@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.example.proyecto_flujo_caja.Models.Aporte;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class aportepatronal extends AppCompatActivity implements View.OnClickListener{
@@ -32,7 +35,28 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         resAporte = findViewById(R.id.resAporte);
         btnRegistrar = findViewById(R.id.btnRegistrar);
         btnRegistrar.setOnClickListener(this);
+
+
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("Aporte").document("7TqA8LJfyRuwHQPWKLKX");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Double caja1= documentSnapshot.getDouble("caja");
+                caja.setText(""+caja1);
+                Double provi= documentSnapshot.getDouble("provivienda");
+                prov.setText(""+provi);
+                Double afps= documentSnapshot.getDouble("afp");
+                afp.setText(""+afps);
+                Double soli= documentSnapshot.getDouble("solidario");
+                solidario.setText(""+soli);
+                Double ries= documentSnapshot.getDouble("riesgo");
+                riesgo.setText(""+ries);
+                Double resAp= documentSnapshot.getDouble("resAporte");
+                resAporte.setText(""+resAp);
+            }
+        });
     }
+
 
     public void onClick(View view)
     {
@@ -49,17 +73,15 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         aporte.setSolidario(porcentajeSolidario);
         aporte.setRiesgo(porcentajeRiesgo);
         aporte.setResAporte(res);
-        db.collection("Aporte").add(aporte);
+        db.collection("Aporte").document("7TqA8LJfyRuwHQPWKLKX").set(aporte);
         Intent siguienteSueldo = new Intent(this, sueldos.class);
         siguienteSueldo.putExtra("dato", resAporte.getText().toString());
         startActivity(siguienteSueldo);
     }
-
     public void anterior (View view){
         Intent anterior = new Intent(this, sueldos.class);
         startActivity(anterior);
     }
-
     public void registrar(View view){
         Intent siguienteSueldo = new Intent(this, sueldos.class);
         siguienteSueldo.putExtra("dato", resAporte.getText().toString());

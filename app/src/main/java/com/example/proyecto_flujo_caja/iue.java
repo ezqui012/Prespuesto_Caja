@@ -122,7 +122,7 @@ public class iue extends AppCompatActivity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-                startActivity(new Intent(getApplicationContext(),aportepatronal.class));
+                startActivity(new Intent(getApplicationContext(),comprass.class));
             }
         });
 

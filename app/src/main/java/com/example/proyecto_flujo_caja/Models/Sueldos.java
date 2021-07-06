@@ -4,6 +4,9 @@ public class Sueldos {
     Double incremento, totalGainAntes,totalGainDespues,retroactivo1,
             retroactivo2, resRetroactivo1, resRetroactivo2, resAporte1, resAporte2;
     Integer meses1,meses2;
+
+
+
     public Sueldos(
             Integer meses1,
             Integer meses2,
@@ -48,5 +51,12 @@ public class Sueldos {
     public void setRetroactivo1(Double re1){this.retroactivo1=re1;}
     public Double getRetroactivo2(){ return retroactivo1;}
     public void setRetroactivo2(Double re1){this.retroactivo2=re1;}
+    public Double getIncremento() {
+        return incremento;
+    }
+
+    public void setIncremento(Double incremento) {
+        this.incremento = incremento;
+    }
 
 }

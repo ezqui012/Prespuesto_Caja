@@ -11,6 +11,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.proyecto_flujo_caja.Models.Sueldos;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
@@ -54,6 +58,40 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         aporte = (TextView)findViewById(R.id.textViAporteRecibido);
         btnRegistrar = findViewById(R.id.btnRegistrarSueldo);
         btnRegistrar.setOnClickListener(this);
+
+
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("Sueldo").document("H74DMS6OaNqVufi9SjNP");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                Double inc= documentSnapshot.getDouble("incremento");
+                incremento.setText(""+inc);
+                Double gainAn= documentSnapshot.getDouble("gainAntes");
+                totalGanadoAntes.setText(""+gainAn);
+                Double mes1= documentSnapshot.getDouble("mes1");
+                numMeses1.setText(""+mes1);
+                Double mes2= documentSnapshot.getDouble("mes2");
+                numMeses2.setText(""+mes2);
+                Double resAp1= documentSnapshot.getDouble("resAporte1");
+                resAporte1.setText(""+resAp1);
+                Double resAp2= documentSnapshot.getDouble("resAporte2");
+                resAporte2.setText(""+resAp2);
+
+                Double resActi1= documentSnapshot.getDouble("resRetroactivo1");
+                resRetroActivo1.setText(""+resActi1);
+                Double resAct2= documentSnapshot.getDouble("resRetroactivo2");
+                resRetroActivo2.setText(""+resAct2);
+
+                Double retro1= documentSnapshot.getDouble("retroactivo1");
+                resRetroActivo1.setText(""+retro1);
+                Double retro2= documentSnapshot.getDouble("retroactivo2");
+                resRetroActivo2.setText(""+retro2);
+
+            }
+        });
+
+
+
     }
     public void onClick(View view){
         this.validacion();
@@ -62,6 +100,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         this.calculoRetroActivoUno();
         this.calculoRetroActivoDos();
     }
+
     private void calculoTotalAntes(){
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
         double aportePat = Double.parseDouble(aporte.getText().toString());
@@ -79,6 +118,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         double totalDespues = (totalAntes*porcentajeIncremento)+totalAntes;
         totalGanadoDespues.setText(""+totalDespues);
         resAporte2.setText(""+aportePat*totalDespues);
+        sueldo.setIncremento(porcentajeIncremento);
         sueldo.setTotalGainDespues(totalDespues);
         sueldo.setResAporte2(aportePat*totalDespues);
         //firebaseFirestore.collection("sueldo").add(totalDespues);
@@ -117,8 +157,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         sueldo.setResRetroactivo2(resRetroactivo);
         //firebaseFirestore.collection("sueldo").add(res);
         //firebaseFirestore.collection("sueldo").add(resRetroactivo);
-        firebaseFirestore.collection("Sueldo").add(sueldo);
-
+        firebaseFirestore.collection("Sueldo").document("H74DMS6OaNqVufi9SjNP").set(sueldo);
     }
     public void validacion(){
         String increment = incremento.getText().toString();

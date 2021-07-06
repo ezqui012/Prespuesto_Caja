@@ -129,8 +129,13 @@ public class spending_interest extends AppCompatActivity {
         startActivity(interest_comercial);
     }
 
-    public void volverinicio(View view){
+    public void volverinicio(View view) {
         Intent change = new Intent(this, MainActivity.class);
         startActivity(change);
+    }
+
+    public void Siguiente (View view){
+        Intent sig = new Intent(this, aportepatronal.class);
+        startActivity(sig);
     }
 }

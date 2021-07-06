@@ -73,6 +73,12 @@ public class comprass extends AppCompatActivity {
 
     public void Calculate(View view){
         sigu.setVisibility(View.VISIBLE);
+        sigu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
+            }
+        });
         calcular.setVisibility(View.INVISIBLE);
 
         String dtsmonth1 = dmonth1.getText().toString();
@@ -162,4 +168,5 @@ public class comprass extends AppCompatActivity {
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
     }
+
 }

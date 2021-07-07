@@ -325,14 +325,23 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double iuepc1=Double.parseDouble(iu1.getText().toString());
                Double iuepc2=Double.parseDouble(iu2.getText().toString());
                Double iuepc3=Double.parseDouble(iu3.getText().toString());
+               Double sspc1=Double.parseDouble(ss1.getText().toString());
+               Double sspc2=Double.parseDouble(ss2.getText().toString());
+               Double sspc3=Double.parseDouble(ss3.getText().toString());
+               Double apppc1=Double.parseDouble(ap1.getText().toString());
+               Double apppc2=Double.parseDouble(ap2.getText().toString());
+               Double apppc3=Double.parseDouble(ap3.getText().toString());
 
 
-               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1;
+               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1;
                ts1.setText(TotsalPC1.toString());
-               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2;
+               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2;
                ts2.setText(TotsalPC2.toString());
-               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3;
+               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3;
                ts3.setText(TotsalPC3.toString());
+
+
+
 
                Double Totsal=TotsalPC1+TotsalPC2+TotsalPC3;
                Totts.setText(Totsal.toString());
@@ -345,21 +354,6 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                fnp2.setText(fnpsin2.toString());
                fnp3.setText(fnpsin3.toString());
 
-
-               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
-               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
-               Double sfepPC1= sfmapc1+fnppc1;
-               sfep1.setText(sfepPC1.toString());
-
-               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
-               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
-               Double sfepPC2= sfmapc2+fnppc2;
-               sfep2.setText(sfepPC2.toString());
-
-               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
-               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
-               Double sfepPC3= sfmapc3+fnppc3;
-               sfep3.setText(sfepPC3.toString());
 
                Double fcpc1 =Double.parseDouble(fcp1.getText().toString());
                Double afpc1 =Double.parseDouble(afin1.getText().toString());
@@ -385,6 +379,21 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
 
                sfma2.setText(sfPC1.toString());
                sfma3.setText(sfepc2.toString());
+
+               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
+               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
+               Double sfepPC1= sfmapc1+fnppc1;
+               sfep1.setText(sfepPC1.toString());
+
+               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
+               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
+               Double sfepPC2= sfmapc2+fnppc2;
+               sfep2.setText(sfepPC2.toString());
+
+               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
+               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
+               Double sfepPC3= sfmapc3+fnppc3;
+               sfep3.setText(sfepPC3.toString());
 
                Double dobsfma=Double.parseDouble(sfma2.getText().toString());
                Double dobsfmaa=Double.parseDouble(sfma2.getText().toString());
@@ -455,8 +464,11 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         String tot3=sfma1.getText().toString();
         String Tottfcp=Totfcp.getText().toString();
         String Tottafin=Totafin.getText().toString();
+        String sum11=sfep1.getText().toString();
+        String sum22=sfep2.getText().toString();
+        String sum33=sfep3.getText().toString();
 
-        pcaja=new PresupuestoCaja(tott1,Tot2,tot3,Tottfcp,Tottafin);
+        pcaja=new PresupuestoCaja(tott1,Tot2,tot3,Tottfcp,Tottafin,sum11,sum22,sum33);
 
         dba.collection("PresupuestoCaja").document("a")
                     .set(pcaja);

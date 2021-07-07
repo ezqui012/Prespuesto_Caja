@@ -14,7 +14,8 @@
         android:text="Financiamiento"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        android:gravity="center_horizontal" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +28,8 @@
             android:layout_height="76dp"
             android:ems="10"
             android:hint="Cuantia"
-            android:inputType="textPersonName"
+            android:inputType="number|numberDecimal"
+
             tools:layout_editor_absoluteX="14dp"
             tools:layout_editor_absoluteY="53dp" />
 
@@ -37,7 +39,7 @@
             android:layout_height="76dp"
             android:ems="10"
             android:hint="Tipo de Interés"
-            android:inputType="textPersonName"
+            android:inputType="number|numberDecimal"
             android:textColor="#000000" />
 
     </LinearLayout>
@@ -53,7 +55,7 @@
             android:layout_height="58dp"
             android:ems="10"
             android:hint="Capital Inicial"
-            android:inputType="textPersonName"
+            android:inputType="number|numberDecimal"
             android:textColor="#000000"
             tools:layout_editor_absoluteX="274dp"
             tools:layout_editor_absoluteY="118dp" />
@@ -64,7 +66,7 @@
             android:layout_height="57dp"
             android:ems="10"
             android:hint="Meses"
-            android:inputType="textPersonName"
+            android:inputType="number|numberDecimal"
             tools:layout_editor_absoluteX="240dp"
             tools:layout_editor_absoluteY="53dp" />
 

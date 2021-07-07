@@ -3,8 +3,11 @@ package com.example.proyecto_flujo_caja;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -18,15 +21,11 @@ import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.DataSet;
-import com.github.mikephil.charting.data.PieData;
-import com.github.mikephil.charting.data.PieDataSet;
+
+
 import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-import com.github.mikephil.charting.formatter.PercentFormatter;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
+
 
 import java.util.ArrayList;
 
@@ -36,9 +35,10 @@ public class grafico extends AppCompatActivity {
     private BarChart barChart;
     private TextView text,text2;
     private String p1,p2,p3,p4;
-    private int total1,total2,total3,total4;
+    private Double total1,total2,total3,total4;
     public int[]totales= new int[4];
-    private String[]months= new String[]{"Enero","Febrero", "Marzo","Abril"};
+    private Button btnVolver;
+    private String[]months= new String[]{"Enero","Febrero", "Marzo"};
     private int[]sale= new int[]{25,30,32,50};
     private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.RED,Color.GREEN};
 
@@ -46,49 +46,20 @@ public class grafico extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafico);
-        text=(TextView)findViewById(R.id.prueba);
-        text2=(TextView)findViewById(R.id.prueba2);
-        obtenerDatos();
+        total1=(Double) getIntent().getSerializableExtra("sum1");
+        total2=(Double) getIntent().getSerializableExtra("sum2");
+        total3=(Double) getIntent().getSerializableExtra("sum3");
+        totales[0]=(int) Math.round(total1);
+        totales[1]=(int) Math.round(total2);;
+        totales[3]=(int) Math.round(total3);
 
-        totales[0]=30;
-        totales[1]=total2;
-        totales[2]=total3;
-        totales[3]=total4;
-        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("PresupuestoCaja").document("a");
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                String t1=documentSnapshot.getString("tot1");
-                total1=Integer.parseInt(t1);
-                text.setText(""+total1);
-                int t2=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t3=Integer.parseInt(documentSnapshot.getString("tot1"));
-                int t4=Integer.parseInt(documentSnapshot.getString("tot1"));
-            }
-        });
-        text2.setText("HH"+p2);
+       barChart=(BarChart)findViewById(R.id.barChart);
 
-    //    barChart=(BarChart)findViewById(R.id.barChart);
-  //      pieChart=(PieChart)findViewById(R.id.pieChart);
-//        createCharts();
-
-
-
-
-
-
-
-
-
+       createCharts();
+       btnVolver=(Button)findViewById(R.id.btnVolver);
     }
 
-    private void obtenerDatos(){
-        Bundle extras = getIntent().getExtras();
-        p1 = extras.getString("total");
-        p2 = extras.getString("total1");
-        p3 = extras.getString("tota2");
-        p4 = extras.getString("tota3");
-    }
+
     private Chart getSameChart(Chart chart, String descripcion, int textColor, int background, int animateY){
         chart.getDescription().setText(descripcion);
         chart.getDescription().setTextSize(15);
@@ -150,12 +121,6 @@ public class grafico extends AppCompatActivity {
         axisLeftY(barChart.getAxisLeft());
         axisRight(barChart.getAxisRight());
 
-     //   pieChart=(PieChart)getSameChart(pieChart, "ventas",Color.GRAY, Color.MAGENTA,3000);
-       // pieChart.setHoleRadius(10);
-        //pieChart.setTransparentCircleRadius(12);
-       // pieChart.setData(getPieData());
-     //   pieChart.invalidate();
-        //pieChart.setDrawHoleEnabled(false);
     }
 
     private DataSet getData(DataSet dataSet){
@@ -172,12 +137,13 @@ public class grafico extends AppCompatActivity {
         barData.setBarWidth(0.45f);
         return barData;
     }
-
-    private PieData getPieData(){
-        PieDataSet pieDataSet = (PieDataSet)getData(new PieDataSet(getPieEntries(),""));
-        pieDataSet.setSliceSpace(2);
-        pieDataSet.setValueFormatter(new PercentFormatter());
-        return new PieData(pieDataSet);
+    public void onClickF(View view){
+        Intent flujo = new Intent(this, MainActivity.class);
+        startActivity(flujo);
     }
+
+
+
+
 
 }

@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.Ventas;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -32,12 +33,16 @@ public class proyeccion_ventas extends AppCompatActivity {
     Button calcu, sig, cancel;
     private Double vcontado, vtreinta, vsesenta, vincobrabilidad;
 
+    Company company;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_proyeccion_ventas);
+
+        company = (Company) getIntent().getSerializableExtra("information");
 
         vcont =findViewById(R.id.vcont);
         v30 =findViewById(R.id.v30);
@@ -229,6 +234,8 @@ public class proyeccion_ventas extends AppCompatActivity {
                 intent.putExtra("contado1", xcont1.toString());
                 intent.putExtra("contado2", xcont2.toString());
                 intent.putExtra("contado3", xcont3.toString());
+                intent.putExtra("infoVenta", venta);
+                intent.putExtra("information", company);
 
                 db.collection("venta").document("a")
                         .set(venta)

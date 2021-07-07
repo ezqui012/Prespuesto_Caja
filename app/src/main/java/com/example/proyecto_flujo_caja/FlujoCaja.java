@@ -5,34 +5,50 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.proyecto_flujo_caja.Models.FlujoCajaProy;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class FlujoCaja extends AppCompatActivity {
 
     FlujoCajaProy flujo;
 
-    private TextView actividadesOp;
-    private TextView ingresosdOp;
-    private TextView gastosOp;
-    private TextView actividadesI;
-    private TextView ingresosC;
-    private TextView gastosC;
-    private TextView actividadFin;
-    private TextView fuentes;
-    private TextView usos;
-    private TextView incremento;
-    private TextView efectivoIn;
-    private TextView saldoProy;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    TextView actividadesOp;
+    TextView ingresosdOp;
+    TextView gastosOp;
+    TextView actividadesI;
+    TextView ingresosC;
+    TextView gastosC;
+    TextView actividadFin;
+    TextView fuentes;
+    TextView usos;
+    TextView incremento;
+    TextView efectivoIn;
+    TextView saldoProy;
+
+    Double ingreos;
+    Double gastos;
+    Double fuente;
+    Double uso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_flujo_caja);
 
-        flujo = new FlujoCajaProy(210000.00, 212131.00, 0.00, 0.00, 0.00, 0.00, 16000.00);
+        ingreos = (Double) getIntent().getSerializableExtra("ingresoOP");
+        gastos = (Double) getIntent().getSerializableExtra("gastoOP");
+        fuente = (Double) getIntent().getSerializableExtra("fuentes");
+        uso = (Double) getIntent().getSerializableExtra("usos");
+
+        //flujo = (FlujoCajaProy) getIntent().getSerializableExtra("flujoCajaInfo");
+
+        flujo = new FlujoCajaProy(ingreos, gastos, 0.0, 0.0, fuente, uso, 16000.0);
+
+        db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").update(flujo.getMapInfo());
 
         actividadesOp = (TextView) findViewById(R.id.Input_total1);
         ingresosdOp = (TextView) findViewById(R.id.Input_ingresoOP);

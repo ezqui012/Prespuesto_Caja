@@ -22,6 +22,9 @@ public class comprass extends AppCompatActivity {
     Spinner opciones;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private Double pcontado, ptreinta, pventas;
+    Ventas infoV;
+    Company company;
+    SalesProjection february, march, april;
     Button sigu,calcular;
 
 
@@ -29,6 +32,8 @@ public class comprass extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comprass);
+        company = (Company) getIntent().getSerializableExtra("information");
+        infoV = (Ventas) getIntent().getSerializableExtra("infoVenta");
         contado = findViewById(R.id.cont);
         treinta = findViewById(R.id.tren);
         venta = findViewById(R.id.vent);
@@ -109,7 +114,16 @@ public class comprass extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
+                //startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
+                Intent intent = new Intent(getApplicationContext(), CompanyInformation.class);
+                february = new SalesProjection(infoV.getMes1(), Double.parseDouble(infoV.getVenta1()), Double.parseDouble(infoV.getPrecio1()));
+                march = new SalesProjection(infoV.getMes2(), Double.parseDouble(infoV.getVenta2()), Double.parseDouble(infoV.getPrecio2()));
+                april = new SalesProjection(infoV.getMes3(), Double.parseDouble(infoV.getVenta3()), Double.parseDouble(infoV.getPrecio3()));
+                intent.putExtra("information", company);
+                intent.putExtra("mes1", february);
+                intent.putExtra("mes2", march);
+                intent.putExtra("mes3", april);
+                startActivity(intent);
             }
 
 

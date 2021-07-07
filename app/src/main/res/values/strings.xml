@@ -2,6 +2,7 @@
     <string name="botonComenzar">Comenzar</string>
     <string name="botonIniFlujo">Iniciar Flujo</string>
     <string name="botonModDatos">Modificar Datos</string>
+    <string name="botonVolver">Volver</string>
     <!-- Navegación aportes y sueldos-->
     <string name="app_name">Proyecto_Flujo_Caja</string>
     <string name="BotonSiguiente">AportesPatronales</string>
@@ -81,7 +82,7 @@
 
     <string name="title_Total">Total: </string>
 
-    <string name="volver">Volver</string>
+    <string name="volver">Volver Inicio</string>
 
     <string name="febrero">Febrero: </string>
     <string name="marzo">Marzo: </string>

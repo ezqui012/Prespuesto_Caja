@@ -130,64 +130,6 @@
                         android:layout_marginLeft="10sp"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_14"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mayo"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/IBmonth4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_15"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/junio"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/IBmonth5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/title_recovery30"
                     android:layout_width="match_parent"
@@ -246,64 +188,6 @@
                         android:layout_marginLeft="10sp"/>
                     <TextView
                         android:id="@+id/R30month3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_18"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op8"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mayo"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/R30month4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_19"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/junio"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/R30month5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -413,64 +297,6 @@
                         android:layout_marginLeft="10sp"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_23"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op13"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mayo"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/IB60month4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_24"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op14"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/junio"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/IB60month5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
                 <TextView
                     android:id="@+id/title_recovery60"
                     android:layout_width="match_parent"
@@ -511,64 +337,6 @@
                         android:layout_marginLeft="10sp"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/layout_26"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/mayo"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/R60month4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layout_27"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-                    <TextView
-                        android:id="@+id/title_op17"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/junio"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                    <TextView
-                        android:id="@+id/R60month5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TextView"
-                        android:textColor="@color/black"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:layout_marginTop="10sp"
-                        android:layout_marginBottom="5sp"
-                        android:layout_marginLeft="10sp"/>
-                </LinearLayout>
-
                 <Button
                     android:id="@+id/btn_show_SI"
                     android:layout_width="match_parent"
@@ -576,10 +344,23 @@
                     android:layout_marginTop="10sp"
                     android:layout_marginLeft="20sp"
                     android:layout_marginRight="20sp"
-                    android:layout_marginBottom="10sp"
+                    android:layout_marginBottom="5sp"
                     android:backgroundTint="@color/blue_app"
                     android:onClick="viewSpendingInterest"
                     android:text="@string/show_expense_interes"
+                    app:cornerRadius="10sp" />
+
+                <Button
+                    android:id="@+id/btn_show_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginRight="20sp"
+                    android:layout_marginBottom="10sp"
+                    android:backgroundTint="@color/red_app"
+                    android:onClick="volverinicio"
+                    android:text="@string/volver"
                     app:cornerRadius="10sp" />
 
             </LinearLayout>

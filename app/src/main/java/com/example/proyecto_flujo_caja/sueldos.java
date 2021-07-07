@@ -180,7 +180,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
 
 
     public void anterior(View view){
-        Intent anteriorPatronal = new Intent(this, aportepatronal.class);
+        Intent anteriorPatronal = new Intent(this, financiamiento.class);
         startActivity(anteriorPatronal);
     }
     public void registro(View view){

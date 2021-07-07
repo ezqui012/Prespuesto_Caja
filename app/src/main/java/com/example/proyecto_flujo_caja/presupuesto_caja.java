@@ -473,6 +473,10 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         dba.collection("PresupuestoCaja").document("a")
                     .set(pcaja);
         Intent flujoCaj = new Intent(this, FlujoCaja.class);
+        flujoCaj.putExtra("ingresoOP", Double.parseDouble(pcaja.getTot1()));
+            flujoCaj.putExtra("gastoOP", Double.parseDouble(pcaja.getTot2()));
+            flujoCaj.putExtra("fuentes", Double.parseDouble(pcaja.getTot4()));
+            flujoCaj.putExtra("usos", Double.parseDouble(pcaja.getTot5()));
         startActivity(flujoCaj);
 
     }

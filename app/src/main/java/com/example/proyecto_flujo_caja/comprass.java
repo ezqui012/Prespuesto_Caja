@@ -86,11 +86,11 @@ public class comprass extends AppCompatActivity {
                 dmonth2.setText(com2);
                 String com3 =documentSnapshot.getString("comp3");
                 dmonth3.setText(com3);
-                String pre1 =documentSnapshot.getString("price1");
+                String pre1 =documentSnapshot.getString("precio1");
                 price1.setText(pre1);
-                String pre2 =documentSnapshot.getString("price2");
+                String pre2 =documentSnapshot.getString("precio2");
                 price2.setText(pre2);
-                String pre3 =documentSnapshot.getString("price3");
+                String pre3 =documentSnapshot.getString("precio3");
                 price3.setText(pre3);
                 String ventt =documentSnapshot.getString("vent");
                 venta.setText(ventt);
@@ -125,13 +125,16 @@ public class comprass extends AppCompatActivity {
         String dtsmonth1 = dmonth1.getText().toString();
         String dtsmonth2 = dmonth2.getText().toString();
         String dtsmonth3 = dmonth3.getText().toString();
-        String dtsprice= price1.getText().toString();
+
+        String dtsprice1= price1.getText().toString();
         String dtsprice2= price2.getText().toString();
         String dtsprice3= price3.getText().toString();
+
         Double dtmonth1 =Double.parseDouble(dtsmonth1);
         Double dtmonth2 =Double.parseDouble(dtsmonth2);
         Double dtmonth3 =Double.parseDouble(dtsmonth3);
-        Double pric =Double.parseDouble(dtsprice);
+
+        Double pric =Double.parseDouble(dtsprice1);
         Double pric2 =Double.parseDouble(dtsprice2);
         Double pric3 =Double.parseDouble(dtsprice3);
 
@@ -139,6 +142,7 @@ public class comprass extends AppCompatActivity {
         final String conta = contado.getText().toString();
         final String trent = treinta.getText().toString();
         final String ven = venta.getText().toString();
+
         if(TextUtils.isEmpty(conta)){ contado.setError("Este campo es requerido");return; }
         if(TextUtils.isEmpty(trent)){treinta.setError("Este campo es requerido");return; }
         if(TextUtils.isEmpty(ven)){venta.setError("Este campo es requerido");return; }
@@ -209,7 +213,7 @@ public class comprass extends AppCompatActivity {
         String mes2= (String) month2.getText();
         String mes3= (String) month3.getText();
 
-        compra = new Compras(conta,dtmonth1.toString(), dtmonth2.toString(),dtmonth3.toString(),trent,mes1,mes2,mes3,dtsprice,dtsprice2,dtsprice3,ven);
+        compra = new Compras(conta,dtmonth1.toString(), dtmonth2.toString(),dtmonth3.toString(),trent,mes1,mes2,mes3,dtsprice1,dtsprice2,dtsprice3,ven);
         db.collection("compras").document("a")
                 .set(compra);
 

@@ -155,10 +155,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void showMyAvtivity(View view){
         Intent change = new Intent(this, CompanyInformation.class);
-        change.putExtra("information", company);
+        /*change.putExtra("information", company);
         change.putExtra("mes1", february);
         change.putExtra("mes2", march);
-        change.putExtra("mes3", april);
+        change.putExtra("mes3", april);*/
         startActivity(change);
     }
 

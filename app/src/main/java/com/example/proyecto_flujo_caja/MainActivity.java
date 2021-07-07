@@ -105,10 +105,9 @@ public class MainActivity extends AppCompatActivity {
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                total1=Double.parseDouble(documentSnapshot.getString("tot1"));
-                total2=Double.parseDouble(documentSnapshot.getString("tot2"));
-                total3=Double.parseDouble(documentSnapshot.getString("tot1"));
-                total4=Double.parseDouble(documentSnapshot.getString("tot1"));
+                total1=Double.parseDouble(documentSnapshot.getString("sum1"));
+                total2=Double.parseDouble(documentSnapshot.getString("sum2"));
+                total3=Double.parseDouble(documentSnapshot.getString("sum3"));
 
             }
         });
@@ -147,10 +146,10 @@ public class MainActivity extends AppCompatActivity {
     }
     public void siguienteGrafico(View view){
         Intent graficos = new Intent(this, grafico.class);
-        graficos.putExtra("total",total1);
-        graficos.putExtra("total2",total2);
-        graficos.putExtra("total3",total3);
-        graficos.putExtra("total4",total4);
+        graficos.putExtra("sum1",total1);
+        graficos.putExtra("sum2",total2);
+        graficos.putExtra("sum3",total3);
+
         startActivity(graficos);
     }
 

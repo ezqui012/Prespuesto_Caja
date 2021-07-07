@@ -58,40 +58,43 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
+                DecimalFormat df = new DecimalFormat();
+                df.setMaximumFractionDigits(2);
                 Double amort= documentSnapshot.getDouble("amortizacion");
-                amortizacion.setText(""+amort);
+                amortizacion.setText(""+df.format(amort));
                 Double amort1= documentSnapshot.getDouble("amortizacion1");
-                amortizacionPe1.setText(""+amort1);
+                amortizacionPe1.setText(""+df.format(amort1));
                 Double amort2= documentSnapshot.getDouble("amortizacion2");
-                amortizacionPe2.setText(""+amort2);
+                amortizacionPe2.setText(""+df.format(amort2));
                 Double cap= documentSnapshot.getDouble("capital");
-                capital.setText(""+cap);
+                capital.setText(""+df.format(cap));
                 Double cap1= documentSnapshot.getDouble("capital1");
-                capPeriodo1.setText(""+cap1);
+                capPeriodo1.setText(""+df.format(cap1));
                 Double cap2= documentSnapshot.getDouble("capital2");
-                capPeriodo2.setText(""+cap2);
+                capPeriodo2.setText(""+df.format(cap2));
 
                 Double capIni= documentSnapshot.getDouble("capitalInicial");
-                capitalInicial.setText(""+capIni);
+                capitalInicial.setText(""+df.format(capIni));
                 Double cuanti= documentSnapshot.getDouble("cuantia");
-                cuantia.setText(""+cuanti);
+                cuantia.setText(""+df.format(cuanti));
 
                 Double cuot= documentSnapshot.getDouble("cuota");
-                cuota.setText(""+cuot);
+                cuota.setText(""+df.format(cuot));
                 Double cuot1= documentSnapshot.getDouble("cuota1");
-                cuota1.setText(""+cuot1);
+                cuota1.setText(""+df.format(cuot1));
                 Double cuot2= documentSnapshot.getDouble("cuota2");
-                cuota2.setText(""+cuot2);
+                cuota2.setText(""+df.format(cuot2));
                 Double inte= documentSnapshot.getDouble("interes");
-                interes.setText(""+inte);
+                interes.setText(""+df.format(inte));
                 Double inte1= documentSnapshot.getDouble("interes1");
-                interes1.setText(""+inte1);
+                interes1.setText(""+df.format(inte1));
                 Double inte2= documentSnapshot.getDouble("interes2");
-                interes2.setText(""+inte2);
+                interes2.setText(""+df.format(inte2));
                 Double mes= documentSnapshot.getDouble("meses");
+
                 meses.setText(""+mes);
                 Double tipoInte= documentSnapshot.getDouble("tipoInteres");
-                tipoInteres.setText(""+tipoInte);
+                tipoInteres.setText(""+df.format(tipoInte));
 
             }
         });

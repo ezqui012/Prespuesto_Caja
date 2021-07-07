@@ -36,7 +36,7 @@ public class grafico extends AppCompatActivity {
     private BarChart barChart;
     private TextView text,text2;
     private String p1,p2,p3,p4;
-    private int total1,total2,total3,total4;
+    private Double total1,total2,total3,total4;
     public int[]totales= new int[4];
     private String[]months= new String[]{"Enero","Febrero", "Marzo","Abril"};
     private int[]sale= new int[]{25,30,32,50};
@@ -46,15 +46,15 @@ public class grafico extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafico);
-        total1=(int) getIntent().getSerializableExtra("total");
-        total2=(int)getIntent().getSerializableExtra("total2");
-        total3=(int)getIntent().getSerializableExtra("total3");
-        total4=(int)getIntent().getSerializableExtra("total4");
+        total1=(Double) getIntent().getSerializableExtra("total");
+        total2=(Double) getIntent().getSerializableExtra("total2");
+        total3=(Double) getIntent().getSerializableExtra("total3");
+        total4=(Double) getIntent().getSerializableExtra("total4");
 
         totales[0]=30;
-        totales[1]=total2;
-        totales[2]=total3;
-        totales[3]=total4;
+        totales[1]=(int) Math.round(total2);
+        totales[2]=(int) Math.round(total3);;
+        totales[3]=(int) Math.round(total4);
 
        barChart=(BarChart)findViewById(R.id.barChart);
 

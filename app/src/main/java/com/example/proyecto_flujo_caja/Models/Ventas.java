@@ -1,6 +1,8 @@
 package com.example.proyecto_flujo_caja.Models;
 
-public class Ventas {
+import java.io.Serializable;
+
+public class Ventas implements Serializable {
     String mes1, mes2, mes3, cont1, cont2, cont3, ventcont, vent30, vent60, inco, venta1, venta2, venta3, precio1, precio2, precio3,treinta1,treinta2,trinta3,sesenta1,sesenta2,sesenta3;
 
     public Ventas(String mes1, String mes2, String mes3, String cont1, String cont2, String cont3, String ventcont, String vent30, String vent60, String inco, String venta1, String venta2, String venta3, String precio1, String precio2, String precio3, String treinta1, String treinta2, String trinta3, String sesenta1, String sesenta2, String sesenta3) {

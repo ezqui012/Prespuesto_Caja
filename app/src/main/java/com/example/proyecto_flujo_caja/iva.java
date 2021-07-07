@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.Iva;
 import com.example.proyecto_flujo_caja.Models.Ventas;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,12 +30,18 @@ public class iva extends AppCompatActivity {
     EditText merch1,merch2,merch3,op1,op2,op3,inte1,inte2,inte3,vent1,vent2,vent3,alq1,alq2,alq3,otro1,otro2,otro3, in1,in2,in3, com1,com2,com3,sub1,sub2,sub3,ot1,ot2,ot3;
     String mes1,mes2,mes3,ct1,ct2,ct3;
 
+    Ventas infoV;
+    Company company;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iva);
+
+        company = (Company) getIntent().getSerializableExtra("information");
+        infoV = (Ventas) getIntent().getSerializableExtra("infoVenta");
 
         cancel=findViewById(R.id.cancelar_iva);
         sig= findViewById(R.id.siguiente_iva);
@@ -286,7 +293,8 @@ public class iva extends AppCompatActivity {
                 intent.putExtra("contado1", cont1.getText().toString());
                 intent.putExtra("contado2", cont2.getText().toString());
                 intent.putExtra("contado3", cont3.getText().toString());
-
+                intent.putExtra("infoVenta", infoV);
+                intent.putExtra("information", company);
 
                 db.collection("Iva").document("a")
                         .set(iva)

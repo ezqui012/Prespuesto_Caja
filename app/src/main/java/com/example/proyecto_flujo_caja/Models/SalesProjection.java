@@ -1,13 +1,15 @@
 package com.example.proyecto_flujo_caja.Models;
 
-public class SalesProjection {
+import java.io.Serializable;
+
+public class SalesProjection implements Serializable {
 
     private String month;
-    private int sold_units;
+    private Double sold_units;
     private Double unit_price;
     private Double gross_income;
 
-    public SalesProjection(String month, int sold_units, Double unit_price) {
+    public SalesProjection(String month, Double sold_units, Double unit_price) {
         this.month = month;
         this.sold_units = sold_units;
         this.unit_price = unit_price;
@@ -22,11 +24,11 @@ public class SalesProjection {
         this.month = month;
     }
 
-    public int getSold_units() {
+    public Double getSold_units() {
         return sold_units;
     }
 
-    public void setSold_units(int sold_units) {
+    public void setSold_units(Double sold_units) {
         this.sold_units = sold_units;
     }
 

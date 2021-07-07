@@ -1,5 +1,6 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -12,37 +13,39 @@ import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.InteresGasto;
 import com.example.proyecto_flujo_caja.Models.InteresIngreso;
 import com.example.proyecto_flujo_caja.Models.SalesProjection;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 
 public class CompanyInformation extends AppCompatActivity {
 
-    private Company company;
+    Company company;
 
-    private EditText input_sales;
-    private EditText input_credit30;
-    private EditText input_credit60;
-    private EditText input_about;
-    private EditText input_badDebt;
-    private EditText input_interest;
+    EditText input_sales;
+    EditText input_credit30;
+    EditText input_credit60;
+    EditText input_about;
+    EditText input_badDebt;
+    EditText input_interest;
 
-    private Double sales;
-    private Double credit30;
-    private Double credit60;
-    private Double about;
-    private Double badDebt;
-    private Double interest;
+    Double sales;
+    Double credit30;
+    Double credit60;
+    Double about;
+    Double badDebt;
+    Double interest;
 
-    private InteresGasto interes;
-    private InteresIngreso interesI;
+    InteresGasto interes;
+    InteresIngreso interesI;
 
-    private SalesProjection february;
-    private SalesProjection march;
-    private SalesProjection april;
-    private SalesProjection may;
-    private SalesProjection june;
+    SalesProjection february;
+    SalesProjection march;
+    SalesProjection april;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,9 @@ public class CompanyInformation extends AppCompatActivity {
         setContentView(R.layout.activity_company_information);
 
         company = (Company) getIntent().getSerializableExtra("information");
+        february = (SalesProjection) getIntent().getSerializableExtra("mes1");
+        march = (SalesProjection) getIntent().getSerializableExtra("mes2");
+        april = (SalesProjection) getIntent().getSerializableExtra("mes3");
 
         input_sales = (EditText) findViewById(R.id.input_sales);
         input_credit30 = (EditText) findViewById(R.id.input_credit30);
@@ -58,22 +64,12 @@ public class CompanyInformation extends AppCompatActivity {
         input_badDebt = (EditText) findViewById(R.id.input_bad_debt);
         input_interest = (EditText) findViewById(R.id.input_interest);
 
-        projectionSold();
-
+        showInfo();
     }
 
     public void anterior(View view){
         Intent anterior = new Intent(this, MainActivity.class);
         startActivity(anterior);
-    }
-
-    private void projectionSold(){
-        february = new SalesProjection("Febrero", 0,0.0);
-        march = new SalesProjection("Marzo", 0,0.0);
-        april = new SalesProjection("Abril", 400000,0.2);
-        may = new SalesProjection("Mayo", 400000,0.2);
-        june = new SalesProjection("Junio", 250000,0.2);
-        showInfo();
     }
 
     private void showInfo(){
@@ -120,8 +116,8 @@ public class CompanyInformation extends AppCompatActivity {
 
         company = null;
         company = new Company(sales, credit30, credit60, about, badDebt, interest);
-        interes = new InteresGasto(february, march, april, may, june, company);
-        interesI = new InteresIngreso(february, march, april, may, june, company);
+        interes = new InteresGasto(february, march, april, company);
+        interesI = new InteresIngreso(february, march, april, company);
 
         db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").update(company.getMapInfo());
         db.collection("interesIngreso").document("TtnQFYTiuoOc3OqXitgn").update(interesI.getMapinteresI());
@@ -130,7 +126,9 @@ public class CompanyInformation extends AppCompatActivity {
         Intent interest_comercial = new Intent(this, CommercialInterest.class);
         interest_comercial.putExtra("informationG", interes);
         interest_comercial.putExtra("informationI", interesI);
+        interest_comercial.putExtra("nMes1", february.getMonth());
+        interest_comercial.putExtra("nMes2", march.getMonth());
+        interest_comercial.putExtra("nMes3", april.getMonth());
         startActivity(interest_comercial);
-
     }
 }

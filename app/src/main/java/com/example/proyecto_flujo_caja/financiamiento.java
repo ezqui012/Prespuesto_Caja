@@ -101,7 +101,8 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         this.calculoFinanciamiento();
     }
     public void calculoFinanciamiento(){
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
         double cantCuantia = Double.parseDouble(cuantia.getText().toString());
         Integer cantMeses = Integer.parseInt(meses.getText().toString());
         double cantTipoInteres = Double.parseDouble(tipoInteres.getText().toString());
@@ -111,27 +112,27 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         double resInteres = cantCapInicial*cantTipoInteres;
         double resAmortizacion = resCuota-resInteres;
         double resCapital = cantCapInicial-resAmortizacion;
-
-        capital.setText(""+resCapital);
-        amortizacion.setText(""+resAmortizacion);
-        interes.setText(""+resInteres);
-        cuota.setText(""+resCuota);
+        //periodo
+        capital.setText(""+df.format(resCapital));
+        amortizacion.setText(""+df.format(resAmortizacion));
+        interes.setText(""+df.format(resInteres));
+        cuota.setText(""+df.format(resCuota));
         //periodo1
         double resInteres1=resCapital*cantTipoInteres;
         double resAmorti1=resCuota-resInteres1;
         double resCapital1=resCapital-resAmorti1;
-        capPeriodo1.setText(""+resCapital1);
-        amortizacionPe1.setText(""+resAmorti1);
-        interes1.setText(""+resInteres1);
+        capPeriodo1.setText(""+df.format(resCapital1));
+        amortizacionPe1.setText(""+df.format(resAmorti1));
+        interes1.setText(""+df.format(resInteres1));
         //periodo2
         double resInteres2=resCapital1*cantTipoInteres;
         double resAmorti2=resCuota-resInteres2;
         double resCapital2=resCapital1-resAmorti2;
-        capPeriodo2.setText(""+resCapital2);
-        amortizacionPe2.setText(""+resAmorti2);
-        interes2.setText(""+resInteres2);
-        cuota1.setText(""+resCuota);
-        cuota2.setText(""+resCuota);
+        capPeriodo2.setText(""+df.format(resCapital2));
+        amortizacionPe2.setText(""+df.format(resAmorti2));
+        interes2.setText(""+df.format(resInteres2));
+        cuota1.setText(""+df.format(resCuota));
+        cuota2.setText(""+df.format(resCuota));
         financiamiento.setCapital(resCapital);
         financiamiento.setAmortizacion(resAmortizacion);
         financiamiento.setInteres(resInteres);

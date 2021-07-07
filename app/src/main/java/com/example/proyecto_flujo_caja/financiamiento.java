@@ -74,9 +74,9 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
                 capPeriodo2.setText(""+df.format(cap2));
 
                 Double capIni= documentSnapshot.getDouble("capitalInicial");
-                capitalInicial.setText(""+df.format(capIni));
+                capitalInicial.setText(""+capIni);
                 Double cuanti= documentSnapshot.getDouble("cuantia");
-                cuantia.setText(""+df.format(cuanti));
+                cuantia.setText(""+cuanti);
 
                 Double cuot= documentSnapshot.getDouble("cuota");
                 cuota.setText(""+df.format(cuot));
@@ -91,7 +91,6 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
                 Double inte2= documentSnapshot.getDouble("interes2");
                 interes2.setText(""+df.format(inte2));
                 Double mes= documentSnapshot.getDouble("meses");
-
                 meses.setText(""+mes);
                 Double tipoInte= documentSnapshot.getDouble("tipoInteres");
                 tipoInteres.setText(""+df.format(tipoInte));
@@ -107,7 +106,7 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
         double cantCuantia = Double.parseDouble(cuantia.getText().toString());
-        Integer cantMeses = Integer.parseInt(meses.getText().toString());
+        Double cantMeses = Double.parseDouble(meses.getText().toString());
         double cantTipoInteres = Double.parseDouble(tipoInteres.getText().toString());
         double cantCapInicial = Double.parseDouble(capitalInicial.getText().toString());
         double i = Math.pow((1-cantTipoInteres),-cantMeses);
@@ -165,7 +164,7 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         pre.putExtra("cuota2", cuota2.getText().toString());
     }
     public void anterior(View view){
-        Intent main = new Intent(this, MainActivity.class);
+        Intent main = new Intent(this, presupuesto_caja.class);
 
         startActivity(main);
     }

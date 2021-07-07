@@ -35,12 +35,12 @@ public class grafico extends AppCompatActivity {
     private BarChart barChart;
     private TextView text,text2;
     private String p1,p2,p3,p4;
-    private Double total1,total2,total3,total4;
-    public int[]totales= new int[4];
+    private Double total1,total2,total3;
+    public int[]totales= new int[3];
     private Button btnVolver;
     private String[]months= new String[]{"Enero","Febrero", "Marzo"};
     private int[]sale= new int[]{25,30,32,50};
-    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.RED,Color.GREEN};
+    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class grafico extends AppCompatActivity {
         total3=(Double) getIntent().getSerializableExtra("sum3");
         totales[0]=(int) Math.round(total1);
         totales[1]=(int) Math.round(total2);;
-        totales[3]=(int) Math.round(total3);
+        totales[2]=(int) Math.round(total3);
 
        barChart=(BarChart)findViewById(R.id.barChart);
 

@@ -369,9 +369,9 @@
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="anterior"
             android:layout_marginLeft="30sp"
-            android:text="@string/BotonCancelarFinanciamiento"
+            android:onClick="anterior"
+            android:text="Siguiente"
             app:backgroundTint="#CD0101"
             tools:layout_editor_absoluteX="337dp"
             tools:layout_editor_absoluteY="543dp" />

@@ -73,6 +73,7 @@ public class CompanyInformation extends AppCompatActivity {
     }
 
     private void showInfo(){
+
         input_sales.setText(String.valueOf(company.getSales()));
         input_credit30.setText(String.valueOf(company.getCredit30()));
         input_credit60.setText(String.valueOf(company.getCredit60()));

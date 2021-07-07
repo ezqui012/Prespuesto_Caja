@@ -114,8 +114,8 @@ public class comprass extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                //startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
-                Intent intent = new Intent(getApplicationContext(), CompanyInformation.class);
+                startActivity(new Intent(getApplicationContext(),CompanyInformation.class));
+               /* Intent intent = new Intent(getApplicationContext(), CompanyInformation.class);
                 february = new SalesProjection(infoV.getMes1(), Double.parseDouble(infoV.getVenta1()), Double.parseDouble(infoV.getPrecio1()));
                 march = new SalesProjection(infoV.getMes2(), Double.parseDouble(infoV.getVenta2()), Double.parseDouble(infoV.getPrecio2()));
                 april = new SalesProjection(infoV.getMes3(), Double.parseDouble(infoV.getVenta3()), Double.parseDouble(infoV.getPrecio3()));
@@ -123,7 +123,7 @@ public class comprass extends AppCompatActivity {
                 intent.putExtra("mes1", february);
                 intent.putExtra("mes2", march);
                 intent.putExtra("mes3", april);
-                startActivity(intent);
+                startActivity(intent);*/
             }
 
 

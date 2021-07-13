@@ -31,14 +31,14 @@ import java.util.ArrayList;
 
 
 public class grafico extends AppCompatActivity {
-    private PieChart pieChart;
     private BarChart barChart;
-    private TextView text,text2;
-    private String p1,p2,p3,p4;
+
+
+
     private Double total1,total2,total3;
     public int[]totales= new int[3];
     private Button btnVolver;
-    private String[]months= new String[]{"Enero","Febrero", "Marzo"};
+    private String[]months= new String[]{"Mes 1","Mes 2", "Mes 3"};
     private int[]sale= new int[]{25,30,32,50};
     private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN};
 
@@ -52,8 +52,7 @@ public class grafico extends AppCompatActivity {
         totales[0]=(int) Math.round(total1);
         totales[1]=(int) Math.round(total2);;
         totales[2]=(int) Math.round(total3);
-
-       barChart=(BarChart)findViewById(R.id.barChart);
+        barChart=(BarChart)findViewById(R.id.barChart);
 
        createCharts();
        btnVolver=(Button)findViewById(R.id.btnVolver);
@@ -62,7 +61,7 @@ public class grafico extends AppCompatActivity {
 
     private Chart getSameChart(Chart chart, String descripcion, int textColor, int background, int animateY){
         chart.getDescription().setText(descripcion);
-        chart.getDescription().setTextSize(15);
+        chart.getDescription().setTextSize(30);
         chart.setBackgroundColor(background);
         chart.animateY(animateY);
         legend(chart);
@@ -72,8 +71,13 @@ public class grafico extends AppCompatActivity {
 
     private void legend(Chart chart){
         Legend legend= chart.getLegend();
-        legend.setForm(Legend.LegendForm.CIRCLE);
-        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.CENTER);
+        legend.setForm(Legend.LegendForm.SQUARE);
+        legend.setTextSize(20);
+        legend.setFormSize(20);
+
+        legend.setVerticalAlignment(Legend.LegendVerticalAlignment.TOP);
+        legend.setHorizontalAlignment(Legend.LegendHorizontalAlignment.RIGHT);
+
         ArrayList<LegendEntry>entries= new ArrayList<>();
         for (int i=0; i<months.length;i++){
             LegendEntry entry= new LegendEntry();
@@ -82,6 +86,7 @@ public class grafico extends AppCompatActivity {
             entries.add(entry);
         }
         legend.setCustom(entries);
+
     }
     private ArrayList<BarEntry>getBarEntries(){
         ArrayList<BarEntry>entries= new ArrayList<>();
@@ -99,15 +104,18 @@ public class grafico extends AppCompatActivity {
     private void axisX(XAxis axis){
         axis.setGranularityEnabled(true);
         axis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        axis.setTextSize(15);
         axis.setValueFormatter(new IndexAxisValueFormatter(months));
     }
     private void axisLeftY(YAxis axis){
         axis.setSpaceTop(30);
         axis.setAxisMinimum(0);
+        axis.setTextSize(20);
 
     }
     private void axisRight(YAxis axis){
         axis.setEnabled(false);
+
 
     }
     public void createCharts(){
@@ -127,7 +135,7 @@ public class grafico extends AppCompatActivity {
         dataSet.setColors(colors);
         //Colores dentro del pastel
         dataSet.setValueTextSize(Color.WHITE);
-        dataSet.setValueTextSize(10);
+        dataSet.setValueTextSize(30);
         return dataSet;
     }
     private BarData getBarData(){

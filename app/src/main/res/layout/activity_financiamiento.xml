@@ -3,72 +3,179 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".financiamiento">
 
-    <TextView
-        android:id="@+id/textView10"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="Financiamiento"
-        android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        android:gravity="center_horizontal" />
+        android:layout_height="236dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="111dp"
-        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="182dp"
+            android:gravity="center_horizontal"
+            android:text="Financiamiento"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextCuantia"
             android:layout_width="275dp"
             android:layout_height="76dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="80dp"
+
+            android:layout_marginEnd="320dp"
+            android:layout_marginRight="320dp"
+            android:layout_marginBottom="80dp"
             android:ems="10"
             android:hint="Cuantia"
             android:inputType="number|numberDecimal"
-
-            tools:layout_editor_absoluteX="14dp"
-            tools:layout_editor_absoluteY="53dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextTipoInteres"
             android:layout_width="278dp"
             android:layout_height="76dp"
+            android:layout_marginStart="305dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:layout_marginBottom="80dp"
             android:ems="10"
             android:hint="Tipo de Interés"
             android:inputType="number|numberDecimal"
-            android:textColor="#000000" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="173dp"
-        android:orientation="horizontal">
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextCapitalInicial"
             android:layout_width="280dp"
             android:layout_height="58dp"
+            android:layout_marginTop="179dp"
+            android:layout_marginEnd="320dp"
+            android:layout_marginRight="320dp"
             android:ems="10"
             android:hint="Capital Inicial"
             android:inputType="number|numberDecimal"
             android:textColor="#000000"
-            tools:layout_editor_absoluteX="274dp"
-            tools:layout_editor_absoluteY="118dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextMeses"
-            android:layout_width="282dp"
-            android:layout_height="57dp"
+            android:layout_width="274dp"
+            android:layout_height="68dp"
+            android:layout_marginStart="306dp"
+            android:layout_marginLeft="306dp"
+            android:layout_marginTop="169dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
             android:ems="10"
             android:hint="Meses"
             android:inputType="number|numberDecimal"
-            tools:layout_editor_absoluteX="240dp"
-            tools:layout_editor_absoluteY="53dp" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView90"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="522dp"
+            android:layout_marginRight="522dp"
+            android:layout_marginBottom="143dp"
+            android:text="Cuantía"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView94"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="305dp"
+            android:layout_marginLeft="305dp"
+            android:layout_marginTop="66dp"
+            android:layout_marginEnd="162dp"
+            android:layout_marginRight="162dp"
+            android:layout_marginBottom="143dp"
+            android:text="Tipo de Interés"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView95"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginEnd="470dp"
+            android:layout_marginRight="470dp"
+            android:layout_marginBottom="50dp"
+            android:text="Capital Inicial"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView96"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="306dp"
+            android:layout_marginLeft="306dp"
+            android:layout_marginTop="159dp"
+            android:layout_marginEnd="235dp"
+            android:layout_marginRight="235dp"
+            android:layout_marginBottom="50dp"
+            android:text="Meses"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:orientation="horizontal">
 
     </LinearLayout>
 
@@ -91,8 +198,8 @@
                 <TableLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="visible"
-                    android:stretchColumns="3">
+                    android:stretchColumns="3"
+                    android:visibility="visible">
 
                     <TableRow
                         android:layout_width="match_parent"
@@ -299,7 +406,8 @@
             </LinearLayout>
         </HorizontalScrollView>
 
-    </LinearLayout><![CDATA[
+    </LinearLayout>
+    <![CDATA[
 
 
 
@@ -359,8 +467,8 @@
             android:id="@+id/btnRegistrarFinanciamiento"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/BotonRegistrarFinanciamiento"
             android:layout_marginLeft="160sp"
+            android:text="@string/BotonRegistrarFinanciamiento"
             app:backgroundTint="#00509A"
             tools:layout_editor_absoluteX="147dp"
             tools:layout_editor_absoluteY="543dp" />

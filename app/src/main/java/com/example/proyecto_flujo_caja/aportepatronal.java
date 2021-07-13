@@ -60,24 +60,53 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
 
     public void onClick(View view)
     {
-        double porcentajeCaja = Double.parseDouble(caja.getText().toString());
-        double porcentajeProv = Double.parseDouble(prov.getText().toString());
-        double porcentajeAfp = Double.parseDouble(afp.getText().toString());
-        double porcentajeSolidario = Double.parseDouble(solidario.getText().toString());
-        double porcentajeRiesgo = Double.parseDouble(riesgo.getText().toString());
-        double res = porcentajeCaja+porcentajeProv+porcentajeAfp+porcentajeSolidario+porcentajeRiesgo;
-        resAporte.setText(""+res);
-        aporte.setAfp(porcentajeAfp);
-        aporte.setCaja(porcentajeCaja);
-        aporte.setProvivienda(porcentajeProv);
-        aporte.setSolidario(porcentajeSolidario);
-        aporte.setRiesgo(porcentajeRiesgo);
-        aporte.setResAporte(res);
-        db.collection("Aporte").document("7TqA8LJfyRuwHQPWKLKX").set(aporte);
-        Intent siguienteSueldo = new Intent(this, sueldos.class);
-        siguienteSueldo.putExtra("dato", resAporte.getText().toString());
-        startActivity(siguienteSueldo);
+        validacion();
+
     }
+
+    public void validacion(){
+       String caj = caja.getText().toString();
+        String provi = prov.getText().toString();
+        String af = afp.getText().toString();
+        String soli = solidario.getText().toString();
+        String ri = riesgo.getText().toString();
+
+        if(caj.equals("")){
+            caja.setError("Campo requerido");
+        }
+        else if(provi.equals("")){
+            prov.setError("Campo Requerido");
+        }
+        else if(af.equals("")){
+            afp.setError("Campo Requerido");
+        }
+        else if(soli.equals("")){
+            solidario.setError("Campo Requerido");
+        }
+        else if(ri.equals("")){
+            riesgo.setError("Campo Requerido");
+        }else{
+            double porcentajeCaja = Double.parseDouble(caja.getText().toString());
+            double porcentajeProv = Double.parseDouble(prov.getText().toString());
+            double porcentajeAfp = Double.parseDouble(afp.getText().toString());
+            double porcentajeSolidario = Double.parseDouble(solidario.getText().toString());
+            double porcentajeRiesgo = Double.parseDouble(riesgo.getText().toString());
+            double res = porcentajeCaja+porcentajeProv+porcentajeAfp+porcentajeSolidario+porcentajeRiesgo;
+            resAporte.setText(""+res);
+            aporte.setAfp(porcentajeAfp);
+            aporte.setCaja(porcentajeCaja);
+            aporte.setProvivienda(porcentajeProv);
+            aporte.setSolidario(porcentajeSolidario);
+            aporte.setRiesgo(porcentajeRiesgo);
+            aporte.setResAporte(res);
+            db.collection("Aporte").document("7TqA8LJfyRuwHQPWKLKX").set(aporte);
+            Intent siguienteSueldo = new Intent(this, sueldos.class);
+            siguienteSueldo.putExtra("dato", resAporte.getText().toString());
+            startActivity(siguienteSueldo);
+        }
+
+    }
+
     public void anterior (View view){
         Intent anterior = new Intent(this, sueldos.class);
         startActivity(anterior);

@@ -100,7 +100,8 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
 
     }
     public void onClick(View view){
-        this.calculoFinanciamiento();
+        validacion();
+
     }
     public void calculoFinanciamiento(){
         DecimalFormat df = new DecimalFormat();
@@ -162,6 +163,26 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         pre.putExtra("cuota", cuota.getText().toString());
         pre.putExtra("cuota1", cuota1.getText().toString());
         pre.putExtra("cuota2", cuota2.getText().toString());
+    }
+    public void validacion(){
+        String cuanti = cuantia.getText().toString();
+        String tipoInt = tipoInteres.getText().toString();
+        String capiIni = capitalInicial.getText().toString();
+        String mes = meses.getText().toString();
+        if(cuanti.equals("")){
+            cuantia.setError("Campo Requerido");
+        }
+        else if(tipoInt.equals("")){
+            tipoInteres.setError("Campo Requerido");
+        }
+        else if(capiIni.equals("")){
+            capitalInicial.setError("Campo Requerido");
+        }
+        else if(mes.equals("")){
+            meses.setError("Campo Requerido");
+        }else{
+            this.calculoFinanciamiento();
+        }
     }
     public void anterior(View view){
         Intent main = new Intent(this, presupuesto_caja.class);

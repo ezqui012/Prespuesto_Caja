@@ -5,7 +5,7 @@
     <string name="botonVolver">Volver</string>
     <!-- Navegación aportes y sueldos-->
     <string name="app_name">Proyecto_Flujo_Caja</string>
-    <string name="BotonSiguiente">AportesPatronales</string>
+    <string name="BotonSiguiente">Aportes Patronales</string>
     <string name="tv1">primer activity</string>
     <string name="BotonRegistrarAporte">Registrar</string>
     <string name="BotonCancelarAporte">Cancelar</string>

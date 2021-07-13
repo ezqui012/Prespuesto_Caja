@@ -73,19 +73,14 @@ public class CompanyInformation extends AppCompatActivity {
                 company = new Company(documentSnapshot.getDouble("sales"), documentSnapshot.getDouble("credit30"),
                         documentSnapshot.getDouble("credit60"), documentSnapshot.getDouble("about"),
                         documentSnapshot.getDouble("badDebt"), documentSnapshot.getDouble("interest"));
+                input_sales.setText(String.valueOf(company.getSales()));
+                input_credit30.setText(String.valueOf(company.getCredit30()));
+                input_credit60.setText(String.valueOf(company.getCredit60()));
+                input_about.setText(String.valueOf(company.getAbout()));
+                input_badDebt.setText(String.valueOf(company.getBadDebt()));
+                input_interest.setText(String.valueOf(company.getInterest()));
             }
         });
-        /*db.collection("interesc").document("1Rw3hWARU5tp4zLSke9n").get().addOnSuccessListener(
-                new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.exists()){
-                            company = new Company(documentSnapshot.getDouble("sales"), documentSnapshot.getDouble("credit30"),
-                                    documentSnapshot.getDouble("credit60"), documentSnapshot.getDouble("about"),
-                                    documentSnapshot.getDouble("badDebt"), documentSnapshot.getDouble("interest"));
-                        }
-                    }
-                });*/
 
         DocumentReference documentReference2= FirebaseFirestore.getInstance().collection("venta").document("a");
         documentReference2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -94,23 +89,10 @@ public class CompanyInformation extends AppCompatActivity {
                 february = new SalesProjection(documentSnapshot.getString("mes1"), Double.parseDouble(documentSnapshot.getString("venta1")), Double.parseDouble(documentSnapshot.getString("precio1")));
                 march = new SalesProjection(documentSnapshot.getString("mes2"), Double.parseDouble(documentSnapshot.getString("venta2")), Double.parseDouble(documentSnapshot.getString("precio2")));
                 april = new SalesProjection(documentSnapshot.getString("mes3"), Double.parseDouble(documentSnapshot.getString("venta3")), Double.parseDouble(documentSnapshot.getString("precio3")));
-                showInfo();
+                //showInfo();
             }
         });
 
-        /*db.collection("venta").document("a").get().addOnSuccessListener(
-                new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        if(documentSnapshot.exists()){
-                            february = new SalesProjection(documentSnapshot.getString("mes1"), Double.parseDouble(documentSnapshot.getString("venta1")), Double.parseDouble(documentSnapshot.getString("precio1")));
-                            march = new SalesProjection(documentSnapshot.getString("mes2"), Double.parseDouble(documentSnapshot.getString("venta2")), Double.parseDouble(documentSnapshot.getString("precio2")));
-                            april = new SalesProjection(documentSnapshot.getString("mes3"), Double.parseDouble(documentSnapshot.getString("venta3")), Double.parseDouble(documentSnapshot.getString("precio3")));
-                        }
-                    }
-                });*/
-
-        //showInfo();
     }
 
     public void anterior(View view){
@@ -118,7 +100,7 @@ public class CompanyInformation extends AppCompatActivity {
         startActivity(anterior);
     }
 
-    private void showInfo(){
+    /*private void showInfo(){
 
         input_sales.setText(String.valueOf(company.getSales()));
         input_credit30.setText(String.valueOf(company.getCredit30()));
@@ -126,7 +108,7 @@ public class CompanyInformation extends AppCompatActivity {
         input_about.setText(String.valueOf(company.getAbout()));
         input_badDebt.setText(String.valueOf(company.getBadDebt()));
         input_interest.setText(String.valueOf(company.getInterest()));
-    }
+    }*/
 
     public void registerInfo(View view){
         if(TextUtils.isEmpty(input_sales.getText().toString())){

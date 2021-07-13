@@ -67,7 +67,7 @@
 
     <string name="titulo_flojo">Flujo de Caja Proyectado</string>
     <string name="subTituloActividadDeOperacion">Actividades de Operación</string>
-    <string name="subTituloActividadDeInversion">Actividades de Inverción</string>
+    <string name="subTituloActividadDeInversion">Actividades de Inversión</string>
     <string name="subTituloActividadDeFinanciamiento">Actividades de Financiamiento</string>
     <string name="subTituloIncrementoProyectado">Incremento Proyectado del Efectivo</string>
     <string name="subTituloEfectivoInicial">Efectivo al Inicio del Periodo</string>

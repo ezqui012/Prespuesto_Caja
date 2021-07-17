@@ -26,7 +26,7 @@
                 android:layout_marginTop="50sp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="19sp"
-                tools:text="Flujo de caja proeyectado en:"></TextView>
+                tools:text="Flujo de caja proyectado en:"></TextView>
 
             <Button
 

@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
         <activity android:name=".FlujoSemestral"></activity>
+        <activity android:name=".FlujoAnual"></activity>
         <activity android:name=".menu_FlujoDeCaja" />
         <activity android:name=".Inicio">
             <intent-filter>

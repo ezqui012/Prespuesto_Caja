@@ -170,6 +170,10 @@ public class MainActivity extends AppCompatActivity {
         change.putExtra("usos", usos);
         startActivity(change);
     }
+    public void MenuFlujo(View view){
+        Intent change = new Intent(this, menu_FlujoDeCaja.class);
+        startActivity(change);
+    }
 
     public void crearReporte(View view){
         Intent intent = new Intent(Intent.ACTION_CREATE_DOCUMENT);

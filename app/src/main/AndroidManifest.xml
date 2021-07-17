@@ -9,6 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
+        <activity android:name=".FlujoSemestral"></activity>
+        <activity android:name=".menu_FlujoDeCaja" />
         <activity android:name=".Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,9 +40,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Proyecto_Flujo_Caja.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.Proyecto_Flujo_Caja.NoActionBar" />
     </application>
 
 </manifest>

@@ -50,15 +50,15 @@ public class FlujoCaja extends AppCompatActivity {
 
         db.collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE").update(flujo.getMapInfo());
 
-        actividadesOp = (TextView) findViewById(R.id.Input_total1);
-        ingresosdOp = (TextView) findViewById(R.id.Input_ingresoOP);
-        gastosOp = (TextView) findViewById(R.id.Input_ingresoGP);
-        actividadesI = (TextView) findViewById(R.id.Input_total2);
-        ingresosC = (TextView) findViewById(R.id.Input_ingresoIC);
-        gastosC = (TextView) findViewById(R.id.Input_ingresoGC);
-        actividadFin = (TextView) findViewById(R.id.Input_total3);
-        fuentes = (TextView) findViewById(R.id.Input_fuentes);
-        usos = (TextView) findViewById(R.id.Input_usos);
+        actividadesOp = (TextView) findViewById(R.id.totop);
+        ingresosdOp = (TextView) findViewById(R.id.ingreop);
+        gastosOp = (TextView) findViewById(R.id.gasop);
+        actividadesI = (TextView) findViewById(R.id.totcap);
+        ingresosC = (TextView) findViewById(R.id.ingrecap);
+        gastosC = (TextView) findViewById(R.id.gascap);
+        actividadFin = (TextView) findViewById(R.id.totfin);
+        fuentes = (TextView) findViewById(R.id.fuentes);
+        usos = (TextView) findViewById(R.id.usos);
         incremento = (TextView) findViewById(R.id.Input_total4);
         efectivoIn = (TextView) findViewById(R.id.Input_total5);
         saldoProy = (TextView) findViewById(R.id.Input_total6);
@@ -82,7 +82,7 @@ public class FlujoCaja extends AppCompatActivity {
     }
 
     public void volverinicio(View view){
-        Intent change = new Intent(this, MainActivity.class);
+        Intent change = new Intent(this, menu_FlujoDeCaja.class);
         startActivity(change);
     }
 }

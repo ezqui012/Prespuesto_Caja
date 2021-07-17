@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".menu_FlujoDeCaja">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="50sp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="19sp"
+                tools:text="Flujo de caja proeyectado en:"></TextView>
+
+            <Button
+
+                android:id="@+id/btnsem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="Semestral"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btnanual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="Anual"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btnbienal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="bienal"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btntrienal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="trienal"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btncuatri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="cuatrienal"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btnquin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:text="quinquenal"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
+    </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

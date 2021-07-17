@@ -59,9 +59,9 @@ public class FlujoCaja extends AppCompatActivity {
         actividadFin = (TextView) findViewById(R.id.totfin);
         fuentes = (TextView) findViewById(R.id.fuentes);
         usos = (TextView) findViewById(R.id.usos);
-        incremento = (TextView) findViewById(R.id.Input_total4);
-        efectivoIn = (TextView) findViewById(R.id.Input_total5);
-        saldoProy = (TextView) findViewById(R.id.Input_total6);
+        incremento = (TextView) findViewById(R.id.totincre);
+        efectivoIn = (TextView) findViewById(R.id.totefeini);
+        saldoProy = (TextView) findViewById(R.id.totefefin);
 
         setTextView();
     }

@@ -382,7 +382,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/Input_total4"
+                        android:id="@+id/totincre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7sp"
@@ -425,7 +425,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/Input_total5"
+                        android:id="@+id/totefeini"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7sp"
@@ -468,7 +468,7 @@
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/Input_total6"
+                        android:id="@+id/totefefin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="7sp"

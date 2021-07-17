@@ -57,7 +57,7 @@ public class FlujoAnual extends AppCompatActivity {
                 Double us=usoo*4;
 
 
-                Double ep=1600.0;
+                Double ep=16000.0;
                 Double totopp=ip-gp;
                 Double tto=totopp+ep;
 

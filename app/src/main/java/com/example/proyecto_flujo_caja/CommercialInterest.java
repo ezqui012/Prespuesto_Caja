@@ -16,23 +16,23 @@ public class CommercialInterest extends AppCompatActivity {
     TextView ibFebruary;
     TextView ibMarch;
     TextView ibApril;
-    TextView ibMay;
-    TextView ibJune;
 
     TextView r30March;
     TextView r30April;
-    TextView r30May;
-    TextView r30June;
 
     TextView ib60February;
     TextView ib60March;
     TextView ib60April;
-    TextView ib60May;
-    TextView ib60June;
 
     TextView r60April;
-    TextView r60May;
-    TextView r60June;
+
+    String mes1;
+    String mes2;
+    String mes3;
+
+    TextView mes1A, mes1B;
+    TextView mes2A, mes2B, mes2C;
+    TextView mes3A, mes3B, mes3C, mes3D;
 
     private InteresGasto interes;
     private InteresIngreso interesI;
@@ -43,6 +43,9 @@ public class CommercialInterest extends AppCompatActivity {
         setContentView(R.layout.activity_commercial_interest);
         interes = (InteresGasto) getIntent().getSerializableExtra("informationG");
         interesI = (InteresIngreso) getIntent().getSerializableExtra("informationI");
+        mes1 = (String) getIntent().getSerializableExtra("nMes1");
+        mes2 = (String) getIntent().getSerializableExtra("nMes2");
+        mes3 = (String) getIntent().getSerializableExtra("nMes3");
         idViewText();
         editText();
     }
@@ -51,48 +54,51 @@ public class CommercialInterest extends AppCompatActivity {
         ibFebruary = (TextView) findViewById(R.id.IBmonth1);
         ibMarch = (TextView) findViewById(R.id.IBmonth2);
         ibApril = (TextView) findViewById(R.id.IBmonth3);
-        ibMay = (TextView) findViewById(R.id.IBmonth4);
-        ibJune = (TextView) findViewById(R.id.IBmonth5);
 
         r30March = (TextView) findViewById(R.id.R30month2);
         r30April = (TextView) findViewById(R.id.R30month3);
-        r30May = (TextView) findViewById(R.id.R30month4);
-        r30June = (TextView) findViewById(R.id.R30month5);
 
         ib60February = (TextView) findViewById(R.id.IB60month1);
         ib60March = (TextView) findViewById(R.id.IB60month2);
         ib60April = (TextView) findViewById(R.id.IB60month3);
-        ib60May = (TextView) findViewById(R.id.IB60month4);
-        ib60June = (TextView) findViewById(R.id.IB60month5);
 
         r60April = (TextView) findViewById(R.id.R60month3);
-        r60May = (TextView) findViewById(R.id.R60month4);
-        r60June = (TextView) findViewById(R.id.R60month5);
 
+        mes1A = (TextView) findViewById(R.id.title_op1);
+        mes1B = (TextView) findViewById(R.id.title_op10);
+
+        mes2A = (TextView) findViewById(R.id.title_op2);
+        mes2B = (TextView) findViewById(R.id.title_op6);
+        mes2C = (TextView) findViewById(R.id.title_op11);
+
+        mes3A = (TextView) findViewById(R.id.title_op3);
+        mes3B = (TextView) findViewById(R.id.title_op7);
+        mes3C = (TextView) findViewById(R.id.title_op12);
+        mes3D = (TextView) findViewById(R.id.title_op15);
     }
 
     private void editText(){
-
+        mes1A.setText(mes1);
         ibFebruary.setText(interesI.getIbFebruary());
+        mes2A.setText(mes2);
         ibMarch.setText(interesI.getIbMarch());
+        mes3A.setText(mes3);
         ibApril.setText(interesI.getIbApril());
-        ibMay.setText(interesI.getIbMay());
-        ibJune.setText(interesI.getIbJune());
 
+        mes2B.setText(mes2);
         r30March.setText(interesI.getR30March());
+        mes3B.setText(mes3);
         r30April.setText(interesI.getR30April());
-        r30May.setText(interesI.getR30May());
-        r30June.setText(interesI.getR30June());
 
+        mes1B.setText(mes1);
         ib60February.setText(interesI.getIb60February());
+        mes2C.setText(mes2);
         ib60March.setText(interesI.getIb60March());
+        mes3C.setText(mes3);
         ib60April.setText(interesI.getIb60April());
-        ib60May.setText(interesI.getIb60May());
-        ib60June.setText(interesI.getIb60June());
 
+        mes3D.setText(mes3);
         r60April.setText(interesI.getR60April());
-        r60May.setText(interesI.getR60May());
-        r60June.setText(interesI.getR60June());
 
     }
 
@@ -100,7 +106,15 @@ public class CommercialInterest extends AppCompatActivity {
         Intent interest_spending = new Intent(this, spending_interest.class);
         interest_spending.putExtra("informationG", interes);
         interest_spending.putExtra("informationI", interesI);
+        interest_spending.putExtra("nMes1", mes1);
+        interest_spending.putExtra("nMes2", mes2);
+        interest_spending.putExtra("nMes3", mes3);
         startActivity(interest_spending);
+    }
+
+    public void volverinicio(View view){
+        Intent change = new Intent(this, MainActivity.class);
+        startActivity(change);
     }
 
 }

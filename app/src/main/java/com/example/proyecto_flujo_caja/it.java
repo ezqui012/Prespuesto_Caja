@@ -11,7 +11,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.Company;
 import com.example.proyecto_flujo_caja.Models.It;
+import com.example.proyecto_flujo_caja.Models.Ventas;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -27,12 +29,18 @@ public class it extends AppCompatActivity {
     TextView m1,m2,m3, cont1,cont2,cont3, totv1,totv2,totv3,it1,it2,it3, fis1,fis2,fis3;
     EditText intc1, intc2, intc3, act1,act2,act3, alq1,alq2,alq3,ot1,ot2,ot3,iue1,iue2,iue3;
 
+    Ventas infoV;
+    Company company;
+
     FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_it);
+
+        company = (Company) getIntent().getSerializableExtra("information");
+        infoV = (Ventas) getIntent().getSerializableExtra("infoVenta");
 
         cancel= findViewById(R.id.cancel_it);
         calcu= findViewById(R.id.calcular_it);
@@ -208,7 +216,11 @@ public class it extends AppCompatActivity {
                                 Log.w(TAG, "Error writing document", e);
                             }
                         });
-                startActivity(new Intent(getApplicationContext(), iue.class));
+                //startActivity(new Intent(getApplicationContext(), iue.class));
+                Intent intent = new Intent(getApplicationContext(), iue.class);
+                intent.putExtra("infoVenta", infoV);
+                intent.putExtra("information", company);
+                startActivity(intent);
             }
         });
 

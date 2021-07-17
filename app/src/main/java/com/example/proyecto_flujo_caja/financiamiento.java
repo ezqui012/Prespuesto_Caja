@@ -58,18 +58,20 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
+                DecimalFormat df = new DecimalFormat();
+                df.setMaximumFractionDigits(2);
                 Double amort= documentSnapshot.getDouble("amortizacion");
-                amortizacion.setText(""+amort);
+                amortizacion.setText(""+df.format(amort));
                 Double amort1= documentSnapshot.getDouble("amortizacion1");
-                amortizacionPe1.setText(""+amort1);
+                amortizacionPe1.setText(""+df.format(amort1));
                 Double amort2= documentSnapshot.getDouble("amortizacion2");
-                amortizacionPe2.setText(""+amort2);
+                amortizacionPe2.setText(""+df.format(amort2));
                 Double cap= documentSnapshot.getDouble("capital");
-                capital.setText(""+cap);
+                capital.setText(""+df.format(cap));
                 Double cap1= documentSnapshot.getDouble("capital1");
-                capPeriodo1.setText(""+cap1);
+                capPeriodo1.setText(""+df.format(cap1));
                 Double cap2= documentSnapshot.getDouble("capital2");
-                capPeriodo2.setText(""+cap2);
+                capPeriodo2.setText(""+df.format(cap2));
 
                 Double capIni= documentSnapshot.getDouble("capitalInicial");
                 capitalInicial.setText(""+capIni);
@@ -77,33 +79,35 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
                 cuantia.setText(""+cuanti);
 
                 Double cuot= documentSnapshot.getDouble("cuota");
-                cuota.setText(""+cuot);
+                cuota.setText(""+df.format(cuot));
                 Double cuot1= documentSnapshot.getDouble("cuota1");
-                cuota1.setText(""+cuot1);
+                cuota1.setText(""+df.format(cuot1));
                 Double cuot2= documentSnapshot.getDouble("cuota2");
-                cuota2.setText(""+cuot2);
+                cuota2.setText(""+df.format(cuot2));
                 Double inte= documentSnapshot.getDouble("interes");
-                interes.setText(""+inte);
+                interes.setText(""+df.format(inte));
                 Double inte1= documentSnapshot.getDouble("interes1");
-                interes1.setText(""+inte1);
+                interes1.setText(""+df.format(inte1));
                 Double inte2= documentSnapshot.getDouble("interes2");
-                interes2.setText(""+inte2);
+                interes2.setText(""+df.format(inte2));
                 Double mes= documentSnapshot.getDouble("meses");
                 meses.setText(""+mes);
                 Double tipoInte= documentSnapshot.getDouble("tipoInteres");
-                tipoInteres.setText(""+tipoInte);
+                tipoInteres.setText(""+df.format(tipoInte));
 
             }
         });
 
     }
     public void onClick(View view){
-        this.calculoFinanciamiento();
+        validacion();
+
     }
     public void calculoFinanciamiento(){
-        DecimalFormat df = new DecimalFormat("#.00");
+        DecimalFormat df = new DecimalFormat();
+        df.setMaximumFractionDigits(2);
         double cantCuantia = Double.parseDouble(cuantia.getText().toString());
-        Integer cantMeses = Integer.parseInt(meses.getText().toString());
+        Double cantMeses = Double.parseDouble(meses.getText().toString());
         double cantTipoInteres = Double.parseDouble(tipoInteres.getText().toString());
         double cantCapInicial = Double.parseDouble(capitalInicial.getText().toString());
         double i = Math.pow((1-cantTipoInteres),-cantMeses);
@@ -111,27 +115,27 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         double resInteres = cantCapInicial*cantTipoInteres;
         double resAmortizacion = resCuota-resInteres;
         double resCapital = cantCapInicial-resAmortizacion;
-
-        capital.setText(""+resCapital);
-        amortizacion.setText(""+resAmortizacion);
-        interes.setText(""+resInteres);
-        cuota.setText(""+resCuota);
+        //periodo
+        capital.setText(""+df.format(resCapital));
+        amortizacion.setText(""+df.format(resAmortizacion));
+        interes.setText(""+df.format(resInteres));
+        cuota.setText(""+df.format(resCuota));
         //periodo1
         double resInteres1=resCapital*cantTipoInteres;
         double resAmorti1=resCuota-resInteres1;
         double resCapital1=resCapital-resAmorti1;
-        capPeriodo1.setText(""+resCapital1);
-        amortizacionPe1.setText(""+resAmorti1);
-        interes1.setText(""+resInteres1);
+        capPeriodo1.setText(""+df.format(resCapital1));
+        amortizacionPe1.setText(""+df.format(resAmorti1));
+        interes1.setText(""+df.format(resInteres1));
         //periodo2
         double resInteres2=resCapital1*cantTipoInteres;
         double resAmorti2=resCuota-resInteres2;
         double resCapital2=resCapital1-resAmorti2;
-        capPeriodo2.setText(""+resCapital2);
-        amortizacionPe2.setText(""+resAmorti2);
-        interes2.setText(""+resInteres2);
-        cuota1.setText(""+resCuota);
-        cuota2.setText(""+resCuota);
+        capPeriodo2.setText(""+df.format(resCapital2));
+        amortizacionPe2.setText(""+df.format(resAmorti2));
+        interes2.setText(""+df.format(resInteres2));
+        cuota1.setText(""+df.format(resCuota));
+        cuota2.setText(""+df.format(resCuota));
         financiamiento.setCapital(resCapital);
         financiamiento.setAmortizacion(resAmortizacion);
         financiamiento.setInteres(resInteres);
@@ -160,8 +164,28 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         pre.putExtra("cuota1", cuota1.getText().toString());
         pre.putExtra("cuota2", cuota2.getText().toString());
     }
+    public void validacion(){
+        String cuanti = cuantia.getText().toString();
+        String tipoInt = tipoInteres.getText().toString();
+        String capiIni = capitalInicial.getText().toString();
+        String mes = meses.getText().toString();
+        if(cuanti.equals("")){
+            cuantia.setError("Campo Requerido");
+        }
+        else if(tipoInt.equals("")){
+            tipoInteres.setError("Campo Requerido");
+        }
+        else if(capiIni.equals("")){
+            capitalInicial.setError("Campo Requerido");
+        }
+        else if(mes.equals("")){
+            meses.setError("Campo Requerido");
+        }else{
+            this.calculoFinanciamiento();
+        }
+    }
     public void anterior(View view){
-        Intent main = new Intent(this, MainActivity.class);
+        Intent main = new Intent(this, presupuesto_caja.class);
 
         startActivity(main);
     }

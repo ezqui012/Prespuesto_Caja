@@ -178,7 +178,8 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="numberDecimal" />
+                                android:inputType="numberDecimal"
+                                android:text="0.0"/>
 
                             <TextView
                                 android:id="@+id/ibru1"
@@ -237,7 +238,8 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="numberDecimal" />
+                                android:inputType="numberDecimal"
+                                android:text="0.0"/>
 
                             <TextView
                                 android:id="@+id/ibru2"
@@ -289,14 +291,16 @@
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="numberDecimal" />
+                                android:inputType="numberDecimal"
+                                />
 
                             <EditText
                                 android:id="@+id/price3"
                                 android:layout_width="60dp"
                                 android:layout_height="wrap_content"
                                 android:ems="10"
-                                android:inputType="numberDecimal" />
+                                android:inputType="numberDecimal"
+                                android:text="0.0"/>
 
                             <TextView
                                 android:id="@+id/ibru3"

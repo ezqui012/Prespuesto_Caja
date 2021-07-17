@@ -130,7 +130,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double res = totalAntes * porcentajeIncremento;
         retroactivo1.setText("" + res);
-        int numMesUno = Integer.parseInt(numMeses1.getText().toString());
+        Double numMesUno = Double.parseDouble(numMeses1.getText().toString());
         double resRetroactivo = numMesUno* res;
         resRetroActivo1.setText(""+resRetroactivo);
         sueldo.setMes1(numMesUno);
@@ -149,7 +149,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         double resAporteAntes = totalAntes * porcentajeIncremento;
         double res = aportePat * resAporteAntes;
         retroactivo2.setText(""+ res);
-        int numMesDos = Integer.parseInt(numMeses2.getText().toString());
+        Double numMesDos = Double.parseDouble(numMeses2.getText().toString());
         double resRetroactivo = numMesDos* res;
         resRetroActivo2.setText(""+resRetroactivo);
         sueldo.setMes2(numMesDos);
@@ -180,7 +180,7 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
 
 
     public void anterior(View view){
-        Intent anteriorPatronal = new Intent(this, aportepatronal.class);
+        Intent anteriorPatronal = new Intent(this, financiamiento.class);
         startActivity(anteriorPatronal);
     }
     public void registro(View view){

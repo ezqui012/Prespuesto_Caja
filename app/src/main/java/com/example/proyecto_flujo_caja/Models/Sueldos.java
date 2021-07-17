@@ -2,14 +2,14 @@ package com.example.proyecto_flujo_caja.Models;
 
 public class Sueldos {
     Double incremento, totalGainAntes,totalGainDespues,retroactivo1,
-            retroactivo2, resRetroactivo1, resRetroactivo2, resAporte1, resAporte2;
-    Integer meses1,meses2;
+            retroactivo2, resRetroactivo1, resRetroactivo2, resAporte1, resAporte2,meses1,meses2;
+
 
 
 
     public Sueldos(
-            Integer meses1,
-            Integer meses2,
+            Double meses1,
+            Double meses2,
             Double Incremento,
             Double totalGainAntes,
             Double totalGainDespues, Double resAporte1,
@@ -31,10 +31,10 @@ public class Sueldos {
     }
     public Sueldos(){}
 
-    public Integer getMes1(){ return meses1;}
-    public void setMes1(Integer mes1){this.meses1=mes1;}
-    public Integer getMes2(){ return meses2;}
-    public void setMes2(Integer mes2){this.meses2=mes2;}
+    public Double getMes1(){ return meses1;}
+    public void setMes1(Double mes1){this.meses1=mes1;}
+    public Double getMes2(){ return meses2;}
+    public void setMes2(Double mes2){this.meses2=mes2;}
     public Double getGainAntes(){ return totalGainAntes;}
     public void setTotalGainAntes(Double gainAntes){this.totalGainAntes=gainAntes;}
     public Double getTotalGainDespues(){ return totalGainDespues;}

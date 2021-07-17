@@ -3,8 +3,8 @@ package com.example.proyecto_flujo_caja.Models;
 public class Financiamiento {
     private Double cuantia, tipoInteres, interes,capitalInicial, capital, amortizacion, cuota;
     private Double interes1, capital1, amortizacion1, cuota1;
-    private Double interes2, capital2, amortizacion2, cuota2;
-    private Integer meses;
+    private Double interes2, capital2, amortizacion2, cuota2, meses;
+
     public Financiamiento(){
     }
     public Double getCuantia() {
@@ -63,11 +63,11 @@ public class Financiamiento {
         this.cuota = cuota;
     }
 
-    public Integer getMeses() {
+    public Double getMeses() {
         return meses;
     }
 
-    public void setMeses(Integer meses) {
+    public void setMeses(Double meses) {
         this.meses = meses;
     }
 

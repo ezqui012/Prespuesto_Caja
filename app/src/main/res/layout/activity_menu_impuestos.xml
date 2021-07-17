@@ -21,40 +21,49 @@
 
     <Button
         android:id="@+id/iva"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="525dp"
+        android:layout_height="96dp"
+        android:layout_marginLeft="40sp"
         android:layout_marginTop="24dp"
+        android:layout_marginRight="40sp"
         android:text="IVA"
+        android:textSize="40sp"
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
-        app:layout_constraintVertical_bias="0.06999999" />
+        app:layout_constraintVertical_bias="0.217" />
 
     <Button
         android:id="@+id/codit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="503dp"
+        android:layout_height="99dp"
+        android:layout_marginLeft="40sp"
         android:layout_marginTop="16dp"
+        android:layout_marginRight="40sp"
         android:text="IT"
+        android:textSize="40sp"
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iva"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.133" />
 
     <Button
         android:id="@+id/iue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="516dp"
+        android:layout_height="92dp"
+        android:layout_marginLeft="40sp"
         android:layout_marginTop="16dp"
+        android:layout_marginRight="40sp"
         android:text="IUE"
+        android:textSize="40sp"
         app:backgroundTint="#3F51B5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/codit"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.164" />
 </androidx.constraintlayout.widget.ConstraintLayout>

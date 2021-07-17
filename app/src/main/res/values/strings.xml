@@ -2,9 +2,10 @@
     <string name="botonComenzar">Comenzar</string>
     <string name="botonIniFlujo">Iniciar Flujo</string>
     <string name="botonModDatos">Modificar Datos</string>
+    <string name="botonVolver">Volver</string>
     <!-- Navegación aportes y sueldos-->
     <string name="app_name">Proyecto_Flujo_Caja</string>
-    <string name="BotonSiguiente">AportesPatronales</string>
+    <string name="BotonSiguiente">Aportes Patronales</string>
     <string name="tv1">primer activity</string>
     <string name="BotonRegistrarAporte">Registrar</string>
     <string name="BotonCancelarAporte">Cancelar</string>
@@ -66,7 +67,7 @@
 
     <string name="titulo_flojo">Flujo de Caja Proyectado</string>
     <string name="subTituloActividadDeOperacion">Actividades de Operación</string>
-    <string name="subTituloActividadDeInversion">Actividades de Inverción</string>
+    <string name="subTituloActividadDeInversion">Actividades de Inversión</string>
     <string name="subTituloActividadDeFinanciamiento">Actividades de Financiamiento</string>
     <string name="subTituloIncrementoProyectado">Incremento Proyectado del Efectivo</string>
     <string name="subTituloEfectivoInicial">Efectivo al Inicio del Periodo</string>
@@ -81,7 +82,7 @@
 
     <string name="title_Total">Total: </string>
 
-    <string name="volver">Volver</string>
+    <string name="volver">Volver Inicio</string>
 
     <string name="febrero">Febrero: </string>
     <string name="marzo">Marzo: </string>

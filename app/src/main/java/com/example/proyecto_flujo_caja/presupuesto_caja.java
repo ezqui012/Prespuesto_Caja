@@ -355,6 +355,24 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                fnp3.setText(fnpsin3.toString());
 
 
+
+
+
+               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
+               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
+               Double sfepPC1= sfmapc1+fnppc1;
+               sfep1.setText(sfepPC1.toString());
+               sfma2.setText(sfep1.getText());
+               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
+               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
+               Double sfepPC2= sfmapc2+fnppc2;
+               sfep2.setText(sfepPC2.toString());
+               sfma3.setText(sfep2.getText());
+               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
+               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
+               Double sfepPC3= sfmapc3+fnppc3;
+               sfep3.setText(sfepPC3.toString());
+
                Double fcpc1 =Double.parseDouble(fcp1.getText().toString());
                Double afpc1 =Double.parseDouble(afin1.getText().toString());
                Double ifpc1 =Double.parseDouble(ifin1.getText().toString());
@@ -377,23 +395,6 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                sf3.setText(sfPC3.toString());
 
 
-               sfma2.setText(sfPC1.toString());
-               sfma3.setText(sfepc2.toString());
-
-               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
-               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
-               Double sfepPC1= sfmapc1+fnppc1;
-               sfep1.setText(sfepPC1.toString());
-
-               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
-               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
-               Double sfepPC2= sfmapc2+fnppc2;
-               sfep2.setText(sfepPC2.toString());
-
-               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
-               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
-               Double sfepPC3= sfmapc3+fnppc3;
-               sfep3.setText(sfepPC3.toString());
 
                Double dobsfma=Double.parseDouble(sfma2.getText().toString());
                Double dobsfmaa=Double.parseDouble(sfma2.getText().toString());
@@ -447,6 +448,8 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double iuet3=Double.parseDouble(iu3.getText().toString());
                Double iuetott=iuet1+iuet2+iuet3;
                Totiue.setText(iuetott.toString());
+
+
 
 
 

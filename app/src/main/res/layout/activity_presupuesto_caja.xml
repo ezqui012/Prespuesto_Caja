@@ -640,7 +640,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="0" />
+                                android:text="2000" />
 
                             <TextView
                                 android:id="@+id/iv2"
@@ -680,7 +680,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="0" />
+                                android:text="2000" />
 
                             <TextView
                                 android:id="@+id/itt2"

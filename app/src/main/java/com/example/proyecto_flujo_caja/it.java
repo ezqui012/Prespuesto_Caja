@@ -166,8 +166,8 @@ public class it extends AppCompatActivity {
 
         //it del periodo
         Double tot1 =Double.parseDouble(totv1.getText().toString());
-        Double tot2 =Double.parseDouble(totv1.getText().toString());
-        Double tot3 =Double.parseDouble(totv1.getText().toString());
+        Double tot2 =Double.parseDouble(totv2.getText().toString());
+        Double tot3 =Double.parseDouble(totv3.getText().toString());
 
         Double itp1= tot1*0.03;
         Double itp2= tot2*0.03;

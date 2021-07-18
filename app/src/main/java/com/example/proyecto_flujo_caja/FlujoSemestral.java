@@ -54,9 +54,8 @@ public class FlujoSemestral extends AppCompatActivity {
                 Double uso= dat5*2;
                 usos.setText(uso.toString());
 
-                String tot6= documentSnapshot.getString("tot6");
-                Double dat6= Double.parseDouble(tot6);
-                Double toefe= dat6*1;
+
+                Double toefe= 16000.0;
                 totefeini.setText(toefe.toString());
 
                 //calculos de totales operativos

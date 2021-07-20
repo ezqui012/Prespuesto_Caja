@@ -207,8 +207,8 @@ public class comprass extends AppCompatActivity {
 
 
         Double xtre1 = 0.0;
-        Double xtre2 = ingreso1 * ptreinta;
-        Double xtre3 = ing2 * ptreinta;
+        Double xtre2 = ingreso1 * ptreinta/2;
+        Double xtre3 = ing2 * ptreinta/2;
 
         thirty1.setText(xtre1.toString());
         thirty2.setText(xtre2.toString());

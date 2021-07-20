@@ -227,18 +227,17 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 ampr1.setText(""+0);
-                Double amorti=documentSnapshot.getDouble("amortizacion");
-                Double amorti2=documentSnapshot.getDouble("amortizacion1");
-                Double amortiTotal=amorti+amorti2;
-                ampr2.setText(""+amorti);
-                ampr3.setText(""+amorti2);
+                String amorti=documentSnapshot.getString("amortizacion");
+                String amorti2=documentSnapshot.getString("amortizacion1");
+                ampr2.setText(amorti);
+                ampr3.setText(amorti2);
 
-                Double inte=documentSnapshot.getDouble("interes");
+                String inte=documentSnapshot.getString("interes");
                 ip1.setText(""+0);
-                Double inte2=documentSnapshot.getDouble("interes1");
-                ip2.setText(""+inte);
+                String inte2=documentSnapshot.getString("interes1");
+                ip2.setText(inte);
 
-                ip3.setText(""+inte2);
+                ip3.setText(inte2);
 
 
 

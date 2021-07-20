@@ -94,7 +94,6 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
                 meses.setText(""+mes);
                 Double tipoInte= documentSnapshot.getDouble("tipoInteres");
                 tipoInteres.setText(""+df.format(tipoInte));
-
             }
         });
 

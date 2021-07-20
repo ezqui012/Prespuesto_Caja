@@ -27,13 +27,13 @@
             android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/scroll_flujoCajaTrim"
+                android:id="@+id/scroll_flujoCaja"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/title_AcO"
+                    android:id="@+id/title_AO"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20sp"
@@ -62,7 +62,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/ingreop"
+                        android:id="@+id/Input_ingresoOP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -94,7 +94,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/gasop"
+                        android:id="@+id/Input_ingresoGP"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -126,7 +126,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totop"
+                        android:id="@+id/Input_total1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -169,7 +169,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/ingrecap"
+                        android:id="@+id/Input_ingresoIC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -201,7 +201,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/gascap"
+                        android:id="@+id/Input_ingresoGC"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -233,7 +233,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totcap"
+                        android:id="@+id/Input_total2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -276,7 +276,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/fuentes"
+                        android:id="@+id/Input_fuentes"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -308,7 +308,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/usos"
+                        android:id="@+id/Input_usos"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -340,7 +340,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totfin"
+                        android:id="@+id/Input_total3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -382,7 +382,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totincre"
+                        android:id="@+id/Input_total4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -425,7 +425,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totefeini"
+                        android:id="@+id/Input_total5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"
@@ -468,7 +468,7 @@
                         android:layout_marginLeft="10sp"/>
 
                     <TextView
-                        android:id="@+id/totefefin"
+                        android:id="@+id/Input_total6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="TextView"

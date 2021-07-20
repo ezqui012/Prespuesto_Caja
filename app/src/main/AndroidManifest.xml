@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Proyecto_Flujo_Caja">
+
         <activity android:name=".graficoQuinquenal"></activity>
         <activity android:name=".graficoAnual" />
+
+        <activity android:name=".FlujoSemestral"></activity>
+        <activity android:name=".FlujoAnual"></activity>
+        <activity android:name=".menu_FlujoDeCaja" />
+
         <activity android:name=".Inicio">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

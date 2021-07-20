@@ -159,7 +159,7 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         pre.putExtra("cap2", capPeriodo2.getText().toString());
         pre.putExtra("amortizacion", amortizacion.getText().toString());
         pre.putExtra("amortizacion1", amortizacionPe1.getText().toString());
-        pre.putExtra("amortizacion2", amortizacionPe2.getText().toString());
+            pre.putExtra("amortizacion2", amortizacionPe2.getText().toString());
         pre.putExtra("cuota", cuota.getText().toString());
         pre.putExtra("cuota1", cuota1.getText().toString());
         pre.putExtra("cuota2", cuota2.getText().toString());

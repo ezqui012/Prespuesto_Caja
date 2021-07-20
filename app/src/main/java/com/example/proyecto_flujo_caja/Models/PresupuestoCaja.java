@@ -21,10 +21,10 @@ public class PresupuestoCaja {
         public String getTot1() {
             return tot1;
         }
-
         public void setTot1(String tot1) {
             this.tot1 = tot1;
         }
+
     public String getTot2() {
         return tot2;
     }

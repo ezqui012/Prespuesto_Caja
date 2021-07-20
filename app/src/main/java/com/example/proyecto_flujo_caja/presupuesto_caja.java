@@ -226,20 +226,19 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         documentReference4.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
+                ampr1.setText(""+0);
                 Double amorti=documentSnapshot.getDouble("amortizacion");
-                ampr1.setText(""+amorti);
                 Double amorti2=documentSnapshot.getDouble("amortizacion1");
-                ampr2.setText(""+amorti2);
-                Double amorti3=documentSnapshot.getDouble("amortizacion2");
-                ampr3.setText(""+amorti3);
+                Double amortiTotal=amorti+amorti2;
+                ampr2.setText(""+amorti);
+                ampr3.setText(""+amorti2);
 
                 Double inte=documentSnapshot.getDouble("interes");
-                ip1.setText(""+inte);
+                ip1.setText(""+0);
                 Double inte2=documentSnapshot.getDouble("interes1");
-                ip2.setText(""+inte2);
-                Double inte3=documentSnapshot.getDouble("interes2");
-                ip3.setText(""+inte3);
+                ip2.setText(""+inte);
 
+                ip3.setText(""+inte2);
 
 
 
@@ -262,6 +261,13 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                 ap2.setText(""+resApi2);
                 Double inte3=documentSnapshot.getDouble("resAporte2");
                 ap3.setText(""+inte3);
+
+                Double resRetroAporte = documentSnapshot.getDouble("resRetroactivo1");
+                rss3.setText(""+resRetroAporte);
+                Double resRetroSueldo= documentSnapshot.getDouble("resRetroactivo2");
+                rap3.setText(""+resRetroSueldo);
+
+
 
             }
         });
@@ -447,6 +453,22 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double iuet3=Double.parseDouble(iu3.getText().toString());
                Double iuetott=iuet1+iuet2+iuet3;
                Totiue.setText(iuetott.toString());
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               Double rs1=Double.parseDouble(rss1.getText().toString());
+               Double rs2=Double.parseDouble(rss2.getText().toString());
+               Double rs3=Double.parseDouble(rss3.getText().toString());
+               Double rssTotal=rs1+rs2+rs3;
+               Totrss.setText(rssTotal.toString());
+
+               Double r1=Double.parseDouble(rap1.getText().toString());
+               Double r2=Double.parseDouble(rap2.getText().toString());
+               Double r3=Double.parseDouble(rap3.getText().toString());
+               Double rTotal=r1+r2+r3;
+               Totrap.setText(rTotal.toString());
 
 
 

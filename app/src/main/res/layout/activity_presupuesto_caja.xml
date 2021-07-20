@@ -773,6 +773,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="0" />
+
                             <TextView
                                 android:id="@+id/Totot"
                                 android:layout_width="0dp"

@@ -136,6 +136,19 @@
                 android:text="Generar PDF"
                 android:textSize="18sp"
                 app:backgroundTint="#00509A" />
+
+            <Button
+
+                android:id="@+id/btn_menuflujo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30sp"
+                android:layout_marginTop="15sp"
+                android:layout_marginRight="30sp"
+                android:onClick="MenuFlujo"
+                android:text="Menu Flujo de Caja"
+                android:textSize="18sp"
+                app:backgroundTint="#00509A" />
         </LinearLayout>
     </ScrollView>
 

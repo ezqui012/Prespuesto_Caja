@@ -338,12 +338,23 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double apppc2=Double.parseDouble(ap2.getText().toString());
                Double apppc3=Double.parseDouble(ap3.getText().toString());
 
+               Double rs1=Double.parseDouble(rss1.getText().toString());
+               Double rs2=Double.parseDouble(rss2.getText().toString());
+               Double rs3=Double.parseDouble(rss3.getText().toString());
+               Double rssTotal=rs1+rs2+rs3;
+               Totrss.setText(rssTotal.toString());
 
-               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1;
+               Double r1=Double.parseDouble(rap1.getText().toString());
+               Double r2=Double.parseDouble(rap2.getText().toString());
+               Double r3=Double.parseDouble(rap3.getText().toString());
+               Double rTotal=r1+r2+r3;
+               Totrap.setText(rTotal.toString());
+
+               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1+r1+rs1;
                ts1.setText(TotsalPC1.toString());
-               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2;
+               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2+r2+rs2;
                ts2.setText(TotsalPC2.toString());
-               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3;
+               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3+r3+rs3;
                ts3.setText(TotsalPC3.toString());
 
 
@@ -459,17 +470,7 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                /*SUMAR ESTOS MAS*/
                /*SUMAR ESTOS MAS*/
                /*SUMAR ESTOS MAS*/
-               Double rs1=Double.parseDouble(rss1.getText().toString());
-               Double rs2=Double.parseDouble(rss2.getText().toString());
-               Double rs3=Double.parseDouble(rss3.getText().toString());
-               Double rssTotal=rs1+rs2+rs3;
-               Totrss.setText(rssTotal.toString());
 
-               Double r1=Double.parseDouble(rap1.getText().toString());
-               Double r2=Double.parseDouble(rap2.getText().toString());
-               Double r3=Double.parseDouble(rap3.getText().toString());
-               Double rTotal=r1+r2+r3;
-               Totrap.setText(rTotal.toString());
 
 
 

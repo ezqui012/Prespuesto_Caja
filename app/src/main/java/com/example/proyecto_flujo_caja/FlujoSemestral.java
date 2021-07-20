@@ -1,16 +1,23 @@
 package com.example.proyecto_flujo_caja;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.FlujoSemes;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import static android.content.ContentValues.TAG;
+
 public class FlujoSemestral extends AppCompatActivity {
+    FlujoSemes flujoSemes;
     TextView ingreop, gasop, totop, ingrecap, gascap, totcap, fuentes,usos,totfin ,totincre, totefeini, totefefin;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
@@ -56,6 +63,7 @@ public class FlujoSemestral extends AppCompatActivity {
 
 
                 Double toefe= 16000.0;
+
                 totefeini.setText(toefe.toString());
 
                 //calculos de totales operativos
@@ -66,6 +74,7 @@ public class FlujoSemestral extends AppCompatActivity {
                 ingrecap.setText("0.0");
                 gascap.setText("0.0");
                 totcap.setText("0.0");
+                String totinver="0.0";
 
                 //tot financiamiento
                 Double totfina = fue-uso;
@@ -79,9 +88,24 @@ public class FlujoSemestral extends AppCompatActivity {
                 Double totsal= toti + toefe;
                 totefefin.setText(totsal.toString());
 
-
+                flujoSemes = new FlujoSemes(totao.toString(), totinver, totfina.toString(),toti.toString(),toefe.toString(),totsal.toString());
+                db.collection("FlujoSemestral").document("a")
+                        .set(flujoSemes)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully written!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error writing document", e);
+                            }
+                        });
             }
         });
+
 
 
     }

@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.proyecto_flujo_caja.Models.*;
 import com.google.android.gms.tasks.*;
 import com.google.firebase.firestore.*;
 
 public class FlujoAnual extends AppCompatActivity {
     TextView ingreop, gasop, totop, ingrecap, gascap, totcap, fuentes,usos,totfin,totini,totincre,tt;
     String ingop,gasopp,incr,fue,uso,eip;
+    FlujoAnuall fAnual;
+    FirebaseFirestore dba = FirebaseFirestore.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +77,10 @@ public class FlujoAnual extends AppCompatActivity {
                 totincre.setText(totopp.toString());
                 tt.setText(tto.toString());
 
+                fAnual=new FlujoAnuall(ip.toString(),gp.toString(),totopp.toString(),"0.0","0.0","0.0",fue,uso,"0.0",totopp.toString(),"16000.0",tto.toString());
 
+                dba.collection("FlujoAnual").document("a")
+                        .set(fAnual);
 
 
 

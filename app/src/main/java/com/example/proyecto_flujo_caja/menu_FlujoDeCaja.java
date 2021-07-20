@@ -35,5 +35,12 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),FlujoAnual.class));
             }
         });
+
+        quin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), flujo_caja5.class));
+            }
+        });
     }
 }

@@ -17,9 +17,7 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
 
         sem= findViewById(R.id.btnsem);
         anual=findViewById(R.id.btnanual);
-        bia=findViewById(R.id.btnbienal);
-        tria=findViewById(R.id.btntrienal);
-        cuatri=findViewById(R.id.btncuatri);
+
         quin=findViewById(R.id.btnquin);
 
         sem.setOnClickListener(new View.OnClickListener() {

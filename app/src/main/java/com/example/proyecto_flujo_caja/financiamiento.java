@@ -16,6 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 
 public class financiamiento extends AppCompatActivity implements View.OnClickListener {
     private EditText cuantia;
@@ -60,41 +61,40 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 DecimalFormat df = new DecimalFormat();
                 df.setMaximumFractionDigits(2);
-                Double amort= documentSnapshot.getDouble("amortizacion");
-                amortizacion.setText(""+df.format(amort));
-                Double amort1= documentSnapshot.getDouble("amortizacion1");
-                amortizacionPe1.setText(""+df.format(amort1));
-                Double amort2= documentSnapshot.getDouble("amortizacion2");
-                amortizacionPe2.setText(""+df.format(amort2));
-                Double cap= documentSnapshot.getDouble("capital");
-                capital.setText(""+df.format(cap));
-                Double cap1= documentSnapshot.getDouble("capital1");
-                capPeriodo1.setText(""+df.format(cap1));
-                Double cap2= documentSnapshot.getDouble("capital2");
-                capPeriodo2.setText(""+df.format(cap2));
+                String amort= documentSnapshot.getString("amortizacion");
+                amortizacion.setText(amort);
+                String amort1= documentSnapshot.getString("amortizacion1");
+                amortizacionPe1.setText(amort1);
+                String amort2= documentSnapshot.getString("amortizacion2");
+                amortizacionPe2.setText(amort2);
+                String cap= documentSnapshot.getString("capital");
+                capital.setText(cap);
+                String cap1= documentSnapshot.getString("capital1");
+                capPeriodo1.setText(cap1);
+                String cap2= documentSnapshot.getString("capital2");
+                capPeriodo2.setText(cap2);
 
-                Double capIni= documentSnapshot.getDouble("capitalInicial");
-                capitalInicial.setText(""+capIni);
-                Double cuanti= documentSnapshot.getDouble("cuantia");
-                cuantia.setText(""+cuanti);
+                String capIni= documentSnapshot.getString("capitalInicial");
+                capitalInicial.setText(capIni);
+                String cuanti= documentSnapshot.getString("cuantia");
+                cuantia.setText(cuanti);
 
-                Double cuot= documentSnapshot.getDouble("cuota");
-                cuota.setText(""+df.format(cuot));
-                Double cuot1= documentSnapshot.getDouble("cuota1");
-                cuota1.setText(""+df.format(cuot1));
-                Double cuot2= documentSnapshot.getDouble("cuota2");
-                cuota2.setText(""+df.format(cuot2));
-                Double inte= documentSnapshot.getDouble("interes");
-                interes.setText(""+df.format(inte));
-                Double inte1= documentSnapshot.getDouble("interes1");
-                interes1.setText(""+df.format(inte1));
-                Double inte2= documentSnapshot.getDouble("interes2");
-                interes2.setText(""+df.format(inte2));
-                Double mes= documentSnapshot.getDouble("meses");
-                meses.setText(""+mes);
-                Double tipoInte= documentSnapshot.getDouble("tipoInteres");
-                tipoInteres.setText(""+df.format(tipoInte));
-
+                String cuot= documentSnapshot.getString("cuota");
+                cuota.setText(cuot);
+                String cuot1= documentSnapshot.getString("cuota1");
+                cuota1.setText(cuot1);
+                String cuot2= documentSnapshot.getString("cuota2");
+                cuota2.setText(cuot2);
+                String inte= documentSnapshot.getString("interes");
+                interes.setText(inte);
+                String inte1= documentSnapshot.getString("interes1");
+                interes1.setText(inte1);
+                String inte2= documentSnapshot.getString("interes2");
+                interes2.setText(inte2);
+                String mes= documentSnapshot.getString("meses");
+                meses.setText(mes);
+                String tipoInte= documentSnapshot.getString("tipoInteres");
+                tipoInteres.setText(tipoInte);
             }
         });
 
@@ -106,6 +106,10 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
     public void calculoFinanciamiento(){
         DecimalFormat df = new DecimalFormat();
         df.setMaximumFractionDigits(2);
+
+
+
+
         double cantCuantia = Double.parseDouble(cuantia.getText().toString());
         Double cantMeses = Double.parseDouble(meses.getText().toString());
         double cantTipoInteres = Double.parseDouble(tipoInteres.getText().toString());
@@ -114,44 +118,52 @@ public class financiamiento extends AppCompatActivity implements View.OnClickLis
         double resCuota = cantCuantia*(cantTipoInteres/(1-i));
         double resInteres = cantCapInicial*cantTipoInteres;
         double resAmortizacion = resCuota-resInteres;
-        double resCapital = cantCapInicial-resAmortizacion;
+
         //periodo
-        capital.setText(""+df.format(resCapital));
-        amortizacion.setText(""+df.format(resAmortizacion));
-        interes.setText(""+df.format(resInteres));
-        cuota.setText(""+df.format(resCuota));
+        DecimalFormatSymbols separador = new DecimalFormatSymbols();
+        separador.setDecimalSeparator('.');
+        DecimalFormat for2 = new DecimalFormat("0.00000", separador);
+        DecimalFormat for1 = new DecimalFormat("0.00", separador);
+        Double resCapital = cantCapInicial-resAmortizacion;
+        capital.setText(""+for1.format(resCapital));
+        amortizacion.setText(""+for1.format(resAmortizacion));
+        interes.setText(""+for1.format(resInteres));
+        cuota.setText(""+for1.format(resCuota));
         //periodo1
         double resInteres1=resCapital*cantTipoInteres;
         double resAmorti1=resCuota-resInteres1;
         double resCapital1=resCapital-resAmorti1;
-        capPeriodo1.setText(""+df.format(resCapital1));
-        amortizacionPe1.setText(""+df.format(resAmorti1));
-        interes1.setText(""+df.format(resInteres1));
+        capPeriodo1.setText(""+for1.format(resCapital1));
+        amortizacionPe1.setText(""+for1.format(resAmorti1));
+        interes1.setText(""+for1.format(resInteres1));
         //periodo2
         double resInteres2=resCapital1*cantTipoInteres;
         double resAmorti2=resCuota-resInteres2;
         double resCapital2=resCapital1-resAmorti2;
-        capPeriodo2.setText(""+df.format(resCapital2));
-        amortizacionPe2.setText(""+df.format(resAmorti2));
-        interes2.setText(""+df.format(resInteres2));
-        cuota1.setText(""+df.format(resCuota));
-        cuota2.setText(""+df.format(resCuota));
-        financiamiento.setCapital(resCapital);
-        financiamiento.setAmortizacion(resAmortizacion);
-        financiamiento.setInteres(resInteres);
-        financiamiento.setCuota(resCuota);
-        financiamiento.setCuantia(cantCuantia);
-        financiamiento.setMeses(cantMeses);
-        financiamiento.setCapitalInicial(cantCapInicial);
-        financiamiento.setCapital1(resCapital1);
-        financiamiento.setAmortizacion1(resAmorti1);
-        financiamiento.setCuota1(resCuota);
-        financiamiento.setInteres1(resInteres1);
-        financiamiento.setCapital2(resCapital2);
-        financiamiento.setAmortizacion2(resAmorti2);
-        financiamiento.setCuota2(resCuota);
-        financiamiento.setInteres2(resInteres2);
-        financiamiento.setTipoInteres(cantTipoInteres);
+        capPeriodo2.setText(""+for1.format(resCapital2));
+        amortizacionPe2.setText(""+for1.format(resAmorti2));
+        interes2.setText(""+for1.format(resInteres2));
+        cuota1.setText(""+for1.format(resCuota));
+        cuota2.setText(""+for1.format(resCuota));
+
+        financiamiento.setCapital(for1.format(resCapital));
+        financiamiento.setAmortizacion(for1.format(resAmortizacion));
+        financiamiento.setInteres(for1.format(resInteres));
+        financiamiento.setCuota(for1.format(resCuota));
+        financiamiento.setCuantia(for1.format(cantCuantia));
+        financiamiento.setMeses(for1.format(cantMeses));
+        financiamiento.setCapitalInicial(for1.format(cantCapInicial));
+        financiamiento.setCapital1(for1.format(resCapital1));
+        financiamiento.setAmortizacion1(for1.format(resAmorti1));
+        financiamiento.setCuota1(for1.format(resCuota));
+        financiamiento.setInteres1(for1.format(resInteres1));
+        financiamiento.setCapital2(for1.format(resCapital2));
+        financiamiento.setAmortizacion2(for1.format(resAmorti2));
+        financiamiento.setCuota2(for1.format(resCuota));
+        financiamiento.setInteres2(for1.format(resInteres2));
+        financiamiento.setTipoInteres(for2.format(cantTipoInteres));
+
+
         db.collection("Financiamiento").document("finan").set(financiamiento);
         Intent pre = new Intent(this, presupuesto_caja.class);
         pre.putExtra("cap", capital.getText().toString());

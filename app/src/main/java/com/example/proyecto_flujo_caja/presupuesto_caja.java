@@ -226,20 +226,18 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         documentReference4.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Double amorti=documentSnapshot.getDouble("amortizacion");
-                ampr1.setText(""+amorti);
-                Double amorti2=documentSnapshot.getDouble("amortizacion1");
-                ampr2.setText(""+amorti2);
-                Double amorti3=documentSnapshot.getDouble("amortizacion2");
-                ampr3.setText(""+amorti3);
+                ampr1.setText(""+0);
+                String amorti=documentSnapshot.getString("amortizacion");
+                String amorti2=documentSnapshot.getString("amortizacion1");
+                ampr2.setText(amorti);
+                ampr3.setText(amorti2);
 
-                Double inte=documentSnapshot.getDouble("interes");
-                ip1.setText(""+inte);
-                Double inte2=documentSnapshot.getDouble("interes1");
-                ip2.setText(""+inte2);
-                Double inte3=documentSnapshot.getDouble("interes2");
-                ip3.setText(""+inte3);
+                String inte=documentSnapshot.getString("interes");
+                ip1.setText(""+0);
+                String inte2=documentSnapshot.getString("interes1");
+                ip2.setText(inte);
 
+                ip3.setText(inte2);
 
 
 
@@ -249,19 +247,26 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         documentReference5.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Double gainantes=documentSnapshot.getDouble("gainAntes");
-                ss1.setText(""+gainantes);
-                Double gan=documentSnapshot.getDouble("gainAntes");
-                ss2.setText(""+gan);
-                Double gainDep=documentSnapshot.getDouble("totalGainDespues");
-                ss3.setText(""+gainDep);
+                String gainantes=documentSnapshot.getString("totalGainAntes");
+                ss1.setText(gainantes);
+                String gan=documentSnapshot.getString("totalGainAntes");
+                ss2.setText(gan);
+                String gainDep=documentSnapshot.getString("totalGainDespues");
+                ss3.setText(gainDep);
 
-                Double resAp1=documentSnapshot.getDouble("resAporte1");
-                ap1.setText(""+resAp1);
-                Double resApi2=documentSnapshot.getDouble("resAporte1");
-                ap2.setText(""+resApi2);
-                Double inte3=documentSnapshot.getDouble("resAporte2");
-                ap3.setText(""+inte3);
+                String resAp1=documentSnapshot.getString("resAporte1");
+                ap1.setText(resAp1);
+                String resApi2=documentSnapshot.getString("resAporte1");
+                ap2.setText(resApi2);
+                String inte3=documentSnapshot.getString("resAporte2");
+                ap3.setText(inte3);
+
+                String resRetroAporte = documentSnapshot.getString("resRetroactivo1");
+                rss3.setText(resRetroAporte);
+                String resRetroSueldo= documentSnapshot.getString("resRetroactivo2");
+                rap3.setText(resRetroSueldo);
+
+
 
             }
         });
@@ -332,12 +337,23 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double apppc2=Double.parseDouble(ap2.getText().toString());
                Double apppc3=Double.parseDouble(ap3.getText().toString());
 
+               Double rs1=Double.parseDouble(rss1.getText().toString());
+               Double rs2=Double.parseDouble(rss2.getText().toString());
+               Double rs3=Double.parseDouble(rss3.getText().toString());
+               Double rssTotal=rs1+rs2+rs3;
+               Totrss.setText(rssTotal.toString());
 
-               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1;
+               Double r1=Double.parseDouble(rap1.getText().toString());
+               Double r2=Double.parseDouble(rap2.getText().toString());
+               Double r3=Double.parseDouble(rap3.getText().toString());
+               Double rTotal=r1+r2+r3;
+               Totrap.setText(rTotal.toString());
+
+               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1+r1+rs1;
                ts1.setText(TotsalPC1.toString());
-               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2;
+               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2+r2+rs2;
                ts2.setText(TotsalPC2.toString());
-               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3;
+               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3+r3+rs3;
                ts3.setText(TotsalPC3.toString());
 
 
@@ -354,6 +370,24 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                fnp2.setText(fnpsin2.toString());
                fnp3.setText(fnpsin3.toString());
 
+
+
+
+
+               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
+               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
+               Double sfepPC1= sfmapc1+fnppc1;
+               sfep1.setText(sfepPC1.toString());
+               sfma2.setText(sfep1.getText());
+               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
+               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
+               Double sfepPC2= sfmapc2+fnppc2;
+               sfep2.setText(sfepPC2.toString());
+               sfma3.setText(sfep2.getText());
+               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
+               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
+               Double sfepPC3= sfmapc3+fnppc3;
+               sfep3.setText(sfepPC3.toString());
 
                Double fcpc1 =Double.parseDouble(fcp1.getText().toString());
                Double afpc1 =Double.parseDouble(afin1.getText().toString());
@@ -377,23 +411,6 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                sf3.setText(sfPC3.toString());
 
 
-               sfma2.setText(sfPC1.toString());
-               sfma3.setText(sfepc2.toString());
-
-               Double sfmapc1 =Double.parseDouble(sfma1.getText().toString());
-               Double fnppc1 =Double.parseDouble(fnp1.getText().toString());
-               Double sfepPC1= sfmapc1+fnppc1;
-               sfep1.setText(sfepPC1.toString());
-
-               Double sfmapc2 =Double.parseDouble(sfma2.getText().toString());
-               Double fnppc2 =Double.parseDouble(fnp2.getText().toString());
-               Double sfepPC2= sfmapc2+fnppc2;
-               sfep2.setText(sfepPC2.toString());
-
-               Double sfmapc3 =Double.parseDouble(sfma3.getText().toString());
-               Double fnppc3 =Double.parseDouble(fnp3.getText().toString());
-               Double sfepPC3= sfmapc3+fnppc3;
-               sfep3.setText(sfepPC3.toString());
 
                Double dobsfma=Double.parseDouble(sfma2.getText().toString());
                Double dobsfmaa=Double.parseDouble(sfma2.getText().toString());
@@ -447,6 +464,14 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double iuet3=Double.parseDouble(iu3.getText().toString());
                Double iuetott=iuet1+iuet2+iuet3;
                Totiue.setText(iuetott.toString());
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+               /*SUMAR ESTOS MAS*/
+
+
+
 
 
 

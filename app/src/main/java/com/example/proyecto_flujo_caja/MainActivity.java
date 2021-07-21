@@ -145,7 +145,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(siguiente);
     }
     public void siguienteGrafico(View view){
-        Intent graficos = new Intent(this, grafico.class);
+        Intent graficos = new Intent(this, graficoQuinquenal.class);
         graficos.putExtra("sum1",total1);
         graficos.putExtra("sum2",total2);
         graficos.putExtra("sum3",total3);
@@ -173,6 +173,8 @@ public class MainActivity extends AppCompatActivity {
     public void MenuFlujo(View view){
         Intent change = new Intent(this, menu_FlujoDeCaja.class);
         startActivity(change);
+
+
     }
 
     public void crearReporte(View view){

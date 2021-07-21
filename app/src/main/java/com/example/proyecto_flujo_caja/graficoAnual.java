@@ -2,11 +2,10 @@ package com.example.proyecto_flujo_caja;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
+
+import android.graphics.Color;
+
 import android.widget.Button;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -21,14 +20,11 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.DataSet;
 
 
-import com.github.mikephil.charting.data.PieEntry;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
-
 
 import java.util.ArrayList;
 
-
-public class grafico extends AppCompatActivity {
+public class graficoAnual extends AppCompatActivity {
     private BarChart barChart;
 
 
@@ -36,26 +32,25 @@ public class grafico extends AppCompatActivity {
     private Double total1,total2,total3;
     public int[]totales= new int[3];
     private Button btnVolver;
-    private String[]months= new String[]{"Mes 1","Mes 2", "Mes 3"};
-    private int[]sale= new int[]{25,30,32,50};
-    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN};
-
+    private String[]months= new String[]{"Mes 1","Mes 2", "Mes 3","Mes 4","Mes 5", "Mes 6","Mes 7","Mes 8", "Mes 9","Mes 10","Mes 11", "Mes 12"};
+    private int[]sale= new int[]{25,30,32,50,25,30,32,50,25,30,32,50};
+    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN,Color.RED,Color.YELLOW,Color.MAGENTA,Color.CYAN,Color.GREEN,Color.RED,Color.YELLOW,Color.MAGENTA,Color.CYAN};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_grafico);
+        setContentView(R.layout.activity_grafico_anual);
+
         total1=(Double) getIntent().getSerializableExtra("sum1");
         total2=(Double) getIntent().getSerializableExtra("sum2");
         total3=(Double) getIntent().getSerializableExtra("sum3");
         totales[0]=(int) Math.round(total1);
         totales[1]=(int) Math.round(total2);;
         totales[2]=(int) Math.round(total3);
-        barChart=(BarChart)findViewById(R.id.barChart);
+        barChart=(BarChart)findViewById(R.id.quienquenalBarChart);
 
-       createCharts();
-       btnVolver=(Button)findViewById(R.id.btnVolver);
+        createCharts();
+        btnVolver=(Button)findViewById(R.id.btnVolver);
     }
-
 
     private Chart getSameChart(Chart chart, String descripcion, int textColor, int background, int animateY){
         chart.getDescription().setText(descripcion);
@@ -88,11 +83,10 @@ public class grafico extends AppCompatActivity {
     }
     private ArrayList<BarEntry>getBarEntries(){
         ArrayList<BarEntry>entries= new ArrayList<>();
-        for (int i=0; i<totales.length;i++)
-                entries.add(new BarEntry(i,totales[i]));
-            return entries;
+        for (int i=0; i<sale.length;i++)
+            entries.add(new BarEntry(i,sale[i]));
+        return entries;
     }
-
 
     private void axisX(XAxis axis){
         axis.setGranularityEnabled(true);
@@ -138,13 +132,6 @@ public class grafico extends AppCompatActivity {
         barData.setBarWidth(0.45f);
         return barData;
     }
-    public void onClickF(View view){
-        Intent flujo = new Intent(this, MainActivity.class);
-        startActivity(flujo);
-    }
-
-
-
 
 
 }

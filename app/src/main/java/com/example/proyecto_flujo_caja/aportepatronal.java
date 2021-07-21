@@ -13,6 +13,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 public class aportepatronal extends AppCompatActivity implements View.OnClickListener{
     private EditText caja;
     private EditText prov;
@@ -41,18 +44,18 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Double caja1= documentSnapshot.getDouble("caja");
-                caja.setText(""+caja1);
-                Double provi= documentSnapshot.getDouble("provivienda");
-                prov.setText(""+provi);
-                Double afps= documentSnapshot.getDouble("afp");
-                afp.setText(""+afps);
-                Double soli= documentSnapshot.getDouble("solidario");
-                solidario.setText(""+soli);
-                Double ries= documentSnapshot.getDouble("riesgo");
-                riesgo.setText(""+ries);
-                Double resAp= documentSnapshot.getDouble("resAporte");
-                resAporte.setText(""+resAp);
+                String caja1= documentSnapshot.getString("caja");
+                caja.setText(caja1);
+                String provi= documentSnapshot.getString("provivienda");
+                prov.setText(provi);
+                String afps= documentSnapshot.getString("afp");
+                afp.setText(afps);
+                String soli= documentSnapshot.getString("solidario");
+                solidario.setText(soli);
+                String ries= documentSnapshot.getString("riesgo");
+                riesgo.setText(ries);
+                String resAp= documentSnapshot.getString("resAporte");
+                resAporte.setText(resAp);
             }
         });
     }
@@ -86,19 +89,23 @@ public class aportepatronal extends AppCompatActivity implements View.OnClickLis
         else if(ri.equals("")){
             riesgo.setError("Campo Requerido");
         }else{
+            DecimalFormatSymbols separador = new DecimalFormatSymbols();
+            separador.setDecimalSeparator('.');
+            DecimalFormat for2 = new DecimalFormat("0.0000", separador);
+            DecimalFormat for1 = new DecimalFormat("0.00", separador);
             double porcentajeCaja = Double.parseDouble(caja.getText().toString());
             double porcentajeProv = Double.parseDouble(prov.getText().toString());
             double porcentajeAfp = Double.parseDouble(afp.getText().toString());
             double porcentajeSolidario = Double.parseDouble(solidario.getText().toString());
             double porcentajeRiesgo = Double.parseDouble(riesgo.getText().toString());
             double res = porcentajeCaja+porcentajeProv+porcentajeAfp+porcentajeSolidario+porcentajeRiesgo;
-            resAporte.setText(""+res);
-            aporte.setAfp(porcentajeAfp);
-            aporte.setCaja(porcentajeCaja);
-            aporte.setProvivienda(porcentajeProv);
-            aporte.setSolidario(porcentajeSolidario);
-            aporte.setRiesgo(porcentajeRiesgo);
-            aporte.setResAporte(res);
+            resAporte.setText(for2.format(res));
+            aporte.setAfp(for1.format(porcentajeAfp));
+            aporte.setCaja(for1.format(porcentajeCaja));
+            aporte.setProvivienda(for1.format(porcentajeProv));
+            aporte.setSolidario(for1.format(porcentajeSolidario));
+            aporte.setRiesgo(for1.format(porcentajeRiesgo));
+            aporte.setResAporte(for1.format(res));
             db.collection("Aporte").document("7TqA8LJfyRuwHQPWKLKX").set(aporte);
             Intent siguienteSueldo = new Intent(this, sueldos.class);
             siguienteSueldo.putExtra("dato", resAporte.getText().toString());

@@ -111,6 +111,7 @@ public class FlujoCajaProy implements Serializable {
         map.put("ingresosC", this.ingresosC);
         map.put("ingresosdOp", this.ingresosdOp);
         map.put("usos", this.usos);
+        map.put("saldoProy", this.saldoProy);
         return map;
     }
 }

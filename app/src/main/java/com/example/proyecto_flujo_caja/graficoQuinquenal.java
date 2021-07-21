@@ -30,7 +30,7 @@ public class graficoQuinquenal extends AppCompatActivity {
     private Double total1,total2,total3;
     public int[]totales= new int[3];
     private Button btnVolver;
-    private String[]months= new String[]{"Mes 1","Mes 2", "Mes 3","Mes 4","Mes 5"};
+    private String[]months= new String[]{"Año 1","Año 2", "Año 3"," 4","Mes 5"};
     private int[]sale= new int[]{25,30,32,50,25};
     private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN,Color.RED,Color.YELLOW};
 

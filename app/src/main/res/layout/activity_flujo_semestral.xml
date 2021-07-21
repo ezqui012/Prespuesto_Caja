@@ -490,19 +490,8 @@
                     android:layout_marginRight="20sp"
                     android:layout_marginBottom="10sp"
                     android:backgroundTint="@color/blue_app"
+                    android:onClick="volver"
                     android:text="@string/volver"
-                    app:cornerRadius="10sp" />
-
-                <Button
-                    android:id="@+id/btn_graficos"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20sp"
-                    android:layout_marginTop="15sp"
-                    android:layout_marginRight="20sp"
-                    android:layout_marginBottom="10sp"
-                    android:backgroundTint="@color/blue_app"
-                    android:text="Generar Grafica"
                     app:cornerRadius="10sp" />
 
             </LinearLayout>

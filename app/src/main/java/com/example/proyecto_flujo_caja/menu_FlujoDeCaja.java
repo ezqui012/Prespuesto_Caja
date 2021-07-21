@@ -127,6 +127,11 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
         graficos.putExtra("saldoProy5",saldo5);
         startActivity(graficos);
     }
+    public void volverInicio(View view){
+        Intent volver = new Intent(this, MainActivity.class);
+        startActivity(volver);
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override

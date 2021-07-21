@@ -3,8 +3,10 @@ package com.example.proyecto_flujo_caja;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.proyecto_flujo_caja.Models.FlujoSemes;
@@ -108,5 +110,9 @@ public class FlujoSemestral extends AppCompatActivity {
 
 
 
+    }
+    public void volver(View view){
+        Intent menu = new Intent(this, menu_FlujoDeCaja.class);
+        startActivity(menu);
     }
 }

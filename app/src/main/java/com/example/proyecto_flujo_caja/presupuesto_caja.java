@@ -26,7 +26,7 @@ import com.google.firebase.firestore.*;
 
 public class presupuesto_caja extends AppCompatActivity {
 
-    TextView Totinpr,Totsfep,Totsf,Totfnp,Totamp,Totsfma,Totafin,Totfcp,Totiue,Totss,Totap,Totrap,Totrss,Totts,Tottee,Totitt,Totses,Totiva,Tottre,Totcom,Totcgo,Totvcon,month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
+    TextView inpr1,inpr2,inpr3,Totinpr,Totsfep,Totsf,Totfnp,Totamp,Totsfma,Totafin,Totfcp,Totiue,Totss,Totap,Totrap,Totrss,Totts,Tottee,Totitt,Totses,Totiva,Tottre,Totcom,Totcgo,Totvcon,month1,month2,month3,vcont1,vcont2,vcont3,recses1, recses2, recses3,rectre1,rectre2, rectre3,tee1,tee2,tee3,sef1,sef2,sef3,compp1,compp2,compp3,ss1,ss2,ss3,ap1,ap2,ap3,rss1,rss2,rss3,rap1,rap2,rap3,cgo1,cgo2,cgo3,ampr1,ampr2,ampr3,ip1,ip2,ip3,iv1,iv2,iv3,itt1,itt2,itt3,iu1,iu2,iu3,oi1,oi2,oi3,ts1,ts2,ts3,fnp1,fnp2,fnp3,sfma1,sfma2,sfma3,sfep1,sfep2,sfep3,fcp1,fcp2,fcp3,afin1,afin2,afin3,ifin1,ifin2,ifin3,sf1,sf2,sf3;
     PresupuestoCaja pcaja;
 String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,cgoo2,cgoo3,vcontt1,vcontt2,vcontt3, comp1,comp2,comp3;
     FirebaseFirestore dba = FirebaseFirestore.getInstance();
@@ -93,6 +93,9 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         ampr1=findViewById(R.id.ampr1);
         ampr2=findViewById(R.id.ampr2);
         ampr3=findViewById(R.id.ampr3);
+        inpr1=findViewById(R.id.inpr1);
+        inpr2=findViewById(R.id.inpr2);
+        inpr3=findViewById(R.id.inpr3);
         ip1=findViewById(R.id.inpr1);
         ip2=findViewById(R.id.inpr2);
         ip3=findViewById(R.id.inpr3);
@@ -349,11 +352,20 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
                Double rTotal=r1+r2+r3;
                Totrap.setText(rTotal.toString());
 
-               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1+r1+rs1;
+
+               Double amppprr1=Double.parseDouble(ampr1.getText().toString());
+               Double amppprr2=Double.parseDouble(ampr2.getText().toString());
+               Double amppprr3=Double.parseDouble(ampr3.getText().toString());
+
+               Double inppprr1=Double.parseDouble(inpr1.getText().toString());
+               Double inppprr2=Double.parseDouble(inpr2.getText().toString());
+               Double inppprr3=Double.parseDouble(inpr3.getText().toString());
+
+               Double TotsalPC1=compc1+cgopc1+ivpc1+itpc1+iuepc1+sspc1+apppc1+r1+rs1+amppprr1+inppprr1;
                ts1.setText(TotsalPC1.toString());
-               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2+r2+rs2;
+               Double TotsalPC2=compc2+cgopc2+ivpc2+itpc2+iuepc2+sspc2+apppc2+r2+rs2+amppprr2+inppprr2;
                ts2.setText(TotsalPC2.toString());
-               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3+r3+rs3;
+               Double TotsalPC3=compc3+cgopc3+ivpc3+itpc3+iuepc3+sspc3+apppc3+r3+rs3+amppprr3+inppprr3;
                ts3.setText(TotsalPC3.toString());
 
 
@@ -482,7 +494,7 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
 
 
         String tott1=Tottee.getText().toString();
-        Double tott22=(Double.parseDouble(Totcgo.getText().toString())+Double.parseDouble(Totss.getText().toString())+Double.parseDouble(Totap.getText().toString())+Double.parseDouble(Totrss.getText().toString())+Double.parseDouble(Totrap.getText().toString())+Double.parseDouble(Totap.getText().toString()));
+        Double tott22=(Double.parseDouble(Totcom.getText().toString())+Double.parseDouble(Totcgo.getText().toString())+Double.parseDouble(Totss.getText().toString())+Double.parseDouble(Totap.getText().toString())+Double.parseDouble(Totrss.getText().toString())+Double.parseDouble(Totrap.getText().toString()));
         Double tott33= (Double.parseDouble(Totitt.getText().toString())+Double.parseDouble(Totiva.getText().toString())+Double.parseDouble(Totiue.getText().toString()));
         Double tot2=tott22+tott33;
         String Tot2=tot2.toString();

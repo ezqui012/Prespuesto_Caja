@@ -247,24 +247,24 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
         documentReference5.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Double gainantes=documentSnapshot.getDouble("gainAntes");
-                ss1.setText(""+gainantes);
-                Double gan=documentSnapshot.getDouble("gainAntes");
-                ss2.setText(""+gan);
-                Double gainDep=documentSnapshot.getDouble("totalGainDespues");
-                ss3.setText(""+gainDep);
+                String gainantes=documentSnapshot.getString("totalGainAntes");
+                ss1.setText(gainantes);
+                String gan=documentSnapshot.getString("totalGainAntes");
+                ss2.setText(gan);
+                String gainDep=documentSnapshot.getString("totalGainDespues");
+                ss3.setText(gainDep);
 
-                Double resAp1=documentSnapshot.getDouble("resAporte1");
-                ap1.setText(""+resAp1);
-                Double resApi2=documentSnapshot.getDouble("resAporte1");
-                ap2.setText(""+resApi2);
-                Double inte3=documentSnapshot.getDouble("resAporte2");
-                ap3.setText(""+inte3);
+                String resAp1=documentSnapshot.getString("resAporte1");
+                ap1.setText(resAp1);
+                String resApi2=documentSnapshot.getString("resAporte1");
+                ap2.setText(resApi2);
+                String inte3=documentSnapshot.getString("resAporte2");
+                ap3.setText(inte3);
 
-                Double resRetroAporte = documentSnapshot.getDouble("resRetroactivo1");
-                rss3.setText(""+resRetroAporte);
-                Double resRetroSueldo= documentSnapshot.getDouble("resRetroactivo2");
-                rap3.setText(""+resRetroSueldo);
+                String resRetroAporte = documentSnapshot.getString("resRetroactivo1");
+                rss3.setText(resRetroAporte);
+                String resRetroSueldo= documentSnapshot.getString("resRetroactivo2");
+                rap3.setText(resRetroSueldo);
 
 
 

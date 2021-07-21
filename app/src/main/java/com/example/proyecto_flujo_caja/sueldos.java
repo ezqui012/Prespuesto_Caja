@@ -16,6 +16,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+
 
 public class sueldos extends AppCompatActivity implements View.OnClickListener {
     private EditText incremento;
@@ -63,27 +66,28 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Double inc= documentSnapshot.getDouble("incremento");
-                incremento.setText(""+inc);
-                Double gainAn= documentSnapshot.getDouble("gainAntes");
-                totalGanadoAntes.setText(""+gainAn);
-                Double mes1= documentSnapshot.getDouble("mes1");
+
+                String inc= documentSnapshot.getString("incremento");
+                incremento.setText(inc);
+                String gainAn= documentSnapshot.getString("totalGainAntes");
+                totalGanadoAntes.setText(gainAn);
+                String mes1= documentSnapshot.getString("meses1");
                 numMeses1.setText(""+mes1);
-                Double mes2= documentSnapshot.getDouble("mes2");
+                String mes2= documentSnapshot.getString("meses2");
                 numMeses2.setText(""+mes2);
-                Double resAp1= documentSnapshot.getDouble("resAporte1");
+                String resAp1= documentSnapshot.getString("resAporte1");
                 resAporte1.setText(""+resAp1);
-                Double resAp2= documentSnapshot.getDouble("resAporte2");
+                String resAp2= documentSnapshot.getString("resAporte2");
                 resAporte2.setText(""+resAp2);
 
-                Double resActi1= documentSnapshot.getDouble("resRetroactivo1");
+                String resActi1= documentSnapshot.getString("resRetroactivo1");
                 resRetroActivo1.setText(""+resActi1);
-                Double resAct2= documentSnapshot.getDouble("resRetroactivo2");
+                String resAct2= documentSnapshot.getString("resRetroactivo2");
                 resRetroActivo2.setText(""+resAct2);
 
-                Double retro1= documentSnapshot.getDouble("retroactivo1");
+                String retro1= documentSnapshot.getString("retroactivo1");
                 resRetroActivo1.setText(""+retro1);
-                Double retro2= documentSnapshot.getDouble("retroactivo2");
+                String retro2= documentSnapshot.getString("retroactivo2");
                 resRetroActivo2.setText(""+retro2);
 
             }
@@ -101,60 +105,77 @@ public class sueldos extends AppCompatActivity implements View.OnClickListener {
     }
 
     private void calculoTotalAntes(){
+        DecimalFormatSymbols separador = new DecimalFormatSymbols();
+        separador.setDecimalSeparator('.');
+        DecimalFormat for2 = new DecimalFormat("0.00000", separador);
+        DecimalFormat for1 = new DecimalFormat("0.00", separador);
+
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
         double aportePat = Double.parseDouble(aporte.getText().toString());
         double res = totalAntes*aportePat;
-        resAporte1.setText(""+res);
-        sueldo.setTotalGainAntes(totalAntes);
-        sueldo.setResAporte1(res);
+        resAporte1.setText(for1.format(res));
+        sueldo.setTotalGainAntes(for1.format(totalAntes));
+        sueldo.setResAporte1(for1.format(res));
         Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
         siguienteSueldo.putExtra("resAp1", resAporte1.getText().toString());
         siguienteSueldo.putExtra("suelAntes", totalGanadoAntes.getText().toString());
     }
     private void calculoTotalDespues(){
+        DecimalFormatSymbols separador = new DecimalFormatSymbols();
+        separador.setDecimalSeparator('.');
+        DecimalFormat for2 = new DecimalFormat("0.00000", separador);
+        DecimalFormat for1 = new DecimalFormat("0.00", separador);
         double aportePat = Double.parseDouble(aporte.getText().toString());
         double totalAntes = Double.parseDouble(totalGanadoAntes.getText().toString());
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double totalDespues = (totalAntes*porcentajeIncremento)+totalAntes;
-        totalGanadoDespues.setText(""+totalDespues);
-        resAporte2.setText(""+aportePat*totalDespues);
-        sueldo.setIncremento(porcentajeIncremento);
-        sueldo.setTotalGainDespues(totalDespues);
-        sueldo.setResAporte2(aportePat*totalDespues);
+        totalGanadoDespues.setText(for1.format(totalDespues));
+        resAporte2.setText(for1.format(aportePat*totalDespues));
+        sueldo.setIncremento(for1.format(porcentajeIncremento));
+        sueldo.setTotalGainDespues(for1.format(totalDespues));
+        sueldo.setResAporte2(for1.format(aportePat*totalDespues));
         Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
         siguienteSueldo.putExtra("resApo2", resAporte2.getText().toString());
         siguienteSueldo.putExtra("suelDespues", totalGanadoDespues.getText().toString());
     }
     private void calculoRetroActivoUno(){
+        DecimalFormatSymbols separador = new DecimalFormatSymbols();
+        separador.setDecimalSeparator('.');
+        DecimalFormat for2 = new DecimalFormat("0.00000", separador);
+        DecimalFormat for1 = new DecimalFormat("0.00", separador);
         double totalAntes= Double.parseDouble(totalGanadoAntes.getText().toString());
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double res = totalAntes * porcentajeIncremento;
-        retroactivo1.setText("" + res);
+        retroactivo1.setText(for1.format(res));
         Double numMesUno = Double.parseDouble(numMeses1.getText().toString());
         double resRetroactivo = numMesUno* res;
         resRetroActivo1.setText(""+resRetroactivo);
-        sueldo.setMes1(numMesUno);
-        sueldo.setRetroactivo1(res);
-        sueldo.setResRetroactivo1(resRetroactivo);
+        sueldo.setMeses1(numMesUno.toString());
+        sueldo.setRetroactivo1(for1.format(res));
+        sueldo.setResRetroactivo1(for1.format(resRetroactivo));
         Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
         siguienteSueldo.putExtra("retro1", retroactivo1.getText().toString());
 
 
     }
     private void calculoRetroActivoDos(){
+        DecimalFormatSymbols separador = new DecimalFormatSymbols();
+        separador.setDecimalSeparator('.');
+        DecimalFormat for2 = new DecimalFormat("0.00000", separador);
+        DecimalFormat for1 = new DecimalFormat("0.00", separador);
 
         double aportePat = Double.parseDouble(aporte.getText().toString());
         double totalAntes= Double.parseDouble(totalGanadoAntes.getText().toString());
         double porcentajeIncremento = Double.parseDouble(incremento.getText().toString());
         double resAporteAntes = totalAntes * porcentajeIncremento;
         double res = aportePat * resAporteAntes;
-        retroactivo2.setText(""+ res);
+        retroactivo2.setText(for1.format(res));
         Double numMesDos = Double.parseDouble(numMeses2.getText().toString());
         double resRetroactivo = numMesDos* res;
-        resRetroActivo2.setText(""+resRetroactivo);
-        sueldo.setMes2(numMesDos);
-        sueldo.setRetroactivo2(res);
-        sueldo.setResRetroactivo2(resRetroactivo);
+        resRetroActivo2.setText(for1.format(resRetroactivo));
+        sueldo.setMeses2(numMesDos.toString());
+        sueldo.setRetroactivo2(for1.format(res));
+        sueldo.setResRetroactivo2(for1.format(resRetroactivo));
         firebaseFirestore.collection("Sueldo").document("H74DMS6OaNqVufi9SjNP").set(sueldo);
         Intent siguienteSueldo = new Intent(this, presupuesto_caja.class);
         siguienteSueldo.putExtra("ret2", retroactivo2.getText().toString());

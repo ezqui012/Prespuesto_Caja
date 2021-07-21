@@ -1,62 +1,56 @@
 package com.example.proyecto_flujo_caja.Models;
 
 public class Aporte {
-    private Double caja;
-    private Double provivienda;
-    private Double afp;
-    private Double solidario;
-    private Double riesgo;
-    private Double resAporte;
+    String caja,resAporte,provivienda,afp,solidario,riesgo;
+
 
     public Aporte(){}
 
-
-
-    public Double getCaja() {
+    public String getCaja() {
         return caja;
     }
 
-    public void setCaja(Double caja) {
+    public void setCaja(String caja) {
         this.caja = caja;
     }
 
-    public Double getProvivienda() {
-        return provivienda;
-    }
-
-    public void setProvivienda(Double provivienda) {
-        this.provivienda = provivienda;
-    }
-
-    public Double getAfp() {
-        return afp;
-    }
-
-    public void setAfp(Double afp) {
-        this.afp = afp;
-    }
-
-    public Double getSolidario() {
-        return solidario;
-    }
-
-    public void setSolidario(Double solidario) {
-        this.solidario = solidario;
-    }
-
-    public Double getRiesgo() {
-        return riesgo;
-    }
-
-    public void setRiesgo(Double riesgo) {
-        this.riesgo = riesgo;
-    }
-
-    public Double getResAporte() {
+    public String getResAporte() {
         return resAporte;
     }
 
-    public void setResAporte(Double resAporte) {
+    public void setResAporte(String resAporte) {
         this.resAporte = resAporte;
+    }
+
+    public String getProvivienda() {
+        return provivienda;
+    }
+
+    public void setProvivienda(String provivienda) {
+        this.provivienda = provivienda;
+    }
+
+    public String getAfp() {
+        return afp;
+    }
+
+    public void setAfp(String afp) {
+        this.afp = afp;
+    }
+
+    public String getSolidario() {
+        return solidario;
+    }
+
+    public void setSolidario(String solidario) {
+        this.solidario = solidario;
+    }
+
+    public String getRiesgo() {
+        return riesgo;
+    }
+
+    public void setRiesgo(String riesgo) {
+        this.riesgo = riesgo;
     }
 }

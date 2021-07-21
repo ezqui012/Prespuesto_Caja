@@ -27,8 +27,9 @@ import javax.annotation.Nullable;
 
 public class menu_FlujoDeCaja extends AppCompatActivity {
     Button sem, anual, bia, tria, cuatri, quin;
-    Button reporte;
+    Button reporte, grafico;
 
+    private Double saldo1,saldo5,saldoSemestral,saldoAnual;
     private static  final int CREATEPDF = 1;
     private Double totalAf3, totalAi3, totalAo3, totalIncre3;
     private Double totalAf5, totalAi5, totalAo5, totalIncre5;
@@ -41,10 +42,10 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_flujo_de_caja);
-
+        obtenerDatos();
         sem= findViewById(R.id.btnsem);
         anual=findViewById(R.id.btnanual);
-
+        grafico=findViewById(R.id.btnGrafico);
         quin=findViewById(R.id.btnquin);
         reporte = findViewById(R.id.btnPdf);
 
@@ -54,6 +55,10 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(),FlujoSemestral.class));
             }
         });
+
+
+
+
 
         anual.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +84,48 @@ public class menu_FlujoDeCaja extends AppCompatActivity {
                 startActivityForResult(intent, CREATEPDF);
             }
         });
+    }
+    public void obtenerDatos()
+    {
+        DocumentReference documentReference= FirebaseFirestore.getInstance().collection("flujoCaja").document("wwACBFEC1JO1Ls0ZUueE");
+        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                saldo1=documentSnapshot.getDouble("saldoProy");
+
+            }
+        });
+        DocumentReference documentReferenceSemestral= FirebaseFirestore.getInstance().collection("FlujoSemestral").document("a");
+        documentReferenceSemestral.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                saldoSemestral=Double.parseDouble(documentSnapshot.getString("saldofin"));
+            }
+        });
+        DocumentReference documentReferenceAnual= FirebaseFirestore.getInstance().collection("FlujoAnual").document("a");
+        documentReferenceAnual.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                saldoAnual=Double.parseDouble(documentSnapshot.getString("nine"));
+            }
+        });
+        DocumentReference documentReference5= FirebaseFirestore.getInstance().collection("flujoCaja5").document("Pi2OveaASqfUliSSRlDN\n");
+        documentReference5.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                saldo5=documentSnapshot.getDouble("saldoProy");
+            }
+        });
+
+    }
+
+    public void siguienteGrafico(View view){
+        Intent graficos = new Intent(this, graficoQuinquenal.class);
+        graficos.putExtra("saldoProy",saldo1);
+        graficos.putExtra("saldoFin",saldoSemestral);
+        graficos.putExtra("nine",saldoAnual);
+        graficos.putExtra("saldoProy5",saldo5);
+        startActivity(graficos);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

@@ -27,12 +27,12 @@ import java.util.ArrayList;
 
 public class graficoQuinquenal extends AppCompatActivity {
     private BarChart barChart;
-    private Double total1,total2,total3;
+    private Double total1,total2,total3,total4;
     public int[]totales= new int[3];
     private Button btnVolver;
-    private String[]months= new String[]{"Año 1","Año 2", "Año 3"," 4","Mes 5"};
+    private String[]months= new String[]{"Trimestral","Semestral", "Anual"," Quinquenal"};
     private int[]sale= new int[]{25,30,32,50,25};
-    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN,Color.RED,Color.YELLOW};
+    private int[]colors= new int[]{Color.BLACK,Color.BLUE,Color.GREEN,Color.RED};
 
 
     @Override
@@ -40,12 +40,14 @@ public class graficoQuinquenal extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_grafico_quinquenal);
 
-        total1=(Double) getIntent().getSerializableExtra("sum1");
-        total2=(Double) getIntent().getSerializableExtra("sum2");
-        total3=(Double) getIntent().getSerializableExtra("sum3");
-        totales[0]=(int) Math.round(total1);
-        totales[1]=(int) Math.round(total2);;
+        total1=(Double) getIntent().getSerializableExtra("saldoProy");
+        total2=(Double) getIntent().getSerializableExtra("saldoFin");
+        total3=(Double) getIntent().getSerializableExtra("nine");
+        total4=(Double) getIntent().getSerializableExtra("saldoProy5");
+        totales[0]=3;
+        totales[1]=(int) Math.round(total2);
         totales[2]=(int) Math.round(total3);
+        totales[3]=(int) Math.round(total4);
         barChart=(BarChart)findViewById(R.id.quienquenalBarChart);
 
         createCharts();

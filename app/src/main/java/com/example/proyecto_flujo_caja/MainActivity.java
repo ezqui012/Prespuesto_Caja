@@ -112,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
     public void Siguiente(View view){

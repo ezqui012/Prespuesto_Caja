@@ -494,7 +494,7 @@ String iue,it1,it2,it3,iva1,iva2,iva3,sess1,sess2,sess3,tree1,tree2,tree3,cgoo1,
 
 
         String tott1=Tottee.getText().toString();
-        Double tott22=(Double.parseDouble(Totcgo.getText().toString())+Double.parseDouble(Totss.getText().toString())+Double.parseDouble(Totap.getText().toString())+Double.parseDouble(Totrss.getText().toString())+Double.parseDouble(Totrap.getText().toString())+Double.parseDouble(Totap.getText().toString()));
+        Double tott22=(Double.parseDouble(Totcom.getText().toString())+Double.parseDouble(Totcgo.getText().toString())+Double.parseDouble(Totss.getText().toString())+Double.parseDouble(Totap.getText().toString())+Double.parseDouble(Totrss.getText().toString())+Double.parseDouble(Totrap.getText().toString()));
         Double tott33= (Double.parseDouble(Totitt.getText().toString())+Double.parseDouble(Totiva.getText().toString())+Double.parseDouble(Totiue.getText().toString()));
         Double tot2=tott22+tott33;
         String Tot2=tot2.toString();
